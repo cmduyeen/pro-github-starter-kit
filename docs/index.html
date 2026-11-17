@@ -57,14 +57,15 @@
     .btn-primary:hover { background: var(--accent-hover); }
     .btn-success { background: var(--green); border-color: var(--green); color: #052e16; }
     main {
-      max-width: 1280px;
-      margin: 24px auto;
+      max-width: 1520px;
+      margin: 20px auto;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: 420px 1fr;
-      gap: 20px;
+      grid-template-columns: 330px 1fr 1fr;
+      gap: 16px;
+      align-items: start;
     }
-    @media (max-width: 920px) {
+    @media (max-width: 1120px) {
       main { grid-template-columns: 1fr; }
     }
     .card {
@@ -126,7 +127,7 @@
     }
     textarea {
       width: 100%;
-      min-height: 460px;
+      min-height: 540px;
       padding: 14px;
       border-radius: 8px;
       border: 1px solid var(--border);
@@ -171,8 +172,8 @@
       color: var(--text);
     }
     .preview-pane {
-      min-height: 460px;
-      max-height: 640px;
+      min-height: 540px;
+      max-height: 680px;
       overflow-y: auto;
       padding: 20px 24px;
       border-radius: 8px;
@@ -236,20 +237,20 @@
     </section>
 
     <section class="card">
-      <h2>2. Preview &amp; Export</h2>
+      <h2>2. Edit Markdown</h2>
       <div class="toolbar">
         <button id="copyBtn" class="btn btn-primary" type="button">Copy Markdown</button>
         <button id="downloadBtn" class="btn btn-success" type="button">Download README.md</button>
-        <button id="copyCliBtn" class="btn" type="button">Copy CLI Command</button>
+        <button id="copyCliBtn" class="btn" type="button">Copy CLI</button>
         <span id="statusMsg" class="status"></span>
       </div>
-      <div class="tabs">
-        <button id="tabPreview" class="tab-btn active" type="button">👁️ Live Preview</button>
-        <button id="tabMarkdown" class="tab-btn" type="button">📝 Markdown Code</button>
-      </div>
-      <div id="previewPane" class="preview-pane">Loading preview...</div>
-      <textarea id="output" class="hidden" spellcheck="false"></textarea>
+      <textarea id="output" spellcheck="false"></textarea>
       <div id="cliBox" class="cli-box"></div>
+    </section>
+
+    <section class="card">
+      <h2>3. Live Preview</h2>
+      <div id="previewPane" class="preview-pane">Loading preview...</div>
     </section>
   </main>
 
@@ -264,8 +265,6 @@
     const pluginsListEl = document.getElementById("pluginsList");
     const outputEl = document.getElementById("output");
     const previewPaneEl = document.getElementById("previewPane");
-    const tabPreviewEl = document.getElementById("tabPreview");
-    const tabMarkdownEl = document.getElementById("tabMarkdown");
     const cliBoxEl = document.getElementById("cliBox");
     const statusMsgEl = document.getElementById("statusMsg");
 
@@ -276,20 +275,6 @@
         previewPaneEl.textContent = markdown;
       }
     }
-
-    tabPreviewEl.addEventListener("click", () => {
-      tabPreviewEl.classList.add("active");
-      tabMarkdownEl.classList.remove("active");
-      previewPaneEl.classList.remove("hidden");
-      outputEl.classList.add("hidden");
-    });
-
-    tabMarkdownEl.addEventListener("click", () => {
-      tabMarkdownEl.classList.add("active");
-      tabPreviewEl.classList.remove("active");
-      outputEl.classList.remove("hidden");
-      previewPaneEl.classList.add("hidden");
-    });
 
     outputEl.addEventListener("input", () => updatePreviewPane(outputEl.value));
 
