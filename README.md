@@ -138,15 +138,39 @@ Click any preview card or **Live Preview** link to see the rendered profile imme
 
 ## 🛠 Curated Resources & SEO
 
-We vetted the top open-source profile tools so you don't have to hunt across 20 tabs:
+### Famous Tools & Open-Source Repositories
 
-| Category | Top Picks | Guide |
-| --- | --- | --- |
-| **Visual Builders** | `readme.so`, `github-profile-readme-generator` | [docs/RESOURCES.md](docs/RESOURCES.md) |
-| **Stats & Graphs** | `github-readme-stats`, `streak-stats`, `activity-graph`, `lowlighter/metrics` | [docs/RESOURCES.md](docs/RESOURCES.md) |
-| **Automation** | `blog-post-workflow`, `waka-readme-stats`, `spotify-github-profile` | [docs/AUTOMATION.md](docs/AUTOMATION.md) |
-| **Profile SEO & GEO** | 1-line Bio, 6 Gateway Pins, 20 Topics, `1280×640` Cover, `llms.txt` | [docs/SEO-CHECKLIST.md](docs/SEO-CHECKLIST.md) |
-| **Inspiration** | `awesome-github-profile-readme`, `creative-profile-readme` | [docs/RESOURCES.md](docs/RESOURCES.md) |
+We vetted the most reliable profile builders, SVG widgets, color palettes, and automation workflows—with direct links and usage notes:
+
+| Category | Popular Tools & Repos | Why Use Them | Full Guide |
+| --- | --- | --- | --- |
+| **Visual Builders** | [readme.so](https://readme.so/) · [github-profile-readme-generator](https://github.com/rahuldkjain/github-profile-readme-generator) | Drag-and-drop Markdown blocks without writing syntax from scratch | [RESOURCES.md](docs/RESOURCES.md) |
+| **Stats & Graphs** | [streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats) · [activity-graph](https://github.com/ashutosh00710/github-readme-activity-graph) · [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) · [metrics](https://github.com/lowlighter/metrics) | Showcase coding streaks, 31-day activity, and language stats *(self-host `github-readme-stats` on Vercel to avoid 503 limits)* | [RESOURCES.md](docs/RESOURCES.md) |
+| **Icons & Badges** | [skill-icons](https://github.com/tandpfun/skill-icons) · [shields.io](https://shields.io/) · [simpleicons.org](https://simpleicons.org/) · [readme-typing-svg](https://github.com/DenverCoder1/readme-typing-svg) | Crisp SVG tech grids, custom social buttons, and animated typing headers | [RESOURCES.md](docs/RESOURCES.md) |
+| **Automation** | [blog-post-workflow](https://github.com/gautamkrishnar/blog-post-workflow) · [Platane/snk](https://github.com/Platane/snk) · [waka-readme-stats](https://github.com/anmol098/waka-readme-stats) · [spotify-github-profile](https://github.com/kittinan/spotify-github-profile) | Auto-sync Blog/YouTube RSS, contribution snake, WakaTime, and Spotify | [AUTOMATION.md](docs/AUTOMATION.md) |
+| **Color Palettes** | [catppuccin](https://github.com/catppuccin/catppuccin) · [dracula](https://github.com/dracula/dracula-theme) · [serein-theme](https://github.com/cmduyeen/serein-theme) · [pinkie-theme](https://github.com/cmduyeen/pinkie-theme) | Cohesive color systems for profiles, editors, and terminals | [Themes](#-1-pick-a-theme-themes) |
+| **Inspiration** | [awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) · [creative-profile-readme](https://github.com/coderjojo/creative-profile-readme) | Hundreds of real-world creative and minimalist profile examples | [RESOURCES.md](docs/RESOURCES.md) |
+
+### GitHub SEO & GEO Checklist (Rank on Google, GitHub & AI Search)
+
+<details>
+<summary><b>🔍 Click to open the 4-Part GitHub SEO & GEO Checklist</b></summary>
+
+1. **Profile Sidebar (First 5 Seconds):**
+   - Use a recognizable **Name** (`Name (handle)`), a crisp **1-line Bio** stating what you build, and link your **Website/Blog** + **Social handle**.
+2. **The 6 Pinned Repositories Strategy:**
+   - Pin **6 flagship "gateway" repositories** (e.g., 1 main product, 1 theme/design system, 1 starter kit, 1 knowledge base/blog) instead of scattered minor sub-repos.
+3. **Per-Repository On-Page SEO:**
+   - **URL Slug:** Clear kebab-case keywords (e.g., `pro-github-starter-kit`).
+   - **Description (140–160 chars):** Lead with primary keywords and clear value.
+   - **Topics (up to 20/20):** Mix broad tags (`python`, `open-source`) with high-intent tags (`github-profile-readme`, `starter-kit`).
+   - **Social Preview (`1280×640px`):** Upload a custom banner in **Settings → General → Social preview** for rich link cards on X, LinkedIn, and Discord.
+4. **GEO (Generative Engine Optimization for AI Search):**
+   - Add an **`llms.txt`** at the repo root summarizing key files, use **structured Markdown tables** with exact numbers, and include a direct **FAQ** section.
+
+</details>
+
+See the full printable checklist in **[docs/SEO-CHECKLIST.md](docs/SEO-CHECKLIST.md)**.
 
 ---
 
