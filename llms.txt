@@ -1,0 +1,12 @@
+# Pro GitHub Starter Kit
+
+> Extensible GitHub Profile starter kit with modular themes, automation plugins (Blog RSS, YouTube RSS, Spotify, WakaTime), curated tools, legitimate GitHub Achievement Badges guide, and SEO checklist.
+
+- [Main Guide](README.md)
+- [Curated Resources](docs/RESOURCES.md)
+- [Profile Automation Guide](docs/AUTOMATION.md)
+- [Achievement Badges Catalog](docs/BADGES.md)
+- [GitHub SEO & GEO Checklist](docs/SEO-CHECKLIST.md)
+- [Contributing Themes & Plugins](CONTRIBUTING.md)
+
+Use `python setup.py --list` to inspect available themes and plugins, and `python setup.py --username <user> --theme <theme> --plugins <p1,p2>` to generate a complete GitHub Profile README and workflows.
