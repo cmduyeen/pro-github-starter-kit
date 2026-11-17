@@ -2,13 +2,17 @@
 
 > Automatically updates your weekly coding time and language breakdown via WakaTime.
 
-## Live Rendered Output (Example: [@cmduyeen](https://github.com/cmduyeen))
+## Live Rendered Output (Example Format)
 
 ## Weekly Coding Activity
 
-<!--START_SECTION:waka-->
-<!-- Automatically updated by .github/workflows/wakatime-sync.yml (requires WAKATIME_API_KEY secret) -->
-<!--END_SECTION:waka-->
+```text
+Python       14 hrs 20 mins  ██████████████░░░░░░   68.4 %
+TypeScript    4 hrs 15 mins  ████░░░░░░░░░░░░░░░░   20.2 %
+Markdown      2 hrs 25 mins  ██░░░░░░░░░░░░░░░░░░   11.4 %
+```
+
+> *(Automatically updated by `.github/workflows/wakatime-sync.yml` once you add `WAKATIME_API_KEY` to Repository Secrets)*
 
 ## How to Enable
 

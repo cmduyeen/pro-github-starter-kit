@@ -2,11 +2,13 @@
 
 > Displays your currently playing or recently played Spotify track.
 
-## Live Rendered Output (Example: [@cmduyeen](https://github.com/cmduyeen))
+## Live Rendered Output
 
-## Currently Listening
+> Requires your own `SPOTIFY_UID` from [spotify-github-profile](https://github.com/kittinan/spotify-github-profile). Once configured, it renders an interactive Spotify Now Playing card like this:
 
-[![Spotify](https://spotify-github-profile.kittinanx.com/api/view?uid=your-spotify-uid&cover_image=true&theme=novatorem&show_offline=true&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://open.spotify.com/)
+```bash
+python setup.py --username cmduyeen --plugins spotify-now-playing --var SPOTIFY_UID=<your-spotify-uid>
+```
 
 ## How to Enable
 

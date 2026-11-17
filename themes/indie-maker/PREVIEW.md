@@ -15,9 +15,9 @@ Indie builder crafting lightweight, zero-install tools and sharing notes along t
 
 ## Latest Blog Posts
 
-<!-- BLOG-POST-LIST:START -->
-<!-- Automatically updated by .github/workflows/blog-rss-sync.yml -->
-<!-- BLOG-POST-LIST:END -->
+- 2026-10-16: [Từ Obsidian đến GitHub Pages, Phần 3: Kiểm tra RSS và đồng bộ hồ sơ](https://cmduyeen.github.io/posts/obsidian-to-github-blog-03-test-rss-and-profile-sync/)
+- 2026-10-15: [Từ Obsidian đến GitHub Pages, Phần 2: Xuất bản Markdown bằng Hugo](https://cmduyeen.github.io/posts/obsidian-to-github-blog-02-publish-with-hugo/)
+- 2026-10-14: [Từ Obsidian đến GitHub Pages, Phần 1: Tạo vault sẵn sàng xuất bản](https://cmduyeen.github.io/posts/obsidian-to-github-blog-01-publishable-vault/)
 
 ## GitHub Stats
 
