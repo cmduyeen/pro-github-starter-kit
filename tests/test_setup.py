@@ -50,7 +50,7 @@ class TestStarterKitSetup(unittest.TestCase):
             },
         )
         self.assertIn("# Hey, I'm octocat", readme)
-        self.assertIn("octocat's GitHub stats", readme)
+        self.assertIn("streak-stats.demolab.com?user=octocat", readme)
         self.assertNotIn("{{PLUGINS}}", readme)
         self.assertNotIn("{{USERNAME}}", readme)
 

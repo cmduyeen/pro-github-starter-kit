@@ -4,10 +4,11 @@
 
 ## Live Rendered Output (Example: [@cmduyeen](https://github.com/cmduyeen))
 
-## GitHub Stats
+## GitHub Streak & Stats
 
-![cmduyeen's GitHub stats](https://github-readme-stats.vercel.app/api?username=cmduyeen&show_icons=true&theme=transparent)
-![GitHub Streak](https://streak-stats.demolab.com?user=cmduyeen&theme=transparent)
+[![GitHub Streak](https://streak-stats.demolab.com?user=cmduyeen&theme=transparent)](https://github.com/cmduyeen)
+
+> **Tip:** If you also want `anuraghazra/github-readme-stats` cards, self-host it on Vercel (free) because the public demo instance frequently returns `503` under heavy traffic.
 
 ## How to Enable
 

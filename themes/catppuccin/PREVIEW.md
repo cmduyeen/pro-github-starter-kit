@@ -24,10 +24,9 @@
 
 [![My Skills](https://skillicons.dev/icons?i=py,ts,js,git,github,vscode,obsidian,markdown)](https://skillicons.dev)
 
-## GitHub Stats
+## GitHub Streak & Stats
 
-![cmduyeen's GitHub stats](https://github-readme-stats.vercel.app/api?username=cmduyeen&show_icons=true&theme=catppuccin_mocha)
-![GitHub Streak](https://streak-stats.demolab.com?user=cmduyeen&theme=catppuccin_mocha)
+[![GitHub Streak](https://streak-stats.demolab.com?user=cmduyeen&theme=catppuccin_mocha)](https://github.com/cmduyeen)
 
 ## Activity Graph
 

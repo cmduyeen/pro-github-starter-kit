@@ -19,10 +19,9 @@ Indie builder crafting lightweight, zero-install tools and sharing notes along t
 - 2026-10-15: [Từ Obsidian đến GitHub Pages, Phần 2: Xuất bản Markdown bằng Hugo](https://cmduyeen.github.io/posts/obsidian-to-github-blog-02-publish-with-hugo/)
 - 2026-10-14: [Từ Obsidian đến GitHub Pages, Phần 1: Tạo vault sẵn sàng xuất bản](https://cmduyeen.github.io/posts/obsidian-to-github-blog-01-publishable-vault/)
 
-## GitHub Stats
+## GitHub Streak & Stats
 
-![cmduyeen's GitHub stats](https://github-readme-stats.vercel.app/api?username=cmduyeen&show_icons=true&theme=transparent)
-![GitHub Streak](https://streak-stats.demolab.com?user=cmduyeen&theme=transparent)
+[![GitHub Streak](https://streak-stats.demolab.com?user=cmduyeen&theme=transparent)](https://github.com/cmduyeen)
 
 ## Find Me Online
 

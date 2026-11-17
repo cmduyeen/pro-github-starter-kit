@@ -17,7 +17,7 @@ A vetted collection of the best open-source repositories, generators, and web to
 
 | Tool / Repo | What It Does | Best Used For | Link |
 | --- | --- | --- | --- |
-| **GitHub Readme Stats** | Generates SVG cards for stars, commits, PRs, and top languages | Showcasing overall GitHub activity with custom themes | [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats) |
+| **GitHub Readme Stats** | Generates SVG cards for stars, commits, PRs, and top languages | Showcasing overall stats *(tip: self-host on Vercel to avoid public 503 limits)* | [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats) |
 | **GitHub Readme Streak Stats** | Displays current, longest, and total contribution streaks | Highlighting coding consistency | [DenverCoder1/github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats) |
 | **GitHub Readme Activity Graph** | Renders a 31-day contribution line graph | Visual learners & data-rich dashboards | [ashutosh00710/github-readme-activity-graph](https://github.com/ashutosh00710/github-readme-activity-graph) |
 | **GitHub Profile Trophy** | Generates visual trophy shelves for stars, followers, commits | Gamified developer portfolios | [ryo-ma/github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy) |
