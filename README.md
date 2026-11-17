@@ -152,18 +152,42 @@ We vetted the top open-source profile tools so you don't have to hunt across 20 
 
 ## 🏆 Legit GitHub Achievements
 
-| Badge | Requirement | Tiers (Default / Bronze / Silver / Gold) |
-| --- | --- | --- |
-| 🦈 **Pull Shark** | Open pull requests that get merged | 2 / 16 / 128 / 1,024 PRs |
-| 👯 **Pair Extraordinaire** | Co-author a commit in a merged PR (`Co-authored-by:`) | 1 / 10 / 24 / 48 PRs |
-| 🚀 **Quickdraw** | Close an issue or PR within **5 minutes** of opening | 1 fast close (single tier) |
-| 🤠 **YOLO** | Merge a pull request **without a code review** | 1 unreviewed merge (single tier) |
-| 🧠 **Galaxy Brain** | Accepted answer in GitHub Discussions (Q&A) | 2 / 8 / 16 / 32 answers |
-| ⭐ **Starstruck** | Own a public repo reaching star milestones | 16 / 128 / 512 / 4,096 stars |
-| 💖 **Public Sponsor** | Sponsor a developer/org via GitHub Sponsors | 1 sponsorship (single tier) |
+All **7 active GitHub Achievement Badges**, their tier thresholds, and legitimate ways to unlock them through real workflows:
+
+| Badge | Exact Requirement | Tiers (Default / Bronze / Silver / Gold) | Legit Tip for Beginners |
+| --- | --- | --- | --- |
+| 🦈 **Pull Shark** | Open pull requests that get merged | 2 / 16 / 128 / 1,024 PRs | Use feature branches + PRs for your own projects, or fix typos in open-source docs |
+| 👯 **Pair Extraordinaire** | Co-author a commit in a merged PR | 1 / 10 / 24 / 48 PRs | Add `Co-authored-by: Name <email>` in your commit footer when pairing with a friend |
+| 🚀 **Quickdraw** | Close an issue or PR within **5 minutes** | 1 fast close *(single tier)* | Open an issue for a quick fix you already have ready, then close it right after |
+| 🤠 **YOLO** | Merge a PR **without a code review** | 1 unreviewed merge *(single tier)* | On your own project, merge a real update PR directly without requesting review |
+| 🧠 **Galaxy Brain** | Accepted answer in GitHub Discussions | 2 / 8 / 16 / 32 answers | Answer `Q&A` questions in repos you use and wait for *Mark as answer* |
+| ⭐ **Starstruck** | Own a public repo hitting star milestones | 16 / 128 / 512 / 4,096 stars | Ship a genuinely helpful tool/kit with live previews & clean SEO topics |
+| 💖 **Public Sponsor** | Sponsor an open-source dev/org | 1 sponsorship *(single tier)* | Sponsor any maintainer via **GitHub Sponsors** (even $1/month) |
+
+<details>
+<summary><b>📌 Step-by-Step: Unlock Your First 4 Badges Legitimately (No Bots Needed)</b></summary>
+
+1. **Pull Shark + YOLO:** Instead of pushing directly to `main` on your personal project, create a real branch (`git checkout -b docs/update-bio`), edit your file, open a Pull Request on GitHub, and click **Merge pull request** without review (**YOLO** unlocked; do this for 2 real updates for **Pull Shark**).
+2. **Pair Extraordinaire:** When collaborating on a PR, end your commit message with a blank line followed by:
+   ```text
+   Co-authored-by: Teammate Name <teammate-github-email@example.com>
+   ```
+   *(The email must belong to a real GitHub account).*
+3. **Quickdraw:** When you notice a small bug or missing link in your repo, open an Issue, push the fix, and close the Issue within 5 minutes.
+
+</details>
+
+<details>
+<summary><b>🎖️ Profile Highlights, Retired Badges & Common Myths</b></summary>
+
+- **Profile Highlights (Sidebar):** `GitHub Pro` (free for students via GitHub Education) and `GitHub Developer Program` member badge.
+- **Retired Badges (No longer obtainable):** `Arctic Code Vault Contributor` (2020 snapshot) and `Mars 2020 Helicopter Contributor`.
+- **Green Squares ≠ Badge:** The contribution calendar tracks daily activity, not an Achievement Badge.
+
+</details>
 
 > [!WARNING]
-> Never use bots to push empty commits or loop fake PRs. That violates GitHub's Acceptable Use Policies (*Spam and Inauthentic Activity*) and risks account flagging. Read **[docs/BADGES.md](docs/BADGES.md)** for fast, 100% legitimate ways to earn every badge.
+> Never use bots to push empty commits or loop fake PRs. That violates GitHub's Acceptable Use Policies (*Spam and Inauthentic Activity*) and risks account flagging. Read **[docs/BADGES.md](docs/BADGES.md)** for full details.
 
 ---
 
