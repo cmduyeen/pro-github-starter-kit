@@ -314,12 +314,15 @@ def render_themes_table(
     return "\n".join(lines)
 
 
-def render_plugins_table(plugins_dir: Path = PLUGINS_DIR) -> str:
+def render_plugins_table(
+    plugins_dir: Path = PLUGINS_DIR,
+    root_dir: Path = ROOT_DIR,
+) -> str:
     """Build the Markdown plugins catalog table automatically from plugins/*/plugin.json."""
     plugins = discover_plugins(plugins_dir)
     lines = [
-        "| Plugin ID | What It Adds | Automation Included? | Preview |",
-        "| --- | --- | --- | --- |",
+        "| Preview | Plugin | Description | Automation | Quick Links |",
+        "| :---: | --- | --- | :---: | --- |",
     ]
     for pid, data in plugins.items():
         pdir: Path = data["_dir"]
@@ -328,12 +331,22 @@ def render_plugins_table(plugins_dir: Path = PLUGINS_DIR) -> str:
         wf_path = pdir / "workflow.yml"
         wf_name = data.get("workflow_file", f"{pid}.yml")
         wf_cell = f"✅ `{wf_name}`" if wf_path.exists() else "—"
-        preview_link = (
-            f"[Live Preview](plugins/{pid}/PREVIEW.md)"
-            if (pdir / "PREVIEW.md").exists()
-            else f"[Snippet](plugins/{pid}/snippet.md)"
+        preview_md = f"plugins/{pid}/PREVIEW.md" if (pdir / "PREVIEW.md").exists() else f"plugins/{pid}/snippet.md"
+
+        if (pdir / "preview.svg").exists():
+            img_rel = f"plugins/{pid}/preview.svg"
+        elif (root_dir / "assets" / "previews" / "plugins" / f"{pid}.svg").exists():
+            img_rel = f"assets/previews/plugins/{pid}.svg"
+        else:
+            img_rel = ""
+
+        preview_cell = (
+            f'[<img src="{img_rel}" width="150" alt="{data.get("name", pid)} Preview"/>]({preview_md})'
+            if img_rel
+            else f"[Preview]({preview_md})"
         )
-        lines.append(f"| `{pid}` *(by @{author})* | {desc} | {wf_cell} | {preview_link} |")
+        links = f"[Live Preview]({preview_md}) · [Snippet](plugins/{pid}/snippet.md)"
+        lines.append(f"| {preview_cell} | **`{pid}`**<br/>*(by @{author})* | {desc} | {wf_cell} | {links} |")
     return "\n".join(lines)
 
 
@@ -346,7 +359,7 @@ def sync_readme_catalog(
     target = readme_path or (ROOT_DIR / "README.md")
     original = target.read_text(encoding="utf-8")
     updated = _replace_marker_block(original, "THEMES-TABLE", render_themes_table(themes_dir, target.parent))
-    updated = _replace_marker_block(updated, "PLUGINS-TABLE", render_plugins_table(plugins_dir))
+    updated = _replace_marker_block(updated, "PLUGINS-TABLE", render_plugins_table(plugins_dir, target.parent))
     if updated == original:
         return False
     target.write_text(updated, encoding="utf-8")
