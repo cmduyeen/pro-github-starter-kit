@@ -7,9 +7,9 @@
   <meta name="description" content="Build your GitHub Profile README visually in seconds. Pick a theme, toggle plugins, edit Markdown side-by-side with live preview, and export." />
   <style>
     :root {
-      --bg: #0b1120;
-      --panel: #111827;
-      --border: #1f2937;
+      --bg: #070b14;
+      --panel: rgba(17, 24, 39, 0.84);
+      --border: rgba(255, 255, 255, 0.08);
       --text: #f3f4f6;
       --muted: #9ca3af;
       --accent: #3b82f6;
@@ -18,10 +18,18 @@
       --code-bg: #030712;
     }
     * { box-sizing: border-box; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.45); }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: var(--bg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 12% 15%, rgba(59, 130, 246, 0.16), transparent 36%),
+        radial-gradient(circle at 88% 80%, rgba(168, 85, 247, 0.14), transparent 38%);
+      background-attachment: fixed;
       color: var(--text);
       line-height: 1.5;
     }
@@ -33,9 +41,19 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      background: var(--panel);
+      background: rgba(11, 17, 32, 0.78);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
-    header h1 { margin: 0; font-size: 1.15rem; }
+    header h1 {
+      margin: 0;
+      font-size: 1.15rem;
+      background: linear-gradient(90deg, #f8fafc, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     header p { margin: 2px 0 0; font-size: 0.85rem; color: var(--muted); }
     .header-links { display: flex; flex-wrap: wrap; gap: 8px; }
     .btn {
@@ -90,9 +108,11 @@
     }
     .card {
       background: var(--panel);
+      backdrop-filter: blur(12px);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 18px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
     }
     .card-header {
       display: flex;
@@ -320,7 +340,15 @@
         <h2>3. Live Preview</h2>
         <button id="toggleModeBtn" class="btn btn-sm" type="button">☀️ Light Mode</button>
       </div>
-      <div id="previewPane" class="preview-pane">Loading preview...</div>
+      <div style="border: 1px solid var(--border); border-radius: 10px; overflow: hidden;">
+        <div style="display:flex; align-items:center; gap:6px; padding:8px 12px; background:#161b22; border-bottom:1px solid var(--border); font-size:0.78rem; color:#9ca3af;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:inline-block;"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#10b981;display:inline-block;"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,monospace;">README.md</span>
+        </div>
+        <div id="previewPane" class="preview-pane" style="border:none; border-radius:0;">Loading preview...</div>
+      </div>
     </section>
   </main>
 

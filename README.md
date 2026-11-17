@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/cover.svg" width="840" alt="Pro GitHub Starter Kit Cover"/>
+
 # 🚀 Pro GitHub Starter Kit
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=3B82F6&center=true&vCenter=true&width=640&lines=Build+a+Standout+GitHub+Profile+in+Minutes.;Modular+Themes+%2B+Plug-and-Play+Automation.;Curated+Tools%2C+Legit+Badges+%26+SEO+Ready.)](https://github.com/cmduyeen/pro-github-starter-kit)
