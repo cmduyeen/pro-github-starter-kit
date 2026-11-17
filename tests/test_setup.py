@@ -89,13 +89,12 @@ class TestStarterKitSetup(unittest.TestCase):
             )
 
     def test_interactive_wizard_returns_expected_choices(self) -> None:
-        # Themes sorted: 1=developer-portfolio, 2=indie-maker, 3=minimalist, ...
-        # Plugins sorted: 1=activity-graph, 2=blog-rss, 3=github-stats, ...
+        expected_theme = sorted(setup.discover_themes().keys())[2]
         answers = iter(["octocat", "3", "3", ""])
         with patch("builtins.input", lambda _prompt="": next(answers)):
             username, theme_id, plugin_ids, variables = setup.interactive_wizard()
         self.assertEqual(username, "octocat")
-        self.assertEqual(theme_id, "minimalist")
+        self.assertEqual(theme_id, expected_theme)
         self.assertEqual(plugin_ids, ["github-stats"])
         self.assertEqual(variables, {})
 
