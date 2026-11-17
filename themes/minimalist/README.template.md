@@ -1,15 +1,19 @@
-# Hi, I'm {{USERNAME}}
+# {{USERNAME}}
 
-Software builder & lifelong learner. I care about simple tools, clear writing, and maintainable systems.
+Software builder & lifelong learner. Focused on simple tools, clear writing, and maintainable systems.
 
-## What I'm Working On
+## Selected Work
 
-- **[Project One](https://github.com/{{USERNAME}})** — Short one-line description of your flagship project.
-- **[Project Two](https://github.com/{{USERNAME}})** — Another useful tool, theme, or open-source guide.
+- **[Flagship Project](https://github.com/{{USERNAME}}?tab=repositories)** — Core open-source utility built for everyday reliability.
+- **[Writing & Notes](https://{{USERNAME}}.github.io)** — Essays on software craftsmanship, automation, and personal knowledge management.
+
+## Now
+
+- Exploring minimalist developer workflows and zero-dependency tooling.
+- Open to collaborating on thoughtful open-source projects.
 
 {{PLUGINS}}
 
-## Elsewhere
+---
 
-- GitHub: [@{{USERNAME}}](https://github.com/{{USERNAME}})
-- Website / Blog: [https://{{USERNAME}}.github.io](https://{{USERNAME}}.github.io)
+[GitHub](https://github.com/{{USERNAME}}) · [Website](https://{{USERNAME}}.github.io)

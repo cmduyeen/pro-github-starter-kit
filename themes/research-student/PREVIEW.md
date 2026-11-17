@@ -4,13 +4,20 @@
 
 # Hello, I'm cmduyeen 📚
 
-Computer Science student & self-learner documenting my coding journey in public.
+Lifelong learner & builder documenting my **computer science and software engineering** journey in public.
 
-## Learning Roadmap
+## Learning in Public
 
-- **Currently Studying:** Data Structures, Python, Git & GitHub Workflows
-- **Public Notes:** [My Self-Study Repository](https://github.com/cmduyeen)
-- **Goal:** Ship small, useful open-source projects consistently
+| Area | Current Focus | Notes |
+| --- | --- | --- |
+| **Core Programming** | Python, TypeScript, Algorithms & Data Structures | [Study Repo →](https://github.com/cmduyeen?tab=repositories) |
+| **Engineering Workflows** | Git, Pull Requests, CI/CD with GitHub Actions | [Projects →](https://github.com/cmduyeen?tab=repositories) |
+| **Technical Writing** | Summarizing books, courses, and experiments | [Blog →](https://cmduyeen.github.io) |
+
+## 2026 Goals
+
+- Ship small, well-documented open-source utilities every month.
+- Contribute bug fixes and documentation improvements to community projects.
 
 ## Tech Stack
 
@@ -26,6 +33,6 @@ Computer Science student & self-learner documenting my coding journey in public.
 [![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/cmduyeen)
 [![Blog](https://img.shields.io/badge/Blog-2563EB?style=for-the-badge&logo=rss&logoColor=white)](https://cmduyeen.github.io)
 
-## Connect
+---
 
-- GitHub: [@cmduyeen](https://github.com/cmduyeen)
+Connect with me on **[GitHub](https://github.com/cmduyeen)**!

@@ -1,17 +1,19 @@
 # Hey, I'm {{USERNAME}} 👋
 
-Indie builder crafting lightweight, zero-install tools and sharing notes along the way.
+Indie maker building **lightweight, zero-install tools** and documenting the process in public.
 
-## Featured Products
+## Shipped Products
 
-| Project | What It Solves | Status |
+| Product | What It Solves | Link |
 | --- | --- | --- |
-| **[Flagship Project](https://github.com/{{USERNAME}})** | Describe the core problem it solves in one line | Active |
-| **[Starter Kit / Tool](https://github.com/{{USERNAME}})** | Describe your second project | Active |
+| **Product One** | Solves a real everyday workflow problem without bloat | [Explore →](https://github.com/{{USERNAME}}?tab=repositories) |
+| **Product Two** | Open-source starter kit or theme ecosystem | [Explore →](https://github.com/{{USERNAME}}?tab=repositories) |
+| **Digital Garden / Blog** | Technical notes, guides, and build logs | [Read →](https://{{USERNAME}}.github.io) |
 
 {{PLUGINS}}
 
-## Connect
+---
 
-- 🌐 Website: [https://{{USERNAME}}.github.io](https://{{USERNAME}}.github.io)
-- 🐙 GitHub: [@{{USERNAME}}](https://github.com/{{USERNAME}})
+### Let's Connect
+
+Find all my public work on **[GitHub](https://github.com/{{USERNAME}})** or read my latest notes at **[{{USERNAME}}.github.io](https://{{USERNAME}}.github.io)**.

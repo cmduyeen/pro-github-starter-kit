@@ -1,15 +1,22 @@
 # Hello, I'm {{USERNAME}} 📚
 
-Computer Science student & self-learner documenting my coding journey in public.
+Lifelong learner & builder documenting my **computer science and software engineering** journey in public.
 
-## Learning Roadmap
+## Learning in Public
 
-- **Currently Studying:** Data Structures, Python, Git & GitHub Workflows
-- **Public Notes:** [My Self-Study Repository](https://github.com/{{USERNAME}})
-- **Goal:** Ship small, useful open-source projects consistently
+| Area | Current Focus | Notes |
+| --- | --- | --- |
+| **Core Programming** | Python, TypeScript, Algorithms & Data Structures | [Study Repo →](https://github.com/{{USERNAME}}?tab=repositories) |
+| **Engineering Workflows** | Git, Pull Requests, CI/CD with GitHub Actions | [Projects →](https://github.com/{{USERNAME}}?tab=repositories) |
+| **Technical Writing** | Summarizing books, courses, and experiments | [Blog →](https://{{USERNAME}}.github.io) |
+
+## 2026 Goals
+
+- Ship small, well-documented open-source utilities every month.
+- Contribute bug fixes and documentation improvements to community projects.
 
 {{PLUGINS}}
 
-## Connect
+---
 
-- GitHub: [@{{USERNAME}}](https://github.com/{{USERNAME}})
+Connect with me on **[GitHub](https://github.com/{{USERNAME}})**!

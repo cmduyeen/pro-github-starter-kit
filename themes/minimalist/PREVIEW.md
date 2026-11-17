@@ -2,14 +2,19 @@
 
 ---
 
-# Hi, I'm cmduyeen
+# cmduyeen
 
-Software builder & lifelong learner. I care about simple tools, clear writing, and maintainable systems.
+Software builder & lifelong learner. Focused on simple tools, clear writing, and maintainable systems.
 
-## What I'm Working On
+## Selected Work
 
-- **[Project One](https://github.com/cmduyeen)** — Short one-line description of your flagship project.
-- **[Project Two](https://github.com/cmduyeen)** — Another useful tool, theme, or open-source guide.
+- **[Flagship Project](https://github.com/cmduyeen?tab=repositories)** — Core open-source utility built for everyday reliability.
+- **[Writing & Notes](https://cmduyeen.github.io)** — Essays on software craftsmanship, automation, and personal knowledge management.
+
+## Now
+
+- Exploring minimalist developer workflows and zero-dependency tooling.
+- Open to collaborating on thoughtful open-source projects.
 
 ## Find Me Online
 
@@ -17,7 +22,6 @@ Software builder & lifelong learner. I care about simple tools, clear writing, a
 [![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/cmduyeen)
 [![Blog](https://img.shields.io/badge/Blog-2563EB?style=for-the-badge&logo=rss&logoColor=white)](https://cmduyeen.github.io)
 
-## Elsewhere
+---
 
-- GitHub: [@cmduyeen](https://github.com/cmduyeen)
-- Website / Blog: [https://cmduyeen.github.io](https://cmduyeen.github.io)
+[GitHub](https://github.com/cmduyeen) · [Website](https://cmduyeen.github.io)

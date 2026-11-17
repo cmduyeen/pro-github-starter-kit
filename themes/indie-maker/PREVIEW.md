@@ -4,14 +4,15 @@
 
 # Hey, I'm cmduyeen 👋
 
-Indie builder crafting lightweight, zero-install tools and sharing notes along the way.
+Indie maker building **lightweight, zero-install tools** and documenting the process in public.
 
-## Featured Products
+## Shipped Products
 
-| Project | What It Solves | Status |
+| Product | What It Solves | Link |
 | --- | --- | --- |
-| **[Flagship Project](https://github.com/cmduyeen)** | Describe the core problem it solves in one line | Active |
-| **[Starter Kit / Tool](https://github.com/cmduyeen)** | Describe your second project | Active |
+| **Product One** | Solves a real everyday workflow problem without bloat | [Explore →](https://github.com/cmduyeen?tab=repositories) |
+| **Product Two** | Open-source starter kit or theme ecosystem | [Explore →](https://github.com/cmduyeen?tab=repositories) |
+| **Digital Garden / Blog** | Technical notes, guides, and build logs | [Read →](https://cmduyeen.github.io) |
 
 ## Latest Blog Posts
 
@@ -29,7 +30,8 @@ Indie builder crafting lightweight, zero-install tools and sharing notes along t
 [![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/cmduyeen)
 [![Blog](https://img.shields.io/badge/Blog-2563EB?style=for-the-badge&logo=rss&logoColor=white)](https://cmduyeen.github.io)
 
-## Connect
+---
 
-- 🌐 Website: [https://cmduyeen.github.io](https://cmduyeen.github.io)
-- 🐙 GitHub: [@cmduyeen](https://github.com/cmduyeen)
+### Let's Connect
+
+Find all my public work on **[GitHub](https://github.com/cmduyeen)** or read my latest notes at **[cmduyeen.github.io](https://cmduyeen.github.io)**.

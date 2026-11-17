@@ -2,14 +2,31 @@
 
 ---
 
+<div align="center">
+
 # Hi there, I'm cmduyeen 🚀
 
-Full-stack developer passionate about open-source, automation, and clean architecture.
+**Software Developer · Open-Source Builder · Automation Enthusiast**
 
-- 🔭 Currently building: **Your current project**
-- 🌱 Learning: **Your next technology**
-- 💬 Ask me about: **Python, TypeScript, Automation**
-- 📫 Reach me: **https://github.com/cmduyeen**
+*Designing clean, scalable software and developer-friendly tools.*
+
+</div>
+
+---
+
+## About Me
+
+- 🔭 **Currently building:** Open-source tools and personal productivity systems
+- 🌱 **Exploring:** System design, developer tooling, and clean architecture
+- 💡 **Philosophy:** Automate repetitive work, document clearly, ship iteratively
+- 📫 **Portfolio & Repos:** [github.com/cmduyeen](https://github.com/cmduyeen?tab=repositories)
+
+## Highlighted Repositories
+
+| Repository | Focus | Status |
+| --- | --- | --- |
+| **[Primary Project](https://github.com/cmduyeen?tab=repositories)** | Core application or CLI tool | Active |
+| **[Starter Kit / Library](https://github.com/cmduyeen?tab=repositories)** | Reusable templates and automation | Active |
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=false&vCenter=true&width=480&lines=Builder+%26+Open-Source+Creator;Automation+%26+Clean+Code)](https://github.com/cmduyeen)
 
@@ -29,4 +46,6 @@ Full-stack developer passionate about open-source, automation, and clean archite
 
 ---
 
-⭐️ From [@cmduyeen](https://github.com/cmduyeen)
+<div align="center">
+  <sub>Built with ❤️ by <a href="https://github.com/cmduyeen">@cmduyeen</a></sub>
+</div>
