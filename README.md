@@ -93,17 +93,17 @@ Click any preview card or **Live Preview** link to see the rendered profile imme
 
 ### 2. Snap in Plugins (`plugins/`)
 
-| Plugin ID | What It Adds | Automation Included? |
-| --- | --- | --- |
-| `blog-rss` | Auto-syncs latest articles from any RSS feed | ✅ `blog-rss-sync.yml` |
-| `youtube-rss` | Auto-syncs latest videos from a YouTube channel | ✅ `youtube-rss-sync.yml` |
-| `wakatime-stats` | Auto-updates weekly coding hours & languages | ✅ `wakatime-sync.yml` |
-| `typing-svg` | Animated hero typing banner (`readme-typing-svg`) | — |
-| `skill-icons` | Clean SVG tech stack grid (`skillicons.dev`) | — |
-| `github-stats` | Dynamic GitHub summary & streak SVG cards | — |
-| `activity-graph` | 31-day contribution line graph | — |
-| `spotify-now-playing` | Currently playing / recent Spotify track widget | — |
-| `social-badges` | `shields.io` GitHub, X & Blog buttons | — |
+| Plugin ID | What It Adds | Automation Included? | Preview |
+| --- | --- | --- | --- |
+| `blog-rss` | Auto-syncs latest articles from any RSS feed | ✅ `blog-rss-sync.yml` | [Live Preview](plugins/blog-rss/PREVIEW.md) |
+| `youtube-rss` | Auto-syncs latest videos from a YouTube channel | ✅ `youtube-rss-sync.yml` | [Live Preview](plugins/youtube-rss/PREVIEW.md) |
+| `wakatime-stats` | Auto-updates weekly coding hours & languages | ✅ `wakatime-sync.yml` | [Live Preview](plugins/wakatime-stats/PREVIEW.md) |
+| `typing-svg` | Animated hero typing banner (`readme-typing-svg`) | — | [Live Preview](plugins/typing-svg/PREVIEW.md) |
+| `skill-icons` | Clean SVG tech stack grid (`skillicons.dev`) | — | [Live Preview](plugins/skill-icons/PREVIEW.md) |
+| `github-stats` | Dynamic GitHub summary & streak SVG cards | — | [Live Preview](plugins/github-stats/PREVIEW.md) |
+| `activity-graph` | 31-day contribution line graph | — | [Live Preview](plugins/activity-graph/PREVIEW.md) |
+| `spotify-now-playing` | Currently playing / recent Spotify track widget | — | [Live Preview](plugins/spotify-now-playing/PREVIEW.md) |
+| `social-badges` | `shields.io` GitHub, X & Blog buttons | — | [Live Preview](plugins/social-badges/PREVIEW.md) |
 
 > [!NOTE]
 > All GitHub Actions workflows run **once per day** and only commit when new content appears—keeping your contribution graph authentic and clean. See **[docs/AUTOMATION.md](docs/AUTOMATION.md)** for setup details.
