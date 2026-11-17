@@ -11,9 +11,24 @@
 
 **An Obsidian-inspired, extensible starter kit for crafting a clean, automated, and high-converting GitHub Profile.**
 
-[Quick Start](#-quick-start-60-seconds) · [Live Previews](#-see-what-you-can-build) · [Themes & Plugins](#-modular-themes--plugins) · [Badges](#-legit-github-achievements) · [Resources](docs/RESOURCES.md)
+[Quick Start](#-quick-start-no-coding-required) · [Live Preview](#-see-what-you-can-build) · [Themes (9)](#-1-pick-a-theme-themes) · [Plugins (12)](#-2-snap-in-plugins-plugins) · [Badges](#-legit-github-achievements)
 
 </div>
+
+---
+
+## 📑 Table of Contents
+
+- [⚡ Quick Start (No Coding Required)](#-quick-start-no-coding-required)
+  - [Option A: 100% in Browser (Recommended)](#option-a-100-in-browser-recommended-for-beginners--non-tech)
+  - [Option B: Interactive Terminal Wizard](#option-b-interactive-terminal-wizard-1-simple-command)
+- [🎨 See What You Can Build](#-see-what-you-can-build)
+- [🧩 Modular Themes & Plugins](#-modular-themes--plugins)
+  - [1. Pick a Theme (`themes/`)](#-1-pick-a-theme-themes)
+  - [2. Snap in Plugins (`plugins/`)](#-2-snap-in-plugins-plugins)
+- [🛠 Curated Resources & SEO](#-curated-resources--seo)
+- [🏆 Legit GitHub Achievements](#-legit-github-achievements)
+- [🤝 Build Together & FAQ](#-build-together-add-your-own-theme-or-plugin)
 
 ---
 
@@ -86,15 +101,15 @@ Click any preview card or **Live Preview** link to see the rendered profile imme
 <!-- THEMES-TABLE:START -->
 | Preview | Theme | Description | Quick Links |
 | :---: | --- | --- | --- |
-| [<img src="assets/previews/catppuccin.svg" width="220" alt="Catppuccin Mocha Preview"/>](themes/catppuccin/PREVIEW.md) | **`catppuccin`**<br/>Catppuccin Mocha *(by @cmduyeen)* | Soothing pastel-dark palette inspired by Catppuccin (catppuccin/catppuccin). | [Live Preview](themes/catppuccin/PREVIEW.md) · [Template](themes/catppuccin/README.template.md) |
-| [<img src="assets/previews/developer-portfolio.svg" width="220" alt="Developer Portfolio Preview"/>](themes/developer-portfolio/PREVIEW.md) | **`developer-portfolio`**<br/>Developer Portfolio *(by @cmduyeen)* | Full developer showcase ready for tech stack icons, stats cards, and activity widgets. | [Live Preview](themes/developer-portfolio/PREVIEW.md) · [Template](themes/developer-portfolio/README.template.md) |
-| [<img src="assets/previews/dracula.svg" width="220" alt="Dracula Palette Preview"/>](themes/dracula/PREVIEW.md) | **`dracula`**<br/>Dracula Palette *(by @cmduyeen)* | Dark purple & neon palette inspired by Dracula Theme (dracula/dracula-theme). | [Live Preview](themes/dracula/PREVIEW.md) · [Template](themes/dracula/README.template.md) |
-| [<img src="assets/previews/indie-maker.svg" width="220" alt="Indie Maker Preview"/>](themes/indie-maker/PREVIEW.md) | **`indie-maker`**<br/>Indie Maker *(by @cmduyeen)* | Product-focused layout highlighting shipped projects, writing, and updates. | [Live Preview](themes/indie-maker/PREVIEW.md) · [Template](themes/indie-maker/README.template.md) |
-| [<img src="assets/previews/minimalist.svg" width="220" alt="Minimalist Preview"/>](themes/minimalist/PREVIEW.md) | **`minimalist`**<br/>Minimalist *(by @cmduyeen)* | Clean text-first profile with zero visual clutter. | [Live Preview](themes/minimalist/PREVIEW.md) · [Template](themes/minimalist/README.template.md) |
-| [<img src="assets/previews/pinkie.svg" width="220" alt="Pinkie Pastel Preview"/>](themes/pinkie/PREVIEW.md) | **`pinkie`**<br/>Pinkie Pastel *(by @cmduyeen)* | Soft pastel-pink aesthetic from Pinkie Theme (cmduyeen/pinkie-theme). | [Live Preview](themes/pinkie/PREVIEW.md) · [Template](themes/pinkie/README.template.md) |
-| [<img src="assets/previews/research-student.svg" width="220" alt="Student & Self-Learner Preview"/>](themes/research-student/PREVIEW.md) | **`research-student`**<br/>Student & Self-Learner *(by @cmduyeen)* | Structured layout highlighting learning roadmap, notes, and starter projects. | [Live Preview](themes/research-student/PREVIEW.md) · [Template](themes/research-student/README.template.md) |
-| [<img src="assets/previews/serein.svg" width="220" alt="Serein Warm Minimal Preview"/>](themes/serein/PREVIEW.md) | **`serein`**<br/>Serein Warm Minimal *(by @cmduyeen)* | Warm, low-distraction palette from Serein Theme (cmduyeen/serein-theme). | [Live Preview](themes/serein/PREVIEW.md) · [Template](themes/serein/README.template.md) |
-| [<img src="assets/previews/terminal-hacker.svg" width="220" alt="Terminal / CLI Preview"/>](themes/terminal-hacker/PREVIEW.md) | **`terminal-hacker`**<br/>Terminal / CLI *(by @cmduyeen)* | Neofetch-inspired terminal block layout for CLI and systems developers. | [Live Preview](themes/terminal-hacker/PREVIEW.md) · [Template](themes/terminal-hacker/README.template.md) |
+| [<img src="assets/previews/catppuccin.svg" width="150" alt="Catppuccin Mocha Preview"/>](themes/catppuccin/PREVIEW.md) | **`catppuccin`**<br/>Catppuccin Mocha *(by @cmduyeen)* | Soothing pastel-dark palette inspired by Catppuccin (catppuccin/catppuccin). | [Live Preview](themes/catppuccin/PREVIEW.md) · [Template](themes/catppuccin/README.template.md) |
+| [<img src="assets/previews/developer-portfolio.svg" width="150" alt="Developer Portfolio Preview"/>](themes/developer-portfolio/PREVIEW.md) | **`developer-portfolio`**<br/>Developer Portfolio *(by @cmduyeen)* | Full developer showcase ready for tech stack icons, stats cards, and activity widgets. | [Live Preview](themes/developer-portfolio/PREVIEW.md) · [Template](themes/developer-portfolio/README.template.md) |
+| [<img src="assets/previews/dracula.svg" width="150" alt="Dracula Palette Preview"/>](themes/dracula/PREVIEW.md) | **`dracula`**<br/>Dracula Palette *(by @cmduyeen)* | Dark purple & neon palette inspired by Dracula Theme (dracula/dracula-theme). | [Live Preview](themes/dracula/PREVIEW.md) · [Template](themes/dracula/README.template.md) |
+| [<img src="assets/previews/indie-maker.svg" width="150" alt="Indie Maker Preview"/>](themes/indie-maker/PREVIEW.md) | **`indie-maker`**<br/>Indie Maker *(by @cmduyeen)* | Product-focused layout highlighting shipped projects, writing, and updates. | [Live Preview](themes/indie-maker/PREVIEW.md) · [Template](themes/indie-maker/README.template.md) |
+| [<img src="assets/previews/minimalist.svg" width="150" alt="Minimalist Preview"/>](themes/minimalist/PREVIEW.md) | **`minimalist`**<br/>Minimalist *(by @cmduyeen)* | Clean text-first profile with zero visual clutter. | [Live Preview](themes/minimalist/PREVIEW.md) · [Template](themes/minimalist/README.template.md) |
+| [<img src="assets/previews/pinkie.svg" width="150" alt="Pinkie Pastel Preview"/>](themes/pinkie/PREVIEW.md) | **`pinkie`**<br/>Pinkie Pastel *(by @cmduyeen)* | Soft pastel-pink aesthetic from Pinkie Theme (cmduyeen/pinkie-theme). | [Live Preview](themes/pinkie/PREVIEW.md) · [Template](themes/pinkie/README.template.md) |
+| [<img src="assets/previews/research-student.svg" width="150" alt="Student & Self-Learner Preview"/>](themes/research-student/PREVIEW.md) | **`research-student`**<br/>Student & Self-Learner *(by @cmduyeen)* | Structured layout highlighting learning roadmap, notes, and starter projects. | [Live Preview](themes/research-student/PREVIEW.md) · [Template](themes/research-student/README.template.md) |
+| [<img src="assets/previews/serein.svg" width="150" alt="Serein Warm Minimal Preview"/>](themes/serein/PREVIEW.md) | **`serein`**<br/>Serein Warm Minimal *(by @cmduyeen)* | Warm, low-distraction palette from Serein Theme (cmduyeen/serein-theme). | [Live Preview](themes/serein/PREVIEW.md) · [Template](themes/serein/README.template.md) |
+| [<img src="assets/previews/terminal-hacker.svg" width="150" alt="Terminal / CLI Preview"/>](themes/terminal-hacker/PREVIEW.md) | **`terminal-hacker`**<br/>Terminal / CLI *(by @cmduyeen)* | Neofetch-inspired terminal block layout for CLI and systems developers. | [Live Preview](themes/terminal-hacker/PREVIEW.md) · [Template](themes/terminal-hacker/README.template.md) |
 <!-- THEMES-TABLE:END -->
 
 ### 2. Snap in Plugins (`plugins/`)

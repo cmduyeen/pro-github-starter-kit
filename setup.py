@@ -301,7 +301,7 @@ def render_themes_table(
             img_rel = ""
 
         preview_cell = (
-            f'[<img src="{img_rel}" width="220" alt="{data.get("name", tid)} Preview"/>]({preview_md})'
+            f'[<img src="{img_rel}" width="150" alt="{data.get("name", tid)} Preview"/>]({preview_md})'
             if img_rel
             else f"[Preview]({preview_md})"
         )
