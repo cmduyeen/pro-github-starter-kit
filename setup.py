@@ -321,16 +321,15 @@ def render_plugins_table(
     """Build the Markdown plugins catalog table automatically from plugins/*/plugin.json."""
     plugins = discover_plugins(plugins_dir)
     lines = [
-        "| Preview | Plugin | Description | Automation | Quick Links |",
-        "| :---: | --- | --- | :---: | --- |",
+        "| Preview | Plugin | Description | Quick Links |",
+        "| :---: | --- | --- | --- |",
     ]
     for pid, data in plugins.items():
         pdir: Path = data["_dir"]
         desc = str(data.get("description", "")).replace("|", "\\|")
         author = str(data.get("author", "community"))
         wf_path = pdir / "workflow.yml"
-        wf_name = data.get("workflow_file", f"{pid}.yml")
-        wf_cell = f"✅ `{wf_name}`" if wf_path.exists() else "—"
+        wf_tag = " · *Auto-sync*" if wf_path.exists() else ""
         preview_md = f"plugins/{pid}/PREVIEW.md" if (pdir / "PREVIEW.md").exists() else f"plugins/{pid}/snippet.md"
 
         if (pdir / "preview.svg").exists():
@@ -346,7 +345,7 @@ def render_plugins_table(
             else f"[Preview]({preview_md})"
         )
         links = f"[Live Preview]({preview_md}) · [Snippet](plugins/{pid}/snippet.md)"
-        lines.append(f"| {preview_cell} | **`{pid}`**<br/>*(by @{author})* | {desc} | {wf_cell} | {links} |")
+        lines.append(f"| {preview_cell} | **`{pid}`**<br/>*(by @{author}{wf_tag})* | {desc} | {links} |")
     return "\n".join(lines)
 
 
