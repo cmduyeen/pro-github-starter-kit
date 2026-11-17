@@ -13,15 +13,20 @@ class TestStarterKitSetup(unittest.TestCase):
     def test_discover_themes_and_plugins(self) -> None:
         themes = setup.discover_themes()
         plugins = setup.discover_plugins()
-        self.assertIn("minimalist", themes)
-        self.assertIn("indie-maker", themes)
-        self.assertIn("developer-portfolio", themes)
-        self.assertIn("blog-rss", plugins)
-        self.assertIn("youtube-rss", plugins)
-        self.assertIn("spotify-now-playing", plugins)
-        self.assertIn("wakatime-stats", plugins)
-        self.assertIn("github-stats", plugins)
-        self.assertIn("skill-icons", plugins)
+        for tid in ("minimalist", "indie-maker", "developer-portfolio", "terminal-hacker", "research-student"):
+            self.assertIn(tid, themes)
+        for pid in (
+            "blog-rss",
+            "youtube-rss",
+            "spotify-now-playing",
+            "wakatime-stats",
+            "github-stats",
+            "skill-icons",
+            "typing-svg",
+            "activity-graph",
+            "social-badges",
+        ):
+            self.assertIn(pid, plugins)
 
     def test_compose_profile_replaces_placeholders_and_collects_workflows(self) -> None:
         readme, workflows = setup.compose_profile(

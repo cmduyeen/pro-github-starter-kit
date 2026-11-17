@@ -47,6 +47,8 @@ python setup.py --username <your-username> \
 | `minimalist` | Clean text & links, zero widget clutter | Writers, engineers who prefer *less is more* |
 | `indie-maker` | Featured products table + writing/video feeds | Solo builders & indie hackers |
 | `developer-portfolio` | Bio bullets + tech stack icons + stats cards | Job seekers & full-stack developers |
+| `terminal-hacker` | Neofetch-inspired terminal block layout | CLI, Linux & systems developers |
+| `research-student` | Learning roadmap + public study notes | Students & self-learners building in public |
 
 ### Built-in Plugins (`plugins/`)
 
@@ -58,6 +60,9 @@ python setup.py --username <your-username> \
 | `spotify-now-playing` | Embeds currently playing / recent Spotify track | — |
 | `github-stats` | Embeds GitHub summary & streak SVG cards | — |
 | `skill-icons` | Crisp SVG tech stack grid via `skillicons.dev` | — |
+| `typing-svg` | Animated typing banner powered by `readme-typing-svg` | — |
+| `activity-graph` | 31-day contribution line graph | — |
+| `social-badges` | Crisp `shields.io` GitHub, X & Blog badges | — |
 
 ---
 
