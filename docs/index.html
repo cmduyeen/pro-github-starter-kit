@@ -43,31 +43,43 @@
   </script>
   <style>
     :root {
-      --bg: #070b14;
-      --panel: rgba(17, 24, 39, 0.84);
-      --border: rgba(255, 255, 255, 0.08);
-      --text: #f3f4f6;
-      --muted: #9ca3af;
-      --accent: #3b82f6;
-      --accent-hover: #2563eb;
-      --green: #10b981;
-      --code-bg: #030712;
+      color-scheme: light;
+      --bg: #F6F4F0;
+      --panel: #EDEAE4;
+      --border: #E3DFD7;
+      --text: #3D3A36;
+      --muted: #5C5852;
+      --accent: #914854;
+      --accent-hover: #7a3b45;
+      --green: #2f7d6d;
+      --code-bg: #FFFFFF;
+      --btn-text: #FFFFFF;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #191817;
+        --panel: #21201E;
+        --border: #2B2926;
+        --text: #C7C3BA;
+        --muted: #A39E95;
+        --accent: #C9848F;
+        --accent-hover: #d69ba5;
+        --green: var(--accent);
+        --code-bg: #141312;
+        --btn-text: #191817;
+      }
     }
     * { box-sizing: border-box; }
     ::-webkit-scrollbar { width: 8px; height: 8px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 999px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.45); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background-color: var(--bg);
-      background-image:
-        radial-gradient(circle at 12% 15%, rgba(59, 130, 246, 0.16), transparent 36%),
-        radial-gradient(circle at 88% 80%, rgba(168, 85, 247, 0.14), transparent 38%);
-      background-attachment: fixed;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.55;
     }
     header {
       border-bottom: 1px solid var(--border);
@@ -77,18 +89,16 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      background: rgba(11, 17, 32, 0.78);
-      backdrop-filter: blur(14px);
+      background: var(--bg);
       position: sticky;
       top: 0;
       z-index: 20;
     }
     header h1 {
       margin: 0;
-      font-size: 1.15rem;
-      background: linear-gradient(90deg, #f8fafc, #93c5fd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 1.05rem;
+      color: var(--text);
     }
     header p { margin: 2px 0 0; font-size: 0.85rem; color: var(--muted); }
     .header-links { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -97,21 +107,21 @@
       align-items: center;
       gap: 6px;
       padding: 7px 12px;
-      border-radius: 8px;
+      border-radius: 6px;
       border: 1px solid var(--border);
-      background: #1f2937;
+      background: var(--panel);
       color: var(--text);
       font-size: 0.84rem;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
-      transition: background 0.15s ease;
+      transition: border-color 0.15s ease, color 0.15s ease;
     }
-    .btn:hover { background: #374151; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
     .btn-sm { padding: 4px 10px; font-size: 0.78rem; }
-    .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-hover); }
-    .btn-success { background: var(--green); border-color: var(--green); color: #052e16; }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--btn-text); }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--btn-text); }
+    .btn-success { background: var(--green); border-color: var(--green); color: var(--btn-text); }
     .steps-bar {
       max-width: 1560px;
       margin: 16px auto 0;
@@ -129,10 +139,10 @@
       gap: 10px;
       padding: 10px 14px;
       border-radius: 12px;
-      background: rgba(17, 24, 39, 0.65);
+      background: var(--panel);
       border: 1px solid var(--border);
       font-size: 0.83rem;
-      color: #cbd5e1;
+      color: var(--text);
     }
     .step-num {
       width: 24px;
@@ -144,16 +154,16 @@
       font-size: 0.76rem;
       font-weight: 700;
       flex-shrink: 0;
-      background: rgba(59, 130, 246, 0.18);
-      color: #93c5fd;
-      border: 1px solid rgba(59, 130, 246, 0.4);
+      background: var(--bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
     }
     .step-chip code {
-      background: rgba(255, 255, 255, 0.08);
+      background: var(--border);
       padding: 1px 6px;
       border-radius: 5px;
       font-size: 0.8em;
-      color: #f8fafc;
+      color: var(--text);
     }
     main {
       max-width: 1560px;
@@ -190,7 +200,7 @@
       font-size: 0.82rem;
       font-weight: 600;
       margin: 12px 0 6px;
-      color: #d1d5db;
+      color: var(--text);
     }
     input[type="text"], select {
       width: 100%;
@@ -202,7 +212,7 @@
       font-size: 0.88rem;
     }
     input[type="text"]:focus, select:focus, textarea:focus {
-      outline: 2px solid rgba(59, 130, 246, 0.5);
+      outline: 2px solid var(--accent);
       border-color: var(--accent);
     }
     .preset-row {
@@ -226,8 +236,8 @@
       background: rgba(255, 255, 255, 0.02);
     }
     .plugin-item.active {
-      border-color: rgba(59, 130, 246, 0.5);
-      background: rgba(59, 130, 246, 0.06);
+      border-color: var(--accent);
+      background: rgba(145, 72, 84, 0.08);
     }
     .plugin-head {
       display: flex;
@@ -241,8 +251,8 @@
       font-size: 0.7rem;
       padding: 1px 6px;
       border-radius: 999px;
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
+      background: rgba(145, 72, 84, 0.14);
+      color: var(--accent);
     }
     .plugin-desc { font-size: 0.78rem; color: var(--muted); margin: 4px 0 0 24px; }
     .plugin-vars { margin: 8px 0 0 24px; display: none; }
@@ -261,7 +271,7 @@
       border-radius: 8px;
       border: 1px solid var(--border);
       background: var(--code-bg);
-      color: #e5e7eb;
+      color: var(--text);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 0.84rem;
       line-height: 1.5;
@@ -282,7 +292,7 @@
       border: 1px solid var(--border);
       font-family: ui-monospace, monospace;
       font-size: 0.78rem;
-      color: #93c5fd;
+      color: var(--accent);
       word-break: break-all;
     }
     .status { font-size: 0.82rem; color: var(--green); margin-left: auto; }
@@ -359,7 +369,7 @@
     </div>
     <div class="step-chip">
       <span class="step-num">3</span>
-      <span>Paste into <code>README.md</code> &amp; commit <span id="draftNotice" style="color:#93c5fd;margin-left:6px;"></span></span>
+      <span>Paste into <code>README.md</code> &amp; commit <span id="draftNotice" style="color:var(--accent);margin-left:6px;"></span></span>
     </div>
   </div>
 
