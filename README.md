@@ -294,17 +294,58 @@ Make your profile and repositories easy to discover on **Google Search**, **GitH
 
 ## 🏆 Legit GitHub Achievements
 
-All **7 active GitHub Achievement Badges**, their tier thresholds, and legitimate ways to unlock them through real workflows:
+All **7 active GitHub Achievement Badges**, organized by how you earn them through real workflows:
 
-| Badge | Exact Requirement | Tiers (Default / Bronze / Silver / Gold) | Legit Tip for Beginners |
-| --- | --- | --- | --- |
-| 🦈 **Pull Shark** | Open pull requests that get merged | 2 / 16 / 128 / 1,024 PRs | Use feature branches + PRs for your own projects, or fix typos in open-source docs |
-| 👯 **Pair Extraordinaire** | Co-author a commit in a merged PR | 1 / 10 / 24 / 48 PRs | Add `Co-authored-by: Name <email>` in your commit footer when pairing with a friend |
-| 🚀 **Quickdraw** | Close an issue or PR within **5 minutes** | 1 fast close *(single tier)* | Open an issue for a quick fix you already have ready, then close it right after |
-| 🤠 **YOLO** | Merge a PR **without a code review** | 1 unreviewed merge *(single tier)* | On your own project, merge a real update PR directly without requesting review |
-| 🧠 **Galaxy Brain** | Accepted answer in GitHub Discussions | 2 / 8 / 16 / 32 answers | Answer `Q&A` questions in repos you use and wait for *Mark as answer* |
-| ⭐ **Starstruck** | Own a public repo hitting star milestones | 16 / 128 / 512 / 4,096 stars | Ship a genuinely helpful tool/kit with live previews & clean SEO topics |
-| 💖 **Public Sponsor** | Sponsor an open-source dev/org | 1 sponsorship *(single tier)* | Sponsor any maintainer via **GitHub Sponsors** (even $1/month) |
+### 1. Solo & Team Workflow Badges
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <b>🦈 Pull Shark</b> · <code>2 / 16 / 128 / 1,024 PRs</code><br/>
+      <sub><b>Rule:</b> Open pull requests that get merged.<br/>
+      <b>Tip:</b> Work on feature branches and merge via PRs in your own repos, or fix typos in open-source docs.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <b>👯 Pair Extraordinaire</b> · <code>1 / 10 / 24 / 48 PRs</code><br/>
+      <sub><b>Rule:</b> Co-author a commit in a merged pull request.<br/>
+      <b>Tip:</b> Add <code>Co-authored-by: Name &lt;email&gt;</code> in your commit footer when pairing with a teammate.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <b>🚀 Quickdraw</b> · <code>1 fast close (Single Tier)</code><br/>
+      <sub><b>Rule:</b> Close an issue or PR within <b>5 minutes</b> of opening it.<br/>
+      <b>Tip:</b> Open an issue when you already have a small fix ready, push the fix, and close the issue right away.</sub>
+    </td>
+    <td width="50%" valign="top">
+      <b>🤠 YOLO</b> · <code>1 unreviewed merge (Single Tier)</code><br/>
+      <sub><b>Rule:</b> Merge a pull request without a code review.<br/>
+      <b>Tip:</b> On your own personal project, merge a genuine update PR directly without requesting review.</sub>
+    </td>
+  </tr>
+</table>
+
+### 2. Community & Support Badges
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <b>🧠 Galaxy Brain</b><br/>
+      <code>2 / 8 / 16 / 32 answers</code><br/>
+      <sub>Answer <b>Discussions (Q&amp;A)</b> questions and get marked as the accepted answer.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <b>⭐ Starstruck</b><br/>
+      <code>16 / 128 / 512 / 4,096 stars</code><br/>
+      <sub>Own a public repository with clean docs, previews, and SEO that earns organic stars.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <b>💖 Public Sponsor</b><br/>
+      <code>1 sponsorship (Single Tier)</code><br/>
+      <sub>Sponsor any open-source developer or organization via GitHub Sponsors.</sub>
+    </td>
+  </tr>
+</table>
 
 <details>
 <summary><b>📌 Step-by-Step: Unlock Your First 4 Badges Legitimately (No Bots Needed)</b></summary>
