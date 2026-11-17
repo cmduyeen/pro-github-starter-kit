@@ -419,6 +419,7 @@ def build_catalog_data(
     plugins_out: list[dict[str, Any]] = []
     for pid, data in plugins_raw.items():
         pdir: Path = data["_dir"]
+        wf_path = pdir / "workflow.yml"
         plugins_out.append(
             {
                 "id": pid,
@@ -426,7 +427,9 @@ def build_catalog_data(
                 "description": data.get("description", ""),
                 "author": data.get("author", "community"),
                 "defaults": data.get("defaults", {}),
-                "has_workflow": (pdir / "workflow.yml").exists(),
+                "has_workflow": wf_path.exists(),
+                "workflow_file": data.get("workflow_file", f"{pid}.yml"),
+                "workflow_content": wf_path.read_text(encoding="utf-8") if wf_path.exists() else "",
                 "snippet": (pdir / "snippet.md").read_text(encoding="utf-8").strip(),
             }
         )

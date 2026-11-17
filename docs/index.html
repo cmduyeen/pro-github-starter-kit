@@ -472,6 +472,13 @@
           ADD_TAGS: ["picture", "source"],
           ADD_ATTR: ["media", "srcset", "align", "valign", "width", "alt"],
         });
+        for (const img of previewPaneEl.querySelectorAll("img")) {
+          if (img.src.includes("github-contribution-grid-snake")) {
+            img.addEventListener("error", () => {
+              img.src = "./../assets/previews/plugins/snake-contribution.svg";
+            }, { once: true });
+          }
+        }
       } else {
         previewPaneEl.textContent = markdown;
       }
@@ -568,6 +575,29 @@
           badge.className = "plugin-badge";
           badge.textContent = "Auto";
           head.append(badge);
+
+          const dlBtn = document.createElement("button");
+          dlBtn.type = "button";
+          dlBtn.className = "btn btn-sm";
+          dlBtn.style.marginLeft = "4px";
+          dlBtn.textContent = "⬇ .yml";
+          dlBtn.title = `Download ${p.workflow_file || p.id + ".yml"} for .github/workflows/`;
+          dlBtn.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            ev.stopPropagation();
+            const username = (usernameEl.value || "your-username").trim();
+            const vars = { USERNAME: username, ...(p.defaults || {}), ...customVars };
+            const wfText = replacePlaceholders(p.workflow_content || "", vars);
+            const blob = new Blob([wfText], { type: "text/yaml;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = p.workflow_file || `${p.id}.yml`;
+            a.click();
+            URL.revokeObjectURL(url);
+            flashStatus(`Downloaded ${a.download}! Put it in .github/workflows/`);
+          });
+          head.append(dlBtn);
         }
 
         const desc = document.createElement("div");

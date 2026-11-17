@@ -95,6 +95,8 @@
         "GRAPH_THEME": "minimal"
       },
       "has_workflow": false,
+      "workflow_file": "activity-graph.yml",
+      "workflow_content": "",
       "snippet": "## Activity Graph\n\n[![{{USERNAME}}'s github activity graph](https://github-readme-activity-graph.vercel.app/graph?username={{USERNAME}}&theme={{GRAPH_THEME}})](https://github.com/{{USERNAME}})"
     },
     {
@@ -106,6 +108,8 @@
         "BLOG_RSS_URL": "https://{{USERNAME}}.github.io/index.xml"
       },
       "has_workflow": true,
+      "workflow_file": "blog-rss-sync.yml",
+      "workflow_content": "name: Sync Latest Blog Posts\n\non:\n  schedule:\n    # Runs once a day at 02:00 UTC to keep commit history clean\n    - cron: \"0 2 * * *\"\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  update-readme-with-blog:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Fetch latest blog posts\n        uses: gautamkrishnar/blog-post-workflow@v1\n        with:\n          feed_list: \"{{BLOG_RSS_URL}}\"\n          max_post_count: 5\n          commit_message: \"chore: update latest blog posts\"\n",
       "snippet": "## Latest Blog Posts\n\n<!-- BLOG-POST-LIST:START -->\n<!-- Automatically updated by .github/workflows/blog-rss-sync.yml -->\n<!-- BLOG-POST-LIST:END -->"
     },
     {
@@ -117,6 +121,8 @@
         "STATS_THEME": "transparent"
       },
       "has_workflow": false,
+      "workflow_file": "github-stats.yml",
+      "workflow_content": "",
       "snippet": "## GitHub Streak & Stats\n\n[![GitHub Streak](https://streak-stats.demolab.com?user={{USERNAME}}&theme={{STATS_THEME}})](https://github.com/{{USERNAME}})"
     },
     {
@@ -128,6 +134,8 @@
         "VIEWS_COLOR": "3b82f6"
       },
       "has_workflow": false,
+      "workflow_file": "profile-views.yml",
+      "workflow_content": "",
       "snippet": "![Profile Views](https://komarev.com/ghpvc/?username={{USERNAME}}&color={{VIEWS_COLOR}}&style=flat-square)"
     },
     {
@@ -139,6 +147,8 @@
         "SKILLS": "py,ts,js,git,github,vscode,obsidian,markdown"
       },
       "has_workflow": false,
+      "workflow_file": "skill-icons.yml",
+      "workflow_content": "",
       "snippet": "## Tech Stack\n\n[![My Skills](https://skillicons.dev/icons?i={{SKILLS}})](https://skillicons.dev)"
     },
     {
@@ -148,6 +158,8 @@
       "author": "cmduyeen",
       "defaults": {},
       "has_workflow": true,
+      "workflow_file": "snake-contribution.yml",
+      "workflow_content": "name: Generate Contribution Snake\n\non:\n  schedule:\n    - cron: \"0 1 * * *\"\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  generate:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Generate github-contribution-grid-snake.svg\n        uses: Platane/snk@v3\n        with:\n          github_user_name: ${{ github.repository_owner }}\n          outputs: |\n            dist/github-contribution-grid-snake.svg\n            dist/github-contribution-grid-snake-dark.svg?palette=github-dark\n\n      - name: Push snake SVGs to the output branch\n        uses: crazy-max/ghaction-github-pages@v4\n        with:\n          target_branch: output\n          build_dir: dist\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n",
       "snippet": "## Contribution Snake\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/{{USERNAME}}/{{USERNAME}}/output/github-contribution-grid-snake-dark.svg\" />\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/{{USERNAME}}/{{USERNAME}}/output/github-contribution-grid-snake.svg\" />\n  <img alt=\"github contribution grid snake animation\" src=\"https://raw.githubusercontent.com/{{USERNAME}}/{{USERNAME}}/output/github-contribution-grid-snake.svg\" />\n</picture>"
     },
     {
@@ -159,6 +171,8 @@
         "X_HANDLE": "{{USERNAME}}"
       },
       "has_workflow": false,
+      "workflow_file": "social-badges.yml",
+      "workflow_content": "",
       "snippet": "## Find Me Online\n\n[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/{{USERNAME}})\n[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/{{X_HANDLE}})\n[![Blog](https://img.shields.io/badge/Blog-2563EB?style=for-the-badge&logo=rss&logoColor=white)](https://{{USERNAME}}.github.io)"
     },
     {
@@ -168,6 +182,8 @@
       "author": "cmduyeen",
       "defaults": {},
       "has_workflow": false,
+      "workflow_file": "sponsor-badge.yml",
+      "workflow_content": "",
       "snippet": "## Support My Work\n\n[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/{{USERNAME}})"
     },
     {
@@ -179,6 +195,8 @@
         "SPOTIFY_UID": "your-spotify-uid"
       },
       "has_workflow": false,
+      "workflow_file": "spotify-now-playing.yml",
+      "workflow_content": "",
       "snippet": "## Currently Listening\n\n[![Spotify](https://spotify-github-profile.kittinanx.com/api/view?uid={{SPOTIFY_UID}}&cover_image=true&theme=novatorem&show_offline=true&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://open.spotify.com/)"
     },
     {
@@ -190,6 +208,8 @@
         "TYPING_LINES": "Builder+%26+Open-Source+Creator;Automation+%26+Clean+Code"
       },
       "has_workflow": false,
+      "workflow_file": "typing-svg.yml",
+      "workflow_content": "",
       "snippet": "[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=false&vCenter=true&width=480&lines={{TYPING_LINES}})](https://github.com/{{USERNAME}})"
     },
     {
@@ -199,6 +219,8 @@
       "author": "cmduyeen",
       "defaults": {},
       "has_workflow": true,
+      "workflow_file": "wakatime-sync.yml",
+      "workflow_content": "name: Sync WakaTime Stats\n\non:\n  schedule:\n    - cron: \"0 0 * * *\"\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  update-wakatime:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Update README with WakaTime metrics\n        uses: anmol098/waka-readme-stats@master\n        with:\n          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}\n          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n",
       "snippet": "## Weekly Coding Activity\n\n<!--START_SECTION:waka-->\n<!-- Automatically updated by .github/workflows/wakatime-sync.yml (requires WAKATIME_API_KEY secret) -->\n<!--END_SECTION:waka-->"
     },
     {
@@ -210,6 +232,8 @@
         "YOUTUBE_CHANNEL_ID": "UC_YOUR_CHANNEL_ID"
       },
       "has_workflow": true,
+      "workflow_file": "youtube-rss-sync.yml",
+      "workflow_content": "name: Sync Latest YouTube Videos\n\non:\n  schedule:\n    - cron: \"0 3 * * *\"\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  update-readme-with-youtube:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Fetch latest YouTube videos\n        uses: gautamkrishnar/blog-post-workflow@v1\n        with:\n          comment_tag_name: \"YOUTUBE\"\n          feed_list: \"https://www.youtube.com/feeds/videos.xml?channel_id={{YOUTUBE_CHANNEL_ID}}\"\n          max_post_count: 5\n          commit_message: \"chore: update latest YouTube videos\"\n",
       "snippet": "## Latest YouTube Videos\n\n<!-- YOUTUBE:START -->\n<!-- Automatically updated by .github/workflows/youtube-rss-sync.yml -->\n<!-- YOUTUBE:END -->"
     }
   ]
