@@ -148,7 +148,66 @@
       word-break: break-all;
     }
     .status { font-size: 0.85rem; color: var(--green); margin-left: auto; align-self: center; }
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .tab-btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .tab-btn.active {
+      background: #1f2937;
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .preview-pane {
+      min-height: 460px;
+      max-height: 640px;
+      overflow-y: auto;
+      padding: 20px 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0d1117;
+      color: #e6edf3;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .preview-pane h1, .preview-pane h2, .preview-pane h3 {
+      border-bottom: 1px solid #21262d;
+      padding-bottom: 0.3em;
+      margin-top: 1.2em;
+    }
+    .preview-pane h1:first-child { margin-top: 0; }
+    .preview-pane a { color: #58a6ff; text-decoration: none; }
+    .preview-pane a:hover { text-decoration: underline; }
+    .preview-pane img { max-width: 100%; height: auto; }
+    .preview-pane table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    .preview-pane th, .preview-pane td {
+      border: 1px solid #30363d;
+      padding: 6px 12px;
+    }
+    .preview-pane th { background: #161b22; }
+    .preview-pane pre, .preview-pane code {
+      background: #161b22;
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85em;
+    }
+    .preview-pane pre { padding: 12px; overflow-x: auto; }
+    .hidden { display: none; }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <header>
@@ -177,14 +236,19 @@
     </section>
 
     <section class="card">
-      <h2>2. Generated <code>README.md</code></h2>
+      <h2>2. Preview &amp; Export</h2>
       <div class="toolbar">
         <button id="copyBtn" class="btn btn-primary" type="button">Copy Markdown</button>
         <button id="downloadBtn" class="btn btn-success" type="button">Download README.md</button>
         <button id="copyCliBtn" class="btn" type="button">Copy CLI Command</button>
         <span id="statusMsg" class="status"></span>
       </div>
-      <textarea id="output" spellcheck="false"></textarea>
+      <div class="tabs">
+        <button id="tabPreview" class="tab-btn active" type="button">👁️ Live Preview</button>
+        <button id="tabMarkdown" class="tab-btn" type="button">📝 Markdown Code</button>
+      </div>
+      <div id="previewPane" class="preview-pane">Loading preview...</div>
+      <textarea id="output" class="hidden" spellcheck="false"></textarea>
       <div id="cliBox" class="cli-box"></div>
     </section>
   </main>
@@ -199,8 +263,35 @@
     const themeDescEl = document.getElementById("themeDesc");
     const pluginsListEl = document.getElementById("pluginsList");
     const outputEl = document.getElementById("output");
+    const previewPaneEl = document.getElementById("previewPane");
+    const tabPreviewEl = document.getElementById("tabPreview");
+    const tabMarkdownEl = document.getElementById("tabMarkdown");
     const cliBoxEl = document.getElementById("cliBox");
     const statusMsgEl = document.getElementById("statusMsg");
+
+    function updatePreviewPane(markdown) {
+      if (window.marked && typeof window.marked.parse === "function") {
+        previewPaneEl.innerHTML = window.marked.parse(markdown, { breaks: true, gfm: true });
+      } else {
+        previewPaneEl.textContent = markdown;
+      }
+    }
+
+    tabPreviewEl.addEventListener("click", () => {
+      tabPreviewEl.classList.add("active");
+      tabMarkdownEl.classList.remove("active");
+      previewPaneEl.classList.remove("hidden");
+      outputEl.classList.add("hidden");
+    });
+
+    tabMarkdownEl.addEventListener("click", () => {
+      tabMarkdownEl.classList.add("active");
+      tabPreviewEl.classList.remove("active");
+      outputEl.classList.remove("hidden");
+      previewPaneEl.classList.add("hidden");
+    });
+
+    outputEl.addEventListener("input", () => updatePreviewPane(outputEl.value));
 
     function replacePlaceholders(text, vars) {
       let result = text;
@@ -232,6 +323,7 @@
       let rendered = theme.template.replace("{{PLUGINS}}", pluginBlocks.join("\n\n"));
       rendered = replacePlaceholders(rendered, merged).replace(/\n{3,}/g, "\n\n").trim() + "\n";
       outputEl.value = rendered;
+      updatePreviewPane(rendered);
 
       const pluginArg = chosen.map(p => p.id).join(",");
       let cli = `python setup.py --username ${username} --theme ${theme.id}`;
