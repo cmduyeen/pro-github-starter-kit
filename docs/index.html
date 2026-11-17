@@ -76,23 +76,48 @@
     .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent-hover); }
     .btn-success { background: var(--green); border-color: var(--green); color: #052e16; }
-    .quick-banner {
+    .steps-bar {
       max-width: 1560px;
-      margin: 14px auto 0;
+      margin: 16px auto 0;
       padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
-    .quick-banner-inner {
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      border-radius: 10px;
-      padding: 10px 16px;
-      font-size: 0.85rem;
-      color: #dbeafe;
+    @media (max-width: 900px) {
+      .steps-bar { grid-template-columns: 1fr; }
+    }
+    .step-chip {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
       gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(17, 24, 39, 0.65);
+      border: 1px solid var(--border);
+      font-size: 0.83rem;
+      color: #cbd5e1;
+    }
+    .step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.76rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      background: rgba(59, 130, 246, 0.18);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+    }
+    .step-chip code {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1px 6px;
+      border-radius: 5px;
+      font-size: 0.8em;
+      color: #f8fafc;
     }
     main {
       max-width: 1560px;
@@ -286,10 +311,18 @@
     </div>
   </header>
 
-  <div class="quick-banner">
-    <div class="quick-banner-inner">
-      <span><strong>3-Step Deploy:</strong> 1) Create a public repo named <code>&lt;your-username&gt;/&lt;your-username&gt;</code> → 2) Customize &amp; Copy below → 3) Paste into <code>README.md</code> &amp; Commit!</span>
-      <span id="draftNotice" style="color: #93c5fd;"></span>
+  <div class="steps-bar">
+    <div class="step-chip">
+      <span class="step-num">1</span>
+      <span>Create public repo <code>&lt;user&gt;/&lt;user&gt;</code></span>
+    </div>
+    <div class="step-chip">
+      <span class="step-num">2</span>
+      <span>Pick a theme, plugins &amp; edit below</span>
+    </div>
+    <div class="step-chip">
+      <span class="step-num">3</span>
+      <span>Paste into <code>README.md</code> &amp; commit <span id="draftNotice" style="color:#93c5fd;margin-left:6px;"></span></span>
     </div>
   </div>
 
