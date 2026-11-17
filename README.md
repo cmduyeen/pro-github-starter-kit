@@ -1,88 +1,116 @@
+<div align="center">
+
 # 🚀 Pro GitHub Starter Kit
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=3B82F6&center=true&vCenter=true&width=640&lines=Build+a+Standout+GitHub+Profile+in+Minutes.;Modular+Themes+%2B+Plug-and-Play+Automation.;Curated+Tools%2C+Legit+Badges+%26+SEO+Ready.)](https://github.com/cmduyeen/pro-github-starter-kit)
+
 [![Validate Themes, Plugins & Tests](https://github.com/cmduyeen/pro-github-starter-kit/actions/workflows/validate-extensions.yml/badge.svg)](https://github.com/cmduyeen/pro-github-starter-kit/actions/workflows/validate-extensions.yml)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+[![Template Repo](https://img.shields.io/badge/Use%20This%20Template-Click%20Here-2ea44f?style=flat-square&logo=github)](https://github.com/cmduyeen/pro-github-starter-kit/generate)
 
-An extensible, **Obsidian-inspired** starter kit to build a clean, high-impact **GitHub Profile README**—featuring modular **Themes**, plug-and-play **Automation Plugins** (Blog RSS, YouTube RSS, Spotify, WakaTime), curated community tools, a policy-safe **GitHub Achievement Badges** guide, and a **GitHub SEO/GEO checklist**.
+**An Obsidian-inspired, extensible starter kit for crafting a clean, automated, and high-converting GitHub Profile.**
 
-## Table of Contents
+[Quick Start](#-quick-start-60-seconds) · [Live Previews](#-see-what-you-can-build) · [Themes & Plugins](#-modular-themes--plugins) · [Badges](#-legit-github-achievements) · [Resources](docs/RESOURCES.md)
 
-- [Step 1: Create Your Special Profile Repo](#step-1-create-your-special-profile-repo)
-- [Step 2: Pick a Theme & Plugins (CLI Builder)](#step-2-pick-a-theme--plugins-cli-builder)
-- [Step 3: Curated Profile Tools & Automation](#step-3-curated-profile-tools--automation)
-- [Step 4: Achievement Badges & SEO Checklist](#step-4-achievement-badges--seo-checklist)
-- [Extend with Your Own Themes & Plugins](#extend-with-your-own-themes--plugins)
-- [FAQ](#faq)
+</div>
 
 ---
 
-## Step 1: Create Your Special Profile Repo
+## ⚡ Quick Start (60 Seconds)
 
-1. Click **Use this template → Create a new repository** (or create a public repository named **exact match** `<your-username>/<your-username>`).
-2. Make sure the repository is **Public** and initialized with a `README.md`—GitHub automatically displays it at the top of your profile page.
-
----
-
-## Step 2: Pick a Theme & Plugins (CLI Builder)
-
-Instead of editing raw Markdown placeholders by hand, use the zero-dependency `setup.py` CLI to compose a theme with any combination of plugins:
+1. Click **[Use this template](https://github.com/cmduyeen/pro-github-starter-kit/generate)** and name your new public repository **exactly** `<your-username>/<your-username>`.
+2. Clone it locally and assemble your profile with **1 zero-dependency Python command**:
 
 ```bash
-# List all available themes and plugins
-python setup.py --list
-
-# Example: Indie Maker theme + Blog RSS + Spotify + GitHub Stats
 python setup.py --username <your-username> \
   --theme indie-maker \
-  --plugins blog-rss,spotify-now-playing,github-stats \
+  --plugins typing-svg,skill-icons,blog-rss,spotify-now-playing,github-stats \
   --var BLOG_RSS_URL=https://yourblog.com/index.xml \
   --var SPOTIFY_UID=your_spotify_uid
 ```
 
-### Built-in Themes (`themes/`)
+> [!TIP]
+> Not sure which combination fits you? Run `python setup.py --list` to inspect all **5 Themes** and **9 Plugins** in your terminal, or test safely with `--dry-run`.
 
-| Theme ID | Style | Best For |
+---
+
+## 🎨 See What You Can Build
+
+Why settle for plain text when you can snap together live, zero-maintenance widgets? Here is a live preview of what the built-in plugins render:
+
+<div align="center">
+
+**Tech Stack Grid (`skill-icons` plugin)**
+
+[![My Skills](https://skillicons.dev/icons?i=py,ts,js,react,nodejs,docker,git,github,vscode,obsidian)](https://skillicons.dev)
+
+**Crisp Social & Contact Bar (`social-badges` plugin)**
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cmduyeen)
+[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/cmduyeen)
+[![Blog](https://img.shields.io/badge/Blog-2563EB?style=for-the-badge&logo=rss&logoColor=white)](https://cmduyeen.github.io)
+
+</div>
+
+---
+
+## 🧩 Modular Themes & Plugins
+
+Just like **Obsidian**, this kit separates **Layout (`themes/`)** from **Features (`plugins/`)** so you can mix, match, or contribute your own.
+
+### 1. Pick a Theme (`themes/`)
+
+| Theme ID | Vibe | Best For |
 | --- | --- | --- |
-| `minimalist` | Clean text & links, zero widget clutter | Writers, engineers who prefer *less is more* |
-| `indie-maker` | Featured products table + writing/video feeds | Solo builders & indie hackers |
-| `developer-portfolio` | Bio bullets + tech stack icons + stats cards | Job seekers & full-stack developers |
-| `terminal-hacker` | Neofetch-inspired terminal block layout | CLI, Linux & systems developers |
-| `research-student` | Learning roadmap + public study notes | Students & self-learners building in public |
+| `minimalist` | Ultra-clean typography, zero clutter | Engineers & writers who live by *less is more* |
+| `indie-maker` | Product showcase table + live writing/video feeds | Solo builders & indie hackers |
+| `developer-portfolio` | Bio bullets + tech stack + stats showcase | Job seekers & full-stack developers |
+| `terminal-hacker` | `neofetch`-style CLI & system specs block | Linux, DevOps & terminal lovers |
+| `research-student` | Study roadmap + public notes + learning goals | Students & self-learners building in public |
 
-### Built-in Plugins (`plugins/`)
+<details>
+<summary><b>👀 Click to preview the <code>terminal-hacker</code> & <code>indie-maker</code> layouts</b></summary>
 
-| Plugin ID | What It Adds | Includes GitHub Action? |
+- **`terminal-hacker`**: Renders a `whoami` header, a `neofetch`-style system block (`OS`, `Role`, `Focus`, `Blog`), `$ ls ./featured-projects`, and `$ cat ./contact.txt`.
+- **`indie-maker`**: Leads with a clean 3-column **Featured Products** table (`Project` | `What It Solves` | `Status`) followed by auto-synced Blog/YouTube feeds.
+
+</details>
+
+### 2. Snap in Plugins (`plugins/`)
+
+| Plugin ID | What It Adds | Automation Included? |
 | --- | --- | --- |
 | `blog-rss` | Auto-syncs latest articles from any RSS feed | ✅ `blog-rss-sync.yml` |
 | `youtube-rss` | Auto-syncs latest videos from a YouTube channel | ✅ `youtube-rss-sync.yml` |
 | `wakatime-stats` | Auto-updates weekly coding hours & languages | ✅ `wakatime-sync.yml` |
-| `spotify-now-playing` | Embeds currently playing / recent Spotify track | — |
-| `github-stats` | Embeds GitHub summary & streak SVG cards | — |
-| `skill-icons` | Crisp SVG tech stack grid via `skillicons.dev` | — |
-| `typing-svg` | Animated typing banner powered by `readme-typing-svg` | — |
+| `typing-svg` | Animated hero typing banner (`readme-typing-svg`) | — |
+| `skill-icons` | Clean SVG tech stack grid (`skillicons.dev`) | — |
+| `github-stats` | Dynamic GitHub summary & streak SVG cards | — |
 | `activity-graph` | 31-day contribution line graph | — |
-| `social-badges` | Crisp `shields.io` GitHub, X & Blog badges | — |
+| `spotify-now-playing` | Currently playing / recent Spotify track widget | — |
+| `social-badges` | `shields.io` GitHub, X & Blog buttons | — |
+
+> [!NOTE]
+> All GitHub Actions workflows run **once per day** and only commit when new content appears—keeping your contribution graph authentic and clean. See **[docs/AUTOMATION.md](docs/AUTOMATION.md)** for setup details.
 
 ---
 
-## Step 3: Curated Profile Tools & Automation
+## 🛠 Curated Resources & SEO
 
-Looking for the best external generators, SVG widgets, and inspiration galleries? Browse the full contextual directory in **[docs/RESOURCES.md](docs/RESOURCES.md)** and setup instructions in **[docs/AUTOMATION.md](docs/AUTOMATION.md)**:
+We vetted the top open-source profile tools so you don't have to hunt across 20 tabs:
 
-| Tool / Repo | What It Does | Link |
+| Category | Top Picks | Guide |
 | --- | --- | --- |
-| **readme.so** | Visual drag-and-drop README builder | [readme.so](https://readme.so/) |
-| **GitHub Readme Stats** | Dynamic SVG stats & top languages cards | [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats) |
-| **Skill Icons** | Clean SVG tech stack icon grids | [tandpfun/skill-icons](https://github.com/tandpfun/skill-icons) |
-| **Blog Post Workflow** | Syncs Blog/YouTube RSS feeds via GitHub Actions | [gautamkrishnar/blog-post-workflow](https://github.com/gautamkrishnar/blog-post-workflow) |
-| **Awesome GitHub Profile README** | Gallery of standout profile layouts for inspiration | [abhisheknaiidu/awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) |
+| **Visual Builders** | `readme.so`, `github-profile-readme-generator` | [docs/RESOURCES.md](docs/RESOURCES.md) |
+| **Stats & Graphs** | `github-readme-stats`, `streak-stats`, `activity-graph`, `lowlighter/metrics` | [docs/RESOURCES.md](docs/RESOURCES.md) |
+| **Automation** | `blog-post-workflow`, `waka-readme-stats`, `spotify-github-profile` | [docs/AUTOMATION.md](docs/AUTOMATION.md) |
+| **Profile SEO & GEO** | 1-line Bio, 6 Gateway Pins, 20 Topics, `1280×640` Cover, `llms.txt` | [docs/SEO-CHECKLIST.md](docs/SEO-CHECKLIST.md) |
+| **Inspiration** | `awesome-github-profile-readme`, `creative-profile-readme` | [docs/RESOURCES.md](docs/RESOURCES.md) |
 
 ---
 
-## Step 4: Achievement Badges & SEO Checklist
-
-### Active GitHub Achievement Badges
+## 🏆 Legit GitHub Achievements
 
 | Badge | Requirement | Tiers (Default / Bronze / Silver / Gold) |
 | --- | --- | --- |
@@ -94,27 +122,31 @@ Looking for the best external generators, SVG widgets, and inspiration galleries
 | ⭐ **Starstruck** | Own a public repo reaching star milestones | 16 / 128 / 512 / 4,096 stars |
 | 💖 **Public Sponsor** | Sponsor a developer/org via GitHub Sponsors | 1 sponsorship (single tier) |
 
-Read **[docs/BADGES.md](docs/BADGES.md)** for legitimate, policy-safe ways to earn each badge, Profile Highlights, and Retired Badges. Follow **[docs/SEO-CHECKLIST.md](docs/SEO-CHECKLIST.md)** to optimize your Bio, 6 Pinned Repos, Topics, and Social Preview.
+> [!WARNING]
+> Never use bots to push empty commits or loop fake PRs. That violates GitHub's Acceptable Use Policies (*Spam and Inauthentic Activity*) and risks account flagging. Read **[docs/BADGES.md](docs/BADGES.md)** for fast, 100% legitimate ways to earn every badge.
 
 ---
 
-## Extend with Your Own Themes & Plugins
+## 🤝 Build Together (Add Your Own Theme or Plugin)
 
-Just like Obsidian, this kit is built for community extensions. Add a folder under `themes/<id>/` or `plugins/<id>/` with its JSON manifest and open a Pull Request—no changes to `setup.py` required. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for the 5-minute spec.
+Want to share your own layout or widget with the community? Drop a folder into `themes/<id>/` or `plugins/<id>/` with its JSON manifest and open a PR—our CI automatically validates everything! See **[CONTRIBUTING.md](CONTRIBUTING.md)**.
+
+<details>
+<summary><b>❓ FAQ — Quick Answers</b></summary>
+
+1. **How do I activate my GitHub Profile README?**  
+   Create a public repository named `<your-username>/<your-username>` with a `README.md` at the root.
+2. **Do I need to install any Python packages to use `setup.py`?**  
+   No. `setup.py` uses only the Python 3.10+ standard library.
+3. **How do I sync my YouTube channel or blog automatically?**  
+   Enable `--plugins blog-rss,youtube-rss` when running `setup.py`, then pass your RSS URL or YouTube Channel ID (`UC...`).
+
+</details>
 
 ---
 
-## FAQ
+<div align="center">
 
-**1. How do I create a GitHub Profile README?**  
-Create a public repository whose name matches your GitHub username (`<username>/<username>`), add a `README.md` at the root, and commit it.
+[MIT License](LICENSE) · Crafted by [cmduyeen](https://github.com/cmduyeen) · **Star ⭐ this repo if it helped you level up your profile!**
 
-**2. Can I use automated scripts to farm Pull Shark or Contribution Graph squares?**  
-No. Bulk empty commits or fake PR loops violate GitHub's Acceptable Use Policies (*Spam and Inauthentic Activity*) and can lead to ignored stats or account flagging. Always earn badges through real workflows.
-
-**3. How do I sync my blog or YouTube channel automatically?**  
-Use the `blog-rss` or `youtube-rss` plugin in `setup.py`. Both generate a scheduled GitHub Actions workflow powered by `gautamkrishnar/blog-post-workflow` that only commits when new content is published.
-
----
-
-[MIT License](LICENSE) · Maintained by [cmduyeen](https://github.com/cmduyeen)
+</div>
