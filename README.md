@@ -17,10 +17,28 @@
 
 ---
 
-## ⚡ Quick Start (60 Seconds)
+## ⚡ Quick Start (No Coding Required)
+
+### Option A: 100% in Browser (Recommended for Beginners & Non-Tech)
+
+No terminal, no Python, no Git commands needed:
 
 1. Click **[Use this template](https://github.com/cmduyeen/pro-github-starter-kit/generate)** and name your new public repository **exactly** `<your-username>/<your-username>`.
-2. Clone it locally and assemble your profile with **1 zero-dependency Python command**:
+2. Open the **Actions** tab in your new repository → select **Build My Profile** → click **Run workflow**.
+3. Pick your **Theme** from the dropdown, tick the **Plugins** you want (optional: paste your Blog RSS or Spotify UID), and click **Run workflow**. GitHub automatically builds and commits your new `README.md`!
+
+### Option B: Interactive Terminal Wizard (1 Simple Command)
+
+If you prefer running locally, just clone your repo and run:
+
+```bash
+python setup.py
+```
+
+A guided Q&A menu will walk you through picking a theme and plugins by number—no flags to memorize.
+
+<details>
+<summary><b>Option C: One-Line CLI (For Power Users)</b></summary>
 
 ```bash
 python setup.py --username <your-username> \
@@ -30,8 +48,10 @@ python setup.py --username <your-username> \
   --var SPOTIFY_UID=your_spotify_uid
 ```
 
+</details>
+
 > [!TIP]
-> Not sure which combination fits you? Run `python setup.py --list` to inspect all **5 Themes** and **9 Plugins** in your terminal, or test safely with `--dry-run`.
+> Want to preview available options first? Run `python setup.py --list` or add `--dry-run`.
 
 ---
 

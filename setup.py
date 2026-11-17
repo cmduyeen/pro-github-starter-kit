@@ -206,12 +206,67 @@ def list_catalog(themes_dir: Path = THEMES_DIR, plugins_dir: Path = PLUGINS_DIR)
         print(f"  - {pid}: {data.get('name')}{wf} — {data.get('description')}")
 
 
+def interactive_wizard(
+    themes_dir: Path = THEMES_DIR,
+    plugins_dir: Path = PLUGINS_DIR,
+) -> tuple[str, str, list[str], dict[str, str]]:
+    """Guided Q&A prompt for beginners who prefer not to pass CLI flags."""
+    themes = discover_themes(themes_dir)
+    plugins = discover_plugins(plugins_dir)
+    theme_ids = list(themes.keys())
+    plugin_ids_all = list(plugins.keys())
+
+    print("=== Pro GitHub Starter Kit — Interactive Setup ===\n")
+    username = input("1. Enter your GitHub username: ").strip()
+    if not USERNAME_PATTERN.match(username):
+        raise ValueError(f"Invalid GitHub username '{username}'.")
+
+    print("\n2. Choose a Theme:")
+    for idx, tid in enumerate(theme_ids, start=1):
+        print(f"  [{idx}] {tid} — {themes[tid].get('description')}")
+    raw_theme = input(f"Enter number [1-{len(theme_ids)}] (default 1): ").strip()
+    theme_idx = int(raw_theme) - 1 if raw_theme else 0
+    if not (0 <= theme_idx < len(theme_ids)):
+        raise ValueError("Theme selection out of range.")
+    chosen_theme = theme_ids[theme_idx]
+
+    print("\n3. Choose Plugins (comma-separated numbers, or press Enter for none):")
+    for idx, pid in enumerate(plugin_ids_all, start=1):
+        print(f"  [{idx}] {pid} — {plugins[pid].get('description')}")
+    raw_plugins = input("Plugins (e.g. 1,4,6): ").strip()
+    chosen_plugins: list[str] = []
+    if raw_plugins:
+        for token in raw_plugins.split(","):
+            token = token.strip()
+            if not token:
+                continue
+            p_idx = int(token) - 1
+            if not (0 <= p_idx < len(plugin_ids_all)):
+                raise ValueError(f"Plugin selection '{token}' out of range.")
+            pid = plugin_ids_all[p_idx]
+            if pid not in chosen_plugins:
+                chosen_plugins.append(pid)
+
+    variables: dict[str, str] = {}
+    for pid in chosen_plugins:
+        defaults = plugins[pid].get("defaults", {})
+        if isinstance(defaults, dict):
+            for key, default_val in defaults.items():
+                rendered_default = str(default_val).replace("{{USERNAME}}", username)
+                val = input(f"  -> {pid} | {key} (Enter for '{rendered_default}'): ").strip()
+                if val:
+                    variables[str(key)] = val
+
+    return username, chosen_theme, chosen_plugins, variables
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Compose a GitHub Profile README and workflows from modular themes and plugins."
     )
     parser.add_argument("--list", action="store_true", help="List available themes and plugins.")
     parser.add_argument("--validate", action="store_true", help="Validate all theme and plugin manifests.")
+    parser.add_argument("-i", "--interactive", action="store_true", help="Run guided interactive setup.")
     parser.add_argument("--username", help="Your GitHub username.")
     parser.add_argument("--theme", default="minimalist", help="Theme ID to use (default: minimalist).")
     parser.add_argument(
@@ -251,15 +306,18 @@ def main(argv: list[str] | None = None) -> int:
         list_catalog()
         return 0
 
-    if not args.username:
-        parser.error("--username is required unless --list or --validate is specified.")
-
     try:
-        plugin_ids = [p.strip() for p in args.plugins.split(",") if p.strip()]
-        variables = parse_vars(args.var)
+        if args.interactive or not args.username:
+            username, theme_id, plugin_ids, variables = interactive_wizard()
+        else:
+            username = args.username
+            theme_id = args.theme
+            plugin_ids = [p.strip() for p in args.plugins.split(",") if p.strip()]
+            variables = parse_vars(args.var)
+
         readme_text, workflows = compose_profile(
-            username=args.username,
-            theme_id=args.theme,
+            username=username,
+            theme_id=theme_id,
             plugin_ids=plugin_ids,
             variables=variables,
         )
