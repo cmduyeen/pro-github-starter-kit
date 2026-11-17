@@ -102,15 +102,18 @@ Click any preview card or **Live Preview** link to see the rendered profile imme
 <!-- PLUGINS-TABLE:START -->
 | Plugin ID | What It Adds | Automation Included? | Preview |
 | --- | --- | --- | --- |
-| `activity-graph` | Renders a 31-day contribution line graph using github-readme-activity-graph. | — | [Live Preview](plugins/activity-graph/PREVIEW.md) |
-| `blog-rss` | Automatically syncs your latest blog posts via RSS using GitHub Actions. | ✅ `blog-rss-sync.yml` | [Live Preview](plugins/blog-rss/PREVIEW.md) |
-| `github-stats` | Embeds dynamic GitHub summary stats, top languages, and streak cards. | — | [Live Preview](plugins/github-stats/PREVIEW.md) |
-| `skill-icons` | Displays your tech stack cleanly using skillicons.dev. | — | [Live Preview](plugins/skill-icons/PREVIEW.md) |
-| `social-badges` | Adds crisp shields.io social and portfolio badges. | — | [Live Preview](plugins/social-badges/PREVIEW.md) |
-| `spotify-now-playing` | Displays your currently playing or recently played Spotify track. | — | [Live Preview](plugins/spotify-now-playing/PREVIEW.md) |
-| `typing-svg` | Adds an animated typing header powered by readme-typing-svg. | — | [Live Preview](plugins/typing-svg/PREVIEW.md) |
-| `wakatime-stats` | Automatically updates your weekly coding time and language breakdown via WakaTime. | ✅ `wakatime-sync.yml` | [Live Preview](plugins/wakatime-stats/PREVIEW.md) |
-| `youtube-rss` | Automatically lists your latest YouTube videos via channel RSS feed. | ✅ `youtube-rss-sync.yml` | [Live Preview](plugins/youtube-rss/PREVIEW.md) |
+| `activity-graph` *(by @cmduyeen)* | Renders a 31-day contribution line graph using github-readme-activity-graph. | — | [Live Preview](plugins/activity-graph/PREVIEW.md) |
+| `blog-rss` *(by @cmduyeen)* | Automatically syncs your latest blog posts via RSS using GitHub Actions. | ✅ `blog-rss-sync.yml` | [Live Preview](plugins/blog-rss/PREVIEW.md) |
+| `github-stats` *(by @cmduyeen)* | Embeds dynamic GitHub summary stats, top languages, and streak cards. | — | [Live Preview](plugins/github-stats/PREVIEW.md) |
+| `profile-views` *(by @cmduyeen)* | Adds a live profile visitor counter badge via komarev.com. | — | [Live Preview](plugins/profile-views/PREVIEW.md) |
+| `skill-icons` *(by @cmduyeen)* | Displays your tech stack cleanly using skillicons.dev. | — | [Live Preview](plugins/skill-icons/PREVIEW.md) |
+| `snake-contribution` *(by @cmduyeen)* | Generates an animated SVG snake eating your contribution graph daily via Platane/snk. | ✅ `snake-contribution.yml` | [Live Preview](plugins/snake-contribution/PREVIEW.md) |
+| `social-badges` *(by @cmduyeen)* | Adds crisp shields.io social and portfolio badges. | — | [Live Preview](plugins/social-badges/PREVIEW.md) |
+| `sponsor-badge` *(by @cmduyeen)* | Adds GitHub Sponsors and support buttons to help fund your open-source work. | — | [Live Preview](plugins/sponsor-badge/PREVIEW.md) |
+| `spotify-now-playing` *(by @cmduyeen)* | Displays your currently playing or recently played Spotify track. | — | [Live Preview](plugins/spotify-now-playing/PREVIEW.md) |
+| `typing-svg` *(by @cmduyeen)* | Adds an animated typing header powered by readme-typing-svg. | — | [Live Preview](plugins/typing-svg/PREVIEW.md) |
+| `wakatime-stats` *(by @cmduyeen)* | Automatically updates your weekly coding time and language breakdown via WakaTime. | ✅ `wakatime-sync.yml` | [Live Preview](plugins/wakatime-stats/PREVIEW.md) |
+| `youtube-rss` *(by @cmduyeen)* | Automatically lists your latest YouTube videos via channel RSS feed. | ✅ `youtube-rss-sync.yml` | [Live Preview](plugins/youtube-rss/PREVIEW.md) |
 <!-- PLUGINS-TABLE:END -->
 
 > [!NOTE]

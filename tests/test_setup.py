@@ -36,6 +36,9 @@ class TestStarterKitSetup(unittest.TestCase):
             "typing-svg",
             "activity-graph",
             "social-badges",
+            "profile-views",
+            "sponsor-badge",
+            "snake-contribution",
         ):
             self.assertIn(pid, plugins)
 

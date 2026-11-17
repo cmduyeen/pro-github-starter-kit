@@ -324,6 +324,7 @@ def render_plugins_table(plugins_dir: Path = PLUGINS_DIR) -> str:
     for pid, data in plugins.items():
         pdir: Path = data["_dir"]
         desc = str(data.get("description", "")).replace("|", "\\|")
+        author = str(data.get("author", "community"))
         wf_path = pdir / "workflow.yml"
         wf_name = data.get("workflow_file", f"{pid}.yml")
         wf_cell = f"✅ `{wf_name}`" if wf_path.exists() else "—"
@@ -332,7 +333,7 @@ def render_plugins_table(plugins_dir: Path = PLUGINS_DIR) -> str:
             if (pdir / "PREVIEW.md").exists()
             else f"[Snippet](plugins/{pid}/snippet.md)"
         )
-        lines.append(f"| `{pid}` | {desc} | {wf_cell} | {preview_link} |")
+        lines.append(f"| `{pid}` *(by @{author})* | {desc} | {wf_cell} | {preview_link} |")
     return "\n".join(lines)
 
 
