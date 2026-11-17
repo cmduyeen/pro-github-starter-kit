@@ -278,16 +278,29 @@ def _replace_marker_block(text: str, marker: str, body: str) -> str:
     return pattern.sub(lambda _: replacement, text, count=1)
 
 
+def _render_grid_cells(cells: list[str], columns: int = 3) -> str:
+    """Format HTML table cells into a balanced N-column GitHub Markdown gallery."""
+    rows: list[str] = ["<table>"]
+    width_pct = int(100 / columns)
+    for idx in range(0, len(cells), columns):
+        rows.append("  <tr>")
+        chunk = cells[idx : idx + columns]
+        for cell in chunk:
+            rows.append(f'    <td align="center" valign="top" width="{width_pct}%">\n{cell}\n    </td>')
+        for _ in range(columns - len(chunk)):
+            rows.append(f'    <td width="{width_pct}%"></td>')
+        rows.append("  </tr>")
+    rows.append("</table>")
+    return "\n".join(rows)
+
+
 def render_themes_table(
     themes_dir: Path = THEMES_DIR,
     root_dir: Path = ROOT_DIR,
 ) -> str:
-    """Build the Markdown themes catalog table automatically from themes/*/theme.json."""
+    """Build a 3-column visual gallery of themes from themes/*/theme.json."""
     themes = discover_themes(themes_dir)
-    lines = [
-        "| Preview | Theme | Description | Quick Links |",
-        "| :---: | --- | --- | --- |",
-    ]
+    cells: list[str] = []
     for tid, data in themes.items():
         tdir: Path = data["_dir"]
         preview_md = f"themes/{tid}/PREVIEW.md" if (tdir / "PREVIEW.md").exists() else f"themes/{tid}/README.template.md"
@@ -300,36 +313,35 @@ def render_themes_table(
         else:
             img_rel = ""
 
-        preview_cell = (
-            f'[<img src="{img_rel}" width="150" alt="{data.get("name", tid)} Preview"/>]({preview_md})'
-            if img_rel
-            else f"[Preview]({preview_md})"
-        )
-        desc = str(data.get("description", "")).replace("|", "\\|")
+        name = data.get("name", tid)
         author = str(data.get("author", "community"))
-        links = f"[Live Preview]({preview_md}) · [Template]({template_md})"
-        lines.append(
-            f"| {preview_cell} | **`{tid}`**<br/>{data.get('name', tid)} *(by @{author})* | {desc} | {links} |"
+        desc = str(data.get("description", ""))
+        img_tag = (
+            f'      <a href="{preview_md}"><img src="{img_rel}" width="240" alt="{name} Preview"/></a><br/>\n'
+            if img_rel
+            else ""
         )
-    return "\n".join(lines)
+        cell = (
+            f"{img_tag}"
+            f'      <b><code>{tid}</code></b> · <a href="{preview_md}">Live Preview</a> · <a href="{template_md}">Template</a><br/>\n'
+            f"      <sub>{desc} <i>(by @{author})</i></sub>"
+        )
+        cells.append(cell)
+    return _render_grid_cells(cells, columns=3)
 
 
 def render_plugins_table(
     plugins_dir: Path = PLUGINS_DIR,
     root_dir: Path = ROOT_DIR,
 ) -> str:
-    """Build the Markdown plugins catalog table automatically from plugins/*/plugin.json."""
+    """Build a 3-column visual gallery of plugins from plugins/*/plugin.json."""
     plugins = discover_plugins(plugins_dir)
-    lines = [
-        "| Preview | Plugin | Description | Quick Links |",
-        "| :---: | --- | --- | --- |",
-    ]
+    cells: list[str] = []
     for pid, data in plugins.items():
         pdir: Path = data["_dir"]
-        desc = str(data.get("description", "")).replace("|", "\\|")
+        desc = str(data.get("description", ""))
         author = str(data.get("author", "community"))
-        wf_path = pdir / "workflow.yml"
-        wf_tag = " · *Auto-sync*" if wf_path.exists() else ""
+        wf_tag = " · <b>Auto-sync</b>" if (pdir / "workflow.yml").exists() else ""
         preview_md = f"plugins/{pid}/PREVIEW.md" if (pdir / "PREVIEW.md").exists() else f"plugins/{pid}/snippet.md"
 
         if (pdir / "preview.svg").exists():
@@ -339,14 +351,19 @@ def render_plugins_table(
         else:
             img_rel = ""
 
-        preview_cell = (
-            f'[<img src="{img_rel}" width="150" alt="{data.get("name", pid)} Preview"/>]({preview_md})'
+        name = data.get("name", pid)
+        img_tag = (
+            f'      <a href="{preview_md}"><img src="{img_rel}" width="240" alt="{name} Preview"/></a><br/>\n'
             if img_rel
-            else f"[Preview]({preview_md})"
+            else ""
         )
-        links = f"[Live Preview]({preview_md}) · [Snippet](plugins/{pid}/snippet.md)"
-        lines.append(f"| {preview_cell} | **`{pid}`**<br/>*(by @{author}{wf_tag})* | {desc} | {links} |")
-    return "\n".join(lines)
+        cell = (
+            f"{img_tag}"
+            f'      <b><code>{pid}</code></b> · <a href="{preview_md}">Preview</a> · <a href="plugins/{pid}/snippet.md">Snippet</a><br/>\n'
+            f"      <sub>{desc}{wf_tag} <i>(by @{author})</i></sub>"
+        )
+        cells.append(cell)
+    return _render_grid_cells(cells, columns=3)
 
 
 def sync_readme_catalog(
