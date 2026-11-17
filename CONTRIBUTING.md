@@ -20,6 +20,8 @@ Create a directory `themes/<theme-id>/` with two files:
 2. **`themes/<theme-id>/README.template.md`**
    - Use `{{USERNAME}}` wherever the user's GitHub handle should appear.
    - Include `{{PLUGINS}}` where selected plugins should be injected.
+3. **Optional Preview Files:**
+   - Add `themes/<theme-id>/preview.svg` (`320×180`) and `themes/<theme-id>/PREVIEW.md` — `README.md` automatically picks them up when your PR is merged!
 
 ---
 

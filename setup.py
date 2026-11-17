@@ -264,12 +264,105 @@ def interactive_wizard(
     return username, chosen_theme, chosen_plugins, variables
 
 
+def _replace_marker_block(text: str, marker: str, body: str) -> str:
+    """Replace content between <!-- MARKER:START --> and <!-- MARKER:END -->."""
+    start_tag = f"<!-- {marker}:START -->"
+    end_tag = f"<!-- {marker}:END -->"
+    pattern = re.compile(
+        re.escape(start_tag) + r".*?" + re.escape(end_tag),
+        re.DOTALL,
+    )
+    if not pattern.search(text):
+        raise ValueError(f"Missing {start_tag} / {end_tag} markers in README.md")
+    replacement = f"{start_tag}\n{body.strip()}\n{end_tag}"
+    return pattern.sub(lambda _: replacement, text, count=1)
+
+
+def render_themes_table(
+    themes_dir: Path = THEMES_DIR,
+    root_dir: Path = ROOT_DIR,
+) -> str:
+    """Build the Markdown themes catalog table automatically from themes/*/theme.json."""
+    themes = discover_themes(themes_dir)
+    lines = [
+        "| Preview | Theme | Description | Quick Links |",
+        "| :---: | --- | --- | --- |",
+    ]
+    for tid, data in themes.items():
+        tdir: Path = data["_dir"]
+        preview_md = f"themes/{tid}/PREVIEW.md" if (tdir / "PREVIEW.md").exists() else f"themes/{tid}/README.template.md"
+        template_md = f"themes/{tid}/README.template.md"
+
+        if (tdir / "preview.svg").exists():
+            img_rel = f"themes/{tid}/preview.svg"
+        elif (root_dir / "assets" / "previews" / f"{tid}.svg").exists():
+            img_rel = f"assets/previews/{tid}.svg"
+        else:
+            img_rel = ""
+
+        preview_cell = (
+            f'[<img src="{img_rel}" width="220" alt="{data.get("name", tid)} Preview"/>]({preview_md})'
+            if img_rel
+            else f"[Preview]({preview_md})"
+        )
+        desc = str(data.get("description", "")).replace("|", "\\|")
+        author = str(data.get("author", "community"))
+        links = f"[Live Preview]({preview_md}) · [Template]({template_md})"
+        lines.append(
+            f"| {preview_cell} | **`{tid}`**<br/>{data.get('name', tid)} *(by @{author})* | {desc} | {links} |"
+        )
+    return "\n".join(lines)
+
+
+def render_plugins_table(plugins_dir: Path = PLUGINS_DIR) -> str:
+    """Build the Markdown plugins catalog table automatically from plugins/*/plugin.json."""
+    plugins = discover_plugins(plugins_dir)
+    lines = [
+        "| Plugin ID | What It Adds | Automation Included? | Preview |",
+        "| --- | --- | --- | --- |",
+    ]
+    for pid, data in plugins.items():
+        pdir: Path = data["_dir"]
+        desc = str(data.get("description", "")).replace("|", "\\|")
+        wf_path = pdir / "workflow.yml"
+        wf_name = data.get("workflow_file", f"{pid}.yml")
+        wf_cell = f"✅ `{wf_name}`" if wf_path.exists() else "—"
+        preview_link = (
+            f"[Live Preview](plugins/{pid}/PREVIEW.md)"
+            if (pdir / "PREVIEW.md").exists()
+            else f"[Snippet](plugins/{pid}/snippet.md)"
+        )
+        lines.append(f"| `{pid}` | {desc} | {wf_cell} | {preview_link} |")
+    return "\n".join(lines)
+
+
+def sync_readme_catalog(
+    readme_path: Path | None = None,
+    themes_dir: Path = THEMES_DIR,
+    plugins_dir: Path = PLUGINS_DIR,
+) -> bool:
+    """Update auto-generated theme and plugin tables in README.md. Returns True if changed."""
+    target = readme_path or (ROOT_DIR / "README.md")
+    original = target.read_text(encoding="utf-8")
+    updated = _replace_marker_block(original, "THEMES-TABLE", render_themes_table(themes_dir, target.parent))
+    updated = _replace_marker_block(updated, "PLUGINS-TABLE", render_plugins_table(plugins_dir))
+    if updated == original:
+        return False
+    target.write_text(updated, encoding="utf-8")
+    return True
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Compose a GitHub Profile README and workflows from modular themes and plugins."
     )
     parser.add_argument("--list", action="store_true", help="List available themes and plugins.")
     parser.add_argument("--validate", action="store_true", help="Validate all theme and plugin manifests.")
+    parser.add_argument(
+        "--sync-readme",
+        action="store_true",
+        help="Auto-update the Themes and Plugins tables in README.md from manifests.",
+    )
     parser.add_argument("-i", "--interactive", action="store_true", help="Run guided interactive setup.")
     parser.add_argument("--username", help="Your GitHub username.")
     parser.add_argument("--theme", default="minimalist", help="Theme ID to use (default: minimalist).")
@@ -308,6 +401,11 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.list:
         list_catalog()
+        return 0
+
+    if args.sync_readme:
+        changed = sync_readme_catalog()
+        print("Updated README.md catalog tables." if changed else "README.md catalog tables already up to date.")
         return 0
 
     try:

@@ -98,6 +98,20 @@ class TestStarterKitSetup(unittest.TestCase):
         self.assertEqual(plugin_ids, ["github-stats"])
         self.assertEqual(variables, {})
 
+    def test_sync_readme_catalog_updates_markers(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            fake_readme = Path(tmp) / "README.md"
+            fake_readme.write_text(
+                "# Test\n\n<!-- THEMES-TABLE:START -->\nold\n<!-- THEMES-TABLE:END -->\n\n<!-- PLUGINS-TABLE:START -->\nold\n<!-- PLUGINS-TABLE:END -->\n",
+                encoding="utf-8",
+            )
+            changed = setup.sync_readme_catalog(readme_path=fake_readme)
+            self.assertTrue(changed)
+            content = fake_readme.read_text(encoding="utf-8")
+            self.assertIn("dracula", content)
+            self.assertIn("blog-rss", content)
+            self.assertFalse(setup.sync_readme_catalog(readme_path=fake_readme))
+
 
 if __name__ == "__main__":
     unittest.main()

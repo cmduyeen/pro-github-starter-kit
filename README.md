@@ -83,31 +83,35 @@ Just like **Obsidian**, this kit separates **Layout (`themes/`)** from **Feature
 
 Click any preview card or **Live Preview** link to see the rendered profile immediately on GitHub:
 
-| Preview | Theme | Best For | Quick Links |
+<!-- THEMES-TABLE:START -->
+| Preview | Theme | Description | Quick Links |
 | :---: | --- | --- | --- |
-| [<img src="assets/previews/minimalist.svg" width="220" alt="Minimalist Theme Preview"/>](themes/minimalist/PREVIEW.md) | **`minimalist`**<br/>Ultra-clean typography, zero clutter | Engineers & writers who live by *less is more* | [Live Preview](themes/minimalist/PREVIEW.md) · [Template](themes/minimalist/README.template.md) |
-| [<img src="assets/previews/indie-maker.svg" width="220" alt="Indie Maker Theme Preview"/>](themes/indie-maker/PREVIEW.md) | **`indie-maker`**<br/>Product showcase + live RSS feeds | Solo builders & indie hackers | [Live Preview](themes/indie-maker/PREVIEW.md) · [Template](themes/indie-maker/README.template.md) |
-| [<img src="assets/previews/developer-portfolio.svg" width="220" alt="Developer Portfolio Theme Preview"/>](themes/developer-portfolio/PREVIEW.md) | **`developer-portfolio`**<br/>Bio bullets + tech stack + stats | Job seekers & full-stack developers | [Live Preview](themes/developer-portfolio/PREVIEW.md) · [Template](themes/developer-portfolio/README.template.md) |
-| [<img src="assets/previews/terminal-hacker.svg" width="220" alt="Terminal Hacker Theme Preview"/>](themes/terminal-hacker/PREVIEW.md) | **`terminal-hacker`**<br/>`neofetch`-style CLI & specs block | Linux, DevOps & terminal lovers | [Live Preview](themes/terminal-hacker/PREVIEW.md) · [Template](themes/terminal-hacker/README.template.md) |
-| [<img src="assets/previews/research-student.svg" width="220" alt="Research Student Theme Preview"/>](themes/research-student/PREVIEW.md) | **`research-student`**<br/>Study roadmap + public notes | Students & self-learners | [Live Preview](themes/research-student/PREVIEW.md) · [Template](themes/research-student/README.template.md) |
-| [<img src="assets/previews/dracula.svg" width="220" alt="Dracula Theme Preview"/>](themes/dracula/PREVIEW.md) | **`dracula`**<br/>Dark purple & neon ([Dracula](https://github.com/dracula/dracula-theme)) | Fans of iconic dark neon palettes | [Live Preview](themes/dracula/PREVIEW.md) · [Template](themes/dracula/README.template.md) |
-| [<img src="assets/previews/catppuccin.svg" width="220" alt="Catppuccin Mocha Theme Preview"/>](themes/catppuccin/PREVIEW.md) | **`catppuccin`**<br/>Pastel Mocha ([Catppuccin](https://github.com/catppuccin/catppuccin)) | Cozy pastel-dark workspace lovers | [Live Preview](themes/catppuccin/PREVIEW.md) · [Template](themes/catppuccin/README.template.md) |
-| [<img src="assets/previews/serein.svg" width="220" alt="Serein Theme Preview"/>](themes/serein/PREVIEW.md) | **`serein`**<br/>Warm minimal ([Serein](https://github.com/cmduyeen/serein-theme)) | Low-glare warm aesthetic fans | [Live Preview](themes/serein/PREVIEW.md) · [Template](themes/serein/README.template.md) |
-| [<img src="assets/previews/pinkie.svg" width="220" alt="Pinkie Pastel Theme Preview"/>](themes/pinkie/PREVIEW.md) | **`pinkie`**<br/>Soft pastel pink ([Pinkie](https://github.com/cmduyeen/pinkie-theme)) | Aesthetic & kawaii pastel lovers | [Live Preview](themes/pinkie/PREVIEW.md) · [Template](themes/pinkie/README.template.md) |
+| [<img src="assets/previews/catppuccin.svg" width="220" alt="Catppuccin Mocha Preview"/>](themes/catppuccin/PREVIEW.md) | **`catppuccin`**<br/>Catppuccin Mocha *(by @cmduyeen)* | Soothing pastel-dark palette inspired by Catppuccin (catppuccin/catppuccin). | [Live Preview](themes/catppuccin/PREVIEW.md) · [Template](themes/catppuccin/README.template.md) |
+| [<img src="assets/previews/developer-portfolio.svg" width="220" alt="Developer Portfolio Preview"/>](themes/developer-portfolio/PREVIEW.md) | **`developer-portfolio`**<br/>Developer Portfolio *(by @cmduyeen)* | Full developer showcase ready for tech stack icons, stats cards, and activity widgets. | [Live Preview](themes/developer-portfolio/PREVIEW.md) · [Template](themes/developer-portfolio/README.template.md) |
+| [<img src="assets/previews/dracula.svg" width="220" alt="Dracula Palette Preview"/>](themes/dracula/PREVIEW.md) | **`dracula`**<br/>Dracula Palette *(by @cmduyeen)* | Dark purple & neon palette inspired by Dracula Theme (dracula/dracula-theme). | [Live Preview](themes/dracula/PREVIEW.md) · [Template](themes/dracula/README.template.md) |
+| [<img src="assets/previews/indie-maker.svg" width="220" alt="Indie Maker Preview"/>](themes/indie-maker/PREVIEW.md) | **`indie-maker`**<br/>Indie Maker *(by @cmduyeen)* | Product-focused layout highlighting shipped projects, writing, and updates. | [Live Preview](themes/indie-maker/PREVIEW.md) · [Template](themes/indie-maker/README.template.md) |
+| [<img src="assets/previews/minimalist.svg" width="220" alt="Minimalist Preview"/>](themes/minimalist/PREVIEW.md) | **`minimalist`**<br/>Minimalist *(by @cmduyeen)* | Clean text-first profile with zero visual clutter. | [Live Preview](themes/minimalist/PREVIEW.md) · [Template](themes/minimalist/README.template.md) |
+| [<img src="assets/previews/pinkie.svg" width="220" alt="Pinkie Pastel Preview"/>](themes/pinkie/PREVIEW.md) | **`pinkie`**<br/>Pinkie Pastel *(by @cmduyeen)* | Soft pastel-pink aesthetic from Pinkie Theme (cmduyeen/pinkie-theme). | [Live Preview](themes/pinkie/PREVIEW.md) · [Template](themes/pinkie/README.template.md) |
+| [<img src="assets/previews/research-student.svg" width="220" alt="Student & Self-Learner Preview"/>](themes/research-student/PREVIEW.md) | **`research-student`**<br/>Student & Self-Learner *(by @cmduyeen)* | Structured layout highlighting learning roadmap, notes, and starter projects. | [Live Preview](themes/research-student/PREVIEW.md) · [Template](themes/research-student/README.template.md) |
+| [<img src="assets/previews/serein.svg" width="220" alt="Serein Warm Minimal Preview"/>](themes/serein/PREVIEW.md) | **`serein`**<br/>Serein Warm Minimal *(by @cmduyeen)* | Warm, low-distraction palette from Serein Theme (cmduyeen/serein-theme). | [Live Preview](themes/serein/PREVIEW.md) · [Template](themes/serein/README.template.md) |
+| [<img src="assets/previews/terminal-hacker.svg" width="220" alt="Terminal / CLI Preview"/>](themes/terminal-hacker/PREVIEW.md) | **`terminal-hacker`**<br/>Terminal / CLI *(by @cmduyeen)* | Neofetch-inspired terminal block layout for CLI and systems developers. | [Live Preview](themes/terminal-hacker/PREVIEW.md) · [Template](themes/terminal-hacker/README.template.md) |
+<!-- THEMES-TABLE:END -->
 
 ### 2. Snap in Plugins (`plugins/`)
 
+<!-- PLUGINS-TABLE:START -->
 | Plugin ID | What It Adds | Automation Included? | Preview |
 | --- | --- | --- | --- |
-| `blog-rss` | Auto-syncs latest articles from any RSS feed | ✅ `blog-rss-sync.yml` | [Live Preview](plugins/blog-rss/PREVIEW.md) |
-| `youtube-rss` | Auto-syncs latest videos from a YouTube channel | ✅ `youtube-rss-sync.yml` | [Live Preview](plugins/youtube-rss/PREVIEW.md) |
-| `wakatime-stats` | Auto-updates weekly coding hours & languages | ✅ `wakatime-sync.yml` | [Live Preview](plugins/wakatime-stats/PREVIEW.md) |
-| `typing-svg` | Animated hero typing banner (`readme-typing-svg`) | — | [Live Preview](plugins/typing-svg/PREVIEW.md) |
-| `skill-icons` | Clean SVG tech stack grid (`skillicons.dev`) | — | [Live Preview](plugins/skill-icons/PREVIEW.md) |
-| `github-stats` | Dynamic GitHub summary & streak SVG cards | — | [Live Preview](plugins/github-stats/PREVIEW.md) |
-| `activity-graph` | 31-day contribution line graph | — | [Live Preview](plugins/activity-graph/PREVIEW.md) |
-| `spotify-now-playing` | Currently playing / recent Spotify track widget | — | [Live Preview](plugins/spotify-now-playing/PREVIEW.md) |
-| `social-badges` | `shields.io` GitHub, X & Blog buttons | — | [Live Preview](plugins/social-badges/PREVIEW.md) |
+| `activity-graph` | Renders a 31-day contribution line graph using github-readme-activity-graph. | — | [Live Preview](plugins/activity-graph/PREVIEW.md) |
+| `blog-rss` | Automatically syncs your latest blog posts via RSS using GitHub Actions. | ✅ `blog-rss-sync.yml` | [Live Preview](plugins/blog-rss/PREVIEW.md) |
+| `github-stats` | Embeds dynamic GitHub summary stats, top languages, and streak cards. | — | [Live Preview](plugins/github-stats/PREVIEW.md) |
+| `skill-icons` | Displays your tech stack cleanly using skillicons.dev. | — | [Live Preview](plugins/skill-icons/PREVIEW.md) |
+| `social-badges` | Adds crisp shields.io social and portfolio badges. | — | [Live Preview](plugins/social-badges/PREVIEW.md) |
+| `spotify-now-playing` | Displays your currently playing or recently played Spotify track. | — | [Live Preview](plugins/spotify-now-playing/PREVIEW.md) |
+| `typing-svg` | Adds an animated typing header powered by readme-typing-svg. | — | [Live Preview](plugins/typing-svg/PREVIEW.md) |
+| `wakatime-stats` | Automatically updates your weekly coding time and language breakdown via WakaTime. | ✅ `wakatime-sync.yml` | [Live Preview](plugins/wakatime-stats/PREVIEW.md) |
+| `youtube-rss` | Automatically lists your latest YouTube videos via channel RSS feed. | ✅ `youtube-rss-sync.yml` | [Live Preview](plugins/youtube-rss/PREVIEW.md) |
+<!-- PLUGINS-TABLE:END -->
 
 > [!NOTE]
 > All GitHub Actions workflows run **once per day** and only commit when new content appears—keeping your contribution graph authentic and clean. See **[docs/AUTOMATION.md](docs/AUTOMATION.md)** for setup details.
