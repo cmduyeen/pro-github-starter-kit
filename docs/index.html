@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pro GitHub Starter Kit — Visual Profile Builder</title>
-  <meta name="description" content="Build your GitHub Profile README visually in seconds. Pick a theme, toggle plugins, and copy or download your Markdown." />
+  <meta name="description" content="Build your GitHub Profile README visually in seconds. Pick a theme, toggle plugins, edit Markdown side-by-side with live preview, and export." />
   <style>
     :root {
       --bg: #0b1120;
@@ -27,7 +27,7 @@
     }
     header {
       border-bottom: 1px solid var(--border);
-      padding: 18px 24px;
+      padding: 14px 24px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -35,33 +35,53 @@
       gap: 12px;
       background: var(--panel);
     }
-    header h1 { margin: 0; font-size: 1.2rem; }
-    header p { margin: 2px 0 0; font-size: 0.88rem; color: var(--muted); }
-    .header-links { display: flex; gap: 10px; }
+    header h1 { margin: 0; font-size: 1.15rem; }
+    header p { margin: 2px 0 0; font-size: 0.85rem; color: var(--muted); }
+    .header-links { display: flex; flex-wrap: wrap; gap: 8px; }
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 8px 14px;
+      padding: 7px 12px;
       border-radius: 8px;
       border: 1px solid var(--border);
       background: #1f2937;
       color: var(--text);
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
+      transition: background 0.15s ease;
     }
     .btn:hover { background: #374151; }
+    .btn-sm { padding: 4px 10px; font-size: 0.78rem; }
     .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent-hover); }
     .btn-success { background: var(--green); border-color: var(--green); color: #052e16; }
+    .quick-banner {
+      max-width: 1560px;
+      margin: 14px auto 0;
+      padding: 0 20px;
+    }
+    .quick-banner-inner {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      color: #dbeafe;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
     main {
-      max-width: 1520px;
-      margin: 20px auto;
+      max-width: 1560px;
+      margin: 16px auto 28px;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: 330px 1fr 1fr;
+      grid-template-columns: 340px 1fr 1fr;
       gap: 16px;
       align-items: start;
     }
@@ -72,29 +92,43 @@
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 20px;
+      padding: 18px;
     }
-    .card h2 {
-      margin: 0 0 14px;
-      font-size: 1rem;
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
       border-bottom: 1px solid var(--border);
       padding-bottom: 8px;
     }
+    .card-header h2 { margin: 0; font-size: 0.98rem; }
     label.field-label {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       margin: 12px 0 6px;
       color: #d1d5db;
     }
     input[type="text"], select {
       width: 100%;
-      padding: 9px 12px;
+      padding: 8px 11px;
       border-radius: 8px;
       border: 1px solid var(--border);
       background: var(--code-bg);
       color: var(--text);
-      font-size: 0.92rem;
+      font-size: 0.88rem;
+    }
+    input[type="text"]:focus, select:focus, textarea:focus {
+      outline: 2px solid rgba(59, 130, 246, 0.5);
+      border-color: var(--accent);
+    }
+    .preset-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0;
     }
     .plugins-list {
       display: grid;
@@ -102,12 +136,17 @@
       max-height: 360px;
       overflow-y: auto;
       padding-right: 4px;
+      margin-top: 8px;
     }
     .plugin-item {
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 10px 12px;
+      padding: 9px 11px;
       background: rgba(255, 255, 255, 0.02);
+    }
+    .plugin-item.active {
+      border-color: rgba(59, 130, 246, 0.5);
+      background: rgba(59, 130, 246, 0.06);
     }
     .plugin-head {
       display: flex;
@@ -116,14 +155,23 @@
       cursor: pointer;
     }
     .plugin-head input { accent-color: var(--accent); width: 16px; height: 16px; }
-    .plugin-desc { font-size: 0.8rem; color: var(--muted); margin: 4px 0 0 24px; }
+    .plugin-badge {
+      margin-left: auto;
+      font-size: 0.7rem;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+    }
+    .plugin-desc { font-size: 0.78rem; color: var(--muted); margin: 4px 0 0 24px; }
     .plugin-vars { margin: 8px 0 0 24px; display: none; }
     .plugin-item.active .plugin-vars { display: block; }
     .toolbar {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      align-items: center;
     }
     textarea {
       width: 100%;
@@ -134,43 +182,29 @@
       background: var(--code-bg);
       color: #e5e7eb;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
+      line-height: 1.5;
       resize: vertical;
     }
+    .editor-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
     .cli-box {
-      margin-top: 12px;
-      padding: 10px 12px;
+      margin-top: 10px;
+      padding: 9px 11px;
       border-radius: 8px;
       background: var(--code-bg);
       border: 1px solid var(--border);
       font-family: ui-monospace, monospace;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #93c5fd;
       word-break: break-all;
     }
-    .status { font-size: 0.85rem; color: var(--green); margin-left: auto; align-self: center; }
-    .tabs {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 10px;
-    }
-    .tab-btn {
-      padding: 6px 14px;
-      border-radius: 6px;
-      border: 1px solid transparent;
-      background: transparent;
-      color: var(--muted);
-      font-size: 0.88rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .tab-btn.active {
-      background: #1f2937;
-      border-color: var(--border);
-      color: var(--text);
-    }
+    .status { font-size: 0.82rem; color: var(--green); margin-left: auto; }
     .preview-pane {
       min-height: 540px;
       max-height: 680px;
@@ -180,24 +214,33 @@
       border: 1px solid var(--border);
       background: #0d1117;
       color: #e6edf3;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       line-height: 1.6;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .preview-pane.light {
+      background: #ffffff;
+      color: #1f2328;
+      border-color: #d0d7de;
     }
     .preview-pane h1, .preview-pane h2, .preview-pane h3 {
       border-bottom: 1px solid #21262d;
       padding-bottom: 0.3em;
-      margin-top: 1.2em;
+      margin-top: 1.1em;
+    }
+    .preview-pane.light h1, .preview-pane.light h2, .preview-pane.light h3 {
+      border-bottom-color: #d8dee4;
     }
     .preview-pane h1:first-child { margin-top: 0; }
     .preview-pane a { color: #58a6ff; text-decoration: none; }
+    .preview-pane.light a { color: #0969da; }
     .preview-pane a:hover { text-decoration: underline; }
     .preview-pane img { max-width: 100%; height: auto; }
     .preview-pane table { border-collapse: collapse; width: 100%; margin: 12px 0; }
-    .preview-pane th, .preview-pane td {
-      border: 1px solid #30363d;
-      padding: 6px 12px;
-    }
+    .preview-pane th, .preview-pane td { border: 1px solid #30363d; padding: 6px 12px; }
     .preview-pane th { background: #161b22; }
+    .preview-pane.light th, .preview-pane.light td { border-color: #d0d7de; }
+    .preview-pane.light th { background: #f6f8fa; }
     .preview-pane pre, .preview-pane code {
       background: #161b22;
       border-radius: 6px;
@@ -205,26 +248,38 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 0.85em;
     }
+    .preview-pane.light pre, .preview-pane.light code { background: #f6f8fa; }
     .preview-pane pre { padding: 12px; overflow-x: auto; }
-    .hidden { display: none; }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <header>
     <div>
-      <h1>🚀 Pro GitHub Starter Kit — Profile Builder</h1>
-      <p>Pick a theme, toggle plugins, and copy or download your <code>README.md</code> in seconds.</p>
+      <h1>🚀 Pro GitHub Starter Kit — Visual Profile Builder</h1>
+      <p>Customize your theme &amp; plugins, edit Markdown side-by-side, and export to GitHub in seconds.</p>
     </div>
     <div class="header-links">
-      <a class="btn" href="https://github.com/cmduyeen/pro-github-starter-kit" target="_blank" rel="noopener">GitHub Repo</a>
+      <a class="btn" href="https://github.com/cmduyeen/pro-github-starter-kit" target="_blank" rel="noopener">Docs &amp; Badges</a>
+      <a class="btn" href="https://github.com/new" target="_blank" rel="noopener">+ New GitHub Repo</a>
       <a class="btn btn-primary" href="https://github.com/cmduyeen/pro-github-starter-kit/generate" target="_blank" rel="noopener">Use This Template</a>
     </div>
   </header>
 
+  <div class="quick-banner">
+    <div class="quick-banner-inner">
+      <span><strong>3-Step Deploy:</strong> 1) Create a public repo named <code>&lt;your-username&gt;/&lt;your-username&gt;</code> → 2) Customize &amp; Copy below → 3) Paste into <code>README.md</code> &amp; Commit!</span>
+      <span id="draftNotice" style="color: #93c5fd;"></span>
+    </div>
+  </div>
+
   <main>
     <section class="card">
-      <h2>1. Configure Your Profile</h2>
+      <div class="card-header">
+        <h2>1. Configure</h2>
+        <button id="resetBtn" class="btn btn-sm" type="button" title="Rebuild from selected theme & plugins">Reset Draft</button>
+      </div>
+
       <label class="field-label" for="username">GitHub Username</label>
       <input id="username" type="text" value="cmduyeen" placeholder="your-github-username" />
 
@@ -232,51 +287,64 @@
       <select id="themeSelect"></select>
       <p id="themeDesc" class="plugin-desc" style="margin-left: 0;"></p>
 
-      <label class="field-label">Select Plugins</label>
+      <label class="field-label" for="pluginSearch">Plugins (<span id="pluginCount">0</span> selected)</label>
+      <input id="pluginSearch" type="text" placeholder="Search plugins (e.g. blog, spotify, stats)..." />
+      <div class="preset-row">
+        <button id="presetProBtn" class="btn btn-sm" type="button">Pro Combo</button>
+        <button id="presetMinimalBtn" class="btn btn-sm" type="button">Minimal</button>
+        <button id="clearPluginsBtn" class="btn btn-sm" type="button">Clear All</button>
+      </div>
       <div id="pluginsList" class="plugins-list">Loading catalog...</div>
     </section>
 
     <section class="card">
-      <h2>2. Edit Markdown</h2>
+      <div class="card-header">
+        <h2>2. Edit Markdown</h2>
+        <span id="statusMsg" class="status"></span>
+      </div>
       <div class="toolbar">
         <button id="copyBtn" class="btn btn-primary" type="button">Copy Markdown</button>
         <button id="downloadBtn" class="btn btn-success" type="button">Download README.md</button>
         <button id="copyCliBtn" class="btn" type="button">Copy CLI</button>
-        <span id="statusMsg" class="status"></span>
       </div>
       <textarea id="output" spellcheck="false"></textarea>
+      <div class="editor-meta">
+        <span id="statsMeta">0 lines · 0 chars</span>
+        <span>Edits auto-saved locally</span>
+      </div>
       <div id="cliBox" class="cli-box"></div>
     </section>
 
     <section class="card">
-      <h2>3. Live Preview</h2>
+      <div class="card-header">
+        <h2>3. Live Preview</h2>
+        <button id="toggleModeBtn" class="btn btn-sm" type="button">☀️ Light Mode</button>
+      </div>
       <div id="previewPane" class="preview-pane">Loading preview...</div>
     </section>
   </main>
 
   <script>
+    const STORAGE_KEY = "pro-github-starter-kit-draft-v1";
     let catalog = { themes: [], plugins: [] };
-    const selectedPlugins = new Set(["skill-icons", "github-stats", "social-badges"]);
-    const customVars = {};
+    let selectedPlugins = new Set(["skill-icons", "github-stats", "social-badges"]);
+    let customVars = {};
+    let hasManualEdits = false;
+    let searchQuery = "";
 
     const usernameEl = document.getElementById("username");
     const themeSelectEl = document.getElementById("themeSelect");
     const themeDescEl = document.getElementById("themeDesc");
+    const pluginSearchEl = document.getElementById("pluginSearch");
+    const pluginCountEl = document.getElementById("pluginCount");
     const pluginsListEl = document.getElementById("pluginsList");
     const outputEl = document.getElementById("output");
     const previewPaneEl = document.getElementById("previewPane");
     const cliBoxEl = document.getElementById("cliBox");
     const statusMsgEl = document.getElementById("statusMsg");
-
-    function updatePreviewPane(markdown) {
-      if (window.marked && typeof window.marked.parse === "function") {
-        previewPaneEl.innerHTML = window.marked.parse(markdown, { breaks: true, gfm: true });
-      } else {
-        previewPaneEl.textContent = markdown;
-      }
-    }
-
-    outputEl.addEventListener("input", () => updatePreviewPane(outputEl.value));
+    const statsMetaEl = document.getElementById("statsMeta");
+    const draftNoticeEl = document.getElementById("draftNotice");
+    const toggleModeBtn = document.getElementById("toggleModeBtn");
 
     function replacePlaceholders(text, vars) {
       let result = text;
@@ -286,12 +354,40 @@
       return result;
     }
 
-    function renderOutput() {
+    function updateMeta(text) {
+      const lines = text ? text.split("\n").length : 0;
+      statsMetaEl.textContent = `${lines} lines · ${text.length} chars`;
+    }
+
+    function updatePreviewPane(markdown) {
+      if (window.marked && typeof window.marked.parse === "function") {
+        previewPaneEl.innerHTML = window.marked.parse(markdown, { breaks: true, gfm: true });
+      } else {
+        previewPaneEl.textContent = markdown;
+      }
+      updateMeta(markdown);
+    }
+
+    function saveDraft() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          username: usernameEl.value,
+          theme: themeSelectEl.value,
+          plugins: Array.from(selectedPlugins),
+          customVars,
+          hasManualEdits,
+          markdown: hasManualEdits ? outputEl.value : "",
+        }));
+      } catch (_) {}
+    }
+
+    function buildFromConfig(forceOverwrite = false) {
       const username = (usernameEl.value || "your-username").trim();
       const theme = catalog.themes.find(t => t.id === themeSelectEl.value) || catalog.themes[0];
       if (!theme) return;
 
       themeDescEl.textContent = `${theme.description} (by @${theme.author})`;
+      pluginCountEl.textContent = String(selectedPlugins.size);
 
       const merged = { USERNAME: username, ...(theme.defaults || {}) };
       const chosen = catalog.plugins.filter(p => selectedPlugins.has(p.id));
@@ -304,11 +400,15 @@
         if (v.trim()) merged[k] = v.trim();
       }
 
-      const pluginBlocks = chosen.map(p => replacePlaceholders(p.snippet, merged));
-      let rendered = theme.template.replace("{{PLUGINS}}", pluginBlocks.join("\n\n"));
-      rendered = replacePlaceholders(rendered, merged).replace(/\n{3,}/g, "\n\n").trim() + "\n";
-      outputEl.value = rendered;
-      updatePreviewPane(rendered);
+      if (!hasManualEdits || forceOverwrite) {
+        const pluginBlocks = chosen.map(p => replacePlaceholders(p.snippet, merged));
+        let rendered = theme.template.replace("{{PLUGINS}}", pluginBlocks.join("\n\n"));
+        rendered = replacePlaceholders(rendered, merged).replace(/\n{3,}/g, "\n\n").trim() + "\n";
+        outputEl.value = rendered;
+        updatePreviewPane(rendered);
+        hasManualEdits = false;
+        draftNoticeEl.textContent = "";
+      }
 
       const pluginArg = chosen.map(p => p.id).join(",");
       let cli = `python setup.py --username ${username} --theme ${theme.id}`;
@@ -317,11 +417,22 @@
         if (v.trim()) cli += ` --var ${k}=${v.trim()}`;
       }
       cliBoxEl.textContent = cli;
+      saveDraft();
     }
 
     function renderPluginsUI() {
       pluginsListEl.innerHTML = "";
-      for (const p of catalog.plugins) {
+      const q = searchQuery.trim().toLowerCase();
+      const filtered = catalog.plugins.filter(p =>
+        !q || p.id.toLowerCase().includes(q) || p.description.toLowerCase().includes(q)
+      );
+
+      if (filtered.length === 0) {
+        pluginsListEl.innerHTML = '<div class="plugin-desc" style="margin-left:0;">No matching plugins found.</div>';
+        return;
+      }
+
+      for (const p of filtered) {
         const wrapper = document.createElement("div");
         const isChecked = selectedPlugins.has(p.id);
         wrapper.className = "plugin-item" + (isChecked ? " active" : "");
@@ -335,16 +446,23 @@
           if (cb.checked) selectedPlugins.add(p.id);
           else selectedPlugins.delete(p.id);
           wrapper.classList.toggle("active", cb.checked);
-          renderOutput();
+          hasManualEdits = false;
+          buildFromConfig(true);
         });
         const title = document.createElement("strong");
         title.textContent = p.id;
         head.append(cb, title);
 
+        if (p.has_workflow) {
+          const badge = document.createElement("span");
+          badge.className = "plugin-badge";
+          badge.textContent = "Auto";
+          head.append(badge);
+        }
+
         const desc = document.createElement("div");
         desc.className = "plugin-desc";
         desc.textContent = p.description;
-
         wrapper.append(head, desc);
 
         const defaultEntries = Object.entries(p.defaults || {});
@@ -362,7 +480,8 @@
             inp.value = customVars[k] || "";
             inp.addEventListener("input", () => {
               customVars[k] = inp.value;
-              renderOutput();
+              hasManualEdits = false;
+              buildFromConfig(true);
             });
             varsDiv.append(lbl, inp);
           }
@@ -377,6 +496,46 @@
       statusMsgEl.textContent = msg;
       setTimeout(() => { statusMsgEl.textContent = ""; }, 2200);
     }
+
+    outputEl.addEventListener("input", () => {
+      hasManualEdits = true;
+      draftNoticeEl.textContent = "Custom text mode (click 'Reset Draft' to re-sync from template)";
+      updatePreviewPane(outputEl.value);
+      saveDraft();
+    });
+
+    usernameEl.addEventListener("input", () => { hasManualEdits = false; buildFromConfig(true); });
+    themeSelectEl.addEventListener("change", () => { hasManualEdits = false; buildFromConfig(true); });
+    pluginSearchEl.addEventListener("input", () => { searchQuery = pluginSearchEl.value; renderPluginsUI(); });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      hasManualEdits = false;
+      buildFromConfig(true);
+      flashStatus("Synced from template!");
+    });
+    document.getElementById("presetProBtn").addEventListener("click", () => {
+      selectedPlugins = new Set(["typing-svg", "skill-icons", "github-stats", "activity-graph", "social-badges"]);
+      hasManualEdits = false;
+      renderPluginsUI();
+      buildFromConfig(true);
+    });
+    document.getElementById("presetMinimalBtn").addEventListener("click", () => {
+      selectedPlugins = new Set(["social-badges"]);
+      hasManualEdits = false;
+      renderPluginsUI();
+      buildFromConfig(true);
+    });
+    document.getElementById("clearPluginsBtn").addEventListener("click", () => {
+      selectedPlugins = new Set();
+      hasManualEdits = false;
+      renderPluginsUI();
+      buildFromConfig(true);
+    });
+
+    toggleModeBtn.addEventListener("click", () => {
+      const isLight = previewPaneEl.classList.toggle("light");
+      toggleModeBtn.textContent = isLight ? "🌙 Dark Mode" : "☀️ Light Mode";
+    });
 
     document.getElementById("copyBtn").addEventListener("click", async () => {
       await navigator.clipboard.writeText(outputEl.value);
@@ -397,22 +556,38 @@
       flashStatus("Downloaded README.md!");
     });
 
-    usernameEl.addEventListener("input", renderOutput);
-    themeSelectEl.addEventListener("change", renderOutput);
-
     fetch("./catalog.json")
       .then(res => res.json())
       .then(data => {
         catalog = data;
+        let saved = null;
+        try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) {}
+
+        if (saved) {
+          if (saved.username) usernameEl.value = saved.username;
+          if (Array.isArray(saved.plugins)) selectedPlugins = new Set(saved.plugins);
+          if (saved.customVars) customVars = saved.customVars;
+        }
+
+        const initialTheme = (saved && saved.theme) || "indie-maker";
         for (const t of catalog.themes) {
           const opt = document.createElement("option");
           opt.value = t.id;
           opt.textContent = `${t.id} — ${t.name}`;
-          if (t.id === "indie-maker") opt.selected = true;
+          if (t.id === initialTheme) opt.selected = true;
           themeSelectEl.append(opt);
         }
+
         renderPluginsUI();
-        renderOutput();
+        if (saved && saved.hasManualEdits && saved.markdown) {
+          hasManualEdits = true;
+          outputEl.value = saved.markdown;
+          updatePreviewPane(saved.markdown);
+          draftNoticeEl.textContent = "Restored custom draft (click 'Reset Draft' to re-sync)";
+          buildFromConfig(false);
+        } else {
+          buildFromConfig(true);
+        }
       })
       .catch(() => {
         pluginsListEl.textContent = "Failed to load catalog.json.";
