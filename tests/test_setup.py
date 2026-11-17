@@ -1,3 +1,4 @@
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -141,9 +142,12 @@ class TestStarterKitSetup(unittest.TestCase):
             plugin_ids=all_pids,
             variables={},
         )
-        self.assertNotIn("{{", readme)
+        self.assertIsNone(re.search(r"(?<!\$)\{\{[A-Z0-9_]+\}\}", readme))
         for name, wf_content in workflows:
-            self.assertNotIn("{{", wf_content, f"Unreplaced placeholder in {name}")
+            self.assertIsNone(
+                re.search(r"(?<!\$)\{\{[A-Z0-9_]+\}\}", wf_content),
+                f"Unreplaced placeholder in {name}",
+            )
 
 
 if __name__ == "__main__":
