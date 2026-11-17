@@ -38,7 +38,13 @@
 
 ### Option A: Visual Web Builder (Fastest — Zero Setup)
 
-Open **[https://cmduyeen.github.io/pro-github-starter-kit/](https://cmduyeen.github.io/pro-github-starter-kit/)**, enter your username, pick a theme & plugins, and click **Copy Markdown** or **Download `README.md`**.
+Open **[https://cmduyeen.github.io/pro-github-starter-kit/](https://cmduyeen.github.io/pro-github-starter-kit/)**, enter your username, pick a theme & plugins, edit Markdown side-by-side with live preview, and click **Copy Markdown** or **Download `README.md`**:
+
+<div align="center">
+  <a href="https://cmduyeen.github.io/pro-github-starter-kit/">
+    <img src="assets/web-builder-preview.png" width="840" alt="Pro GitHub Starter Kit Visual Web Builder"/>
+  </a>
+</div>
 
 ### Option B: 100% in Browser via GitHub Actions
 
