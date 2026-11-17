@@ -81,21 +81,15 @@ Just like **Obsidian**, this kit separates **Layout (`themes/`)** from **Feature
 
 ### 1. Pick a Theme (`themes/`)
 
-| Theme ID | Vibe | Best For |
-| --- | --- | --- |
-| `minimalist` | Ultra-clean typography, zero clutter | Engineers & writers who live by *less is more* |
-| `indie-maker` | Product showcase table + live writing/video feeds | Solo builders & indie hackers |
-| `developer-portfolio` | Bio bullets + tech stack + stats showcase | Job seekers & full-stack developers |
-| `terminal-hacker` | `neofetch`-style CLI & system specs block | Linux, DevOps & terminal lovers |
-| `research-student` | Study roadmap + public notes + learning goals | Students & self-learners building in public |
+Click any preview card or **Live Preview** link to see the rendered profile immediately on GitHub:
 
-<details>
-<summary><b>👀 Click to preview the <code>terminal-hacker</code> & <code>indie-maker</code> layouts</b></summary>
-
-- **`terminal-hacker`**: Renders a `whoami` header, a `neofetch`-style system block (`OS`, `Role`, `Focus`, `Blog`), `$ ls ./featured-projects`, and `$ cat ./contact.txt`.
-- **`indie-maker`**: Leads with a clean 3-column **Featured Products** table (`Project` | `What It Solves` | `Status`) followed by auto-synced Blog/YouTube feeds.
-
-</details>
+| Preview | Theme | Best For | Quick Links |
+| :---: | --- | --- | --- |
+| [<img src="assets/previews/minimalist.svg" width="220" alt="Minimalist Theme Preview"/>](themes/minimalist/PREVIEW.md) | **`minimalist`**<br/>Ultra-clean typography, zero clutter | Engineers & writers who live by *less is more* | [Live Preview](themes/minimalist/PREVIEW.md) · [Template](themes/minimalist/README.template.md) |
+| [<img src="assets/previews/indie-maker.svg" width="220" alt="Indie Maker Theme Preview"/>](themes/indie-maker/PREVIEW.md) | **`indie-maker`**<br/>Product showcase + live RSS feeds | Solo builders & indie hackers | [Live Preview](themes/indie-maker/PREVIEW.md) · [Template](themes/indie-maker/README.template.md) |
+| [<img src="assets/previews/developer-portfolio.svg" width="220" alt="Developer Portfolio Theme Preview"/>](themes/developer-portfolio/PREVIEW.md) | **`developer-portfolio`**<br/>Bio bullets + tech stack + stats | Job seekers & full-stack developers | [Live Preview](themes/developer-portfolio/PREVIEW.md) · [Template](themes/developer-portfolio/README.template.md) |
+| [<img src="assets/previews/terminal-hacker.svg" width="220" alt="Terminal Hacker Theme Preview"/>](themes/terminal-hacker/PREVIEW.md) | **`terminal-hacker`**<br/>`neofetch`-style CLI & specs block | Linux, DevOps & terminal lovers | [Live Preview](themes/terminal-hacker/PREVIEW.md) · [Template](themes/terminal-hacker/README.template.md) |
+| [<img src="assets/previews/research-student.svg" width="220" alt="Research Student Theme Preview"/>](themes/research-student/PREVIEW.md) | **`research-student`**<br/>Study roadmap + public notes | Students & self-learners | [Live Preview](themes/research-student/PREVIEW.md) · [Template](themes/research-student/README.template.md) |
 
 ### 2. Snap in Plugins (`plugins/`)
 
