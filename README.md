@@ -12,33 +12,19 @@
 [![Template Repo](https://img.shields.io/badge/Use%20This%20Template-Click%20Here-2ea44f?style=flat-square&logo=github)](https://github.com/cmduyeen/pro-github-starter-kit/generate)
 [![Web Builder](https://img.shields.io/badge/Web%20Builder-Open%20App-3B82F6?style=flat-square&logo=googlechrome&logoColor=white)](https://cmduyeen.github.io/pro-github-starter-kit/)
 
-**An Obsidian-inspired, extensible starter kit for crafting a clean, automated, and high-converting GitHub Profile.**
+**Turn a blank GitHub profile into a standout developer portfolio in 60 seconds—no coding, no domain, 100% free.**
 
-[Quick Start](#-quick-start-no-coding-required) · [Themes (9)](#-1-pick-a-theme-themes) · [Plugins (12)](#-2-snap-in-plugins-plugins) · [Resources & SEO](#-curated-resources--seo) · [Achievements](#-legit-github-achievements) · [FAQ](#-build-together-add-your-own-theme-or-plugin)
+[🚀 Launch Web Builder](https://cmduyeen.github.io/pro-github-starter-kit/) · [⚡ Use This Template](https://github.com/cmduyeen/pro-github-starter-kit/generate) · [Themes (9)](#-1-pick-a-theme-themes) · [Plugins (12)](#-2-snap-in-plugins-plugins) · [Achievements](#-legit-github-achievements) · [Resources & SEO](#-curated-resources--seo)
 
 </div>
 
-<details>
-<summary><b>📑 Table of Contents</b></summary>
-
-- [⚡ Quick Start (No Coding Required)](#-quick-start-no-coding-required)
-- [🎨 See What You Can Build](#-see-what-you-can-build)
-- [🧩 Modular Themes & Plugins](#-modular-themes--plugins)
-  - [1. Pick a Theme (`themes/`)](#-1-pick-a-theme-themes)
-  - [2. Snap in Plugins (`plugins/`)](#-2-snap-in-plugins-plugins)
-- [🛠 Curated Resources & SEO](#-curated-resources--seo)
-- [🏆 Legit GitHub Achievements](#-legit-github-achievements)
-- [🤝 Build Together & FAQ](#-build-together-add-your-own-theme-or-plugin)
-
-</details>
-
 ---
 
-## ⚡ Quick Start (No Coding Required)
+## ⚡ Build Your Profile in 60 Seconds
 
-### Option A: Visual Web Builder (Fastest — Zero Setup)
-
-Open **[https://cmduyeen.github.io/pro-github-starter-kit/](https://cmduyeen.github.io/pro-github-starter-kit/)**, enter your username, pick a theme & plugins, edit Markdown side-by-side with live preview, and click **Copy Markdown** or **Download `README.md`**:
+1. **Create your profile repo:** Click **[Use This Template](https://github.com/cmduyeen/pro-github-starter-kit/generate)** (or create a public repo named `<your-username>/<your-username>`).
+2. **Customize visually:** Open the **[Live Web Builder](https://cmduyeen.github.io/pro-github-starter-kit/)**, pick a theme & plugins, edit Markdown side-by-side with Dark/Light preview, and click **Copy Markdown**.
+3. **Publish:** Paste into your `README.md` and commit. Done!
 
 <div align="center">
   <a href="https://cmduyeen.github.io/pro-github-starter-kit/">
@@ -46,59 +32,20 @@ Open **[https://cmduyeen.github.io/pro-github-starter-kit/](https://cmduyeen.git
   </a>
 </div>
 
-### Option B: 100% in Browser via GitHub Actions
-
-No terminal, no Python, no Git commands needed:
-
-1. Click **[Use this template](https://github.com/cmduyeen/pro-github-starter-kit/generate)** and name your new public repository **exactly** `<your-username>/<your-username>`.
-2. Open the **Actions** tab in your new repository → select **Build My Profile** → click **Run workflow**.
-3. Pick your **Theme** from the dropdown, tick the **Plugins** you want (optional: paste your Blog RSS or Spotify UID), and click **Run workflow**. GitHub automatically builds and commits your new `README.md`!
-
-### Option B: Interactive Terminal Wizard (1 Simple Command)
-
-If you prefer running locally, just clone your repo and run:
-
-```bash
-python setup.py
-```
-
-A guided Q&A menu will walk you through picking a theme and plugins by number—no flags to memorize.
-
 <details>
-<summary><b>Option C: One-Line CLI (For Power Users)</b></summary>
+<summary><b>🛠️ Prefer GitHub Actions or Terminal CLI? (Click for 3 alternative ways)</b></summary>
 
-```bash
-python setup.py --username <your-username> \
-  --theme indie-maker \
-  --plugins typing-svg,skill-icons,blog-rss,spotify-now-playing,github-stats \
-  --var BLOG_RSS_URL=https://yourblog.com/index.xml \
-  --var SPOTIFY_UID=your_spotify_uid
-```
+- **Via GitHub Actions (No Terminal):** In your template repo, open **Actions → Build My Profile → Run workflow**, choose your theme & plugins from the dropdown, and let GitHub commit `README.md` for you.
+- **Interactive Terminal Wizard (1 Command):** Clone your repo and run `python setup.py` for a guided numbered menu (zero external dependencies).
+- **One-Line Power CLI:**
+  ```bash
+  python setup.py --username <your-username> \
+    --theme indie-maker \
+    --plugins typing-svg,skill-icons,blog-rss,github-stats \
+    --var BLOG_RSS_URL=https://yourblog.com/index.xml
+  ```
 
 </details>
-
-> [!TIP]
-> Want to preview available options first? Run `python setup.py --list` or add `--dry-run`.
-
----
-
-## 🎨 See What You Can Build
-
-Why settle for plain text when you can snap together live, zero-maintenance widgets? Here is a live preview of what the built-in plugins render:
-
-<div align="center">
-
-**Tech Stack Grid (`skill-icons` plugin)**
-
-[![My Skills](https://skillicons.dev/icons?i=py,ts,js,react,nodejs,docker,git,github,vscode,obsidian)](https://skillicons.dev)
-
-**Crisp Social & Contact Bar (`social-badges` plugin)**
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cmduyeen)
-[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/cmduyeen)
-[![Blog](https://img.shields.io/badge/Blog-2563EB?style=for-the-badge&logo=rss&logoColor=white)](https://cmduyeen.github.io)
-
-</div>
 
 ---
 
