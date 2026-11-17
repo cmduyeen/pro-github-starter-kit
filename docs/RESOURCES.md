@@ -52,3 +52,14 @@ A vetted collection of the best open-source repositories, generators, and web to
 | --- | --- | --- | --- |
 | **Awesome GitHub Profile README** | Huge curated gallery of creative and minimal profiles | Studying layout ideas before choosing a theme | [abhisheknaiidu/awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) |
 | **Creative Profile README** | Categorized collection of standout developer profiles | Exploring visual styles and formatting tricks | [coderjojo/creative-profile-readme](https://github.com/coderjojo/creative-profile-readme) |
+
+---
+
+## 6. Online Avatar Generators
+
+| Tool | Style | Best Used For | Link |
+| --- | --- | --- | --- |
+| **MyOctocat** | Official GitHub Octocat mascot | Custom GitHub-themed profile pictures | [myoctocat.com](https://myoctocat.com/) |
+| **DiceBear** | Pixel Art, Notionists, Bottts, Lorelei | Open-source SVG/PNG avatars via web or API | [dicebear.com](https://www.dicebear.com/) |
+| **Boring Avatars** | Minimalist geometric shapes | Clean, modern abstract avatars | [boringavatars.com](https://boringavatars.com/) |
+| **Getavataaars** | Clean vector cartoon portraits | Customizable friendly developer avatars | [getavataaars.com](https://getavataaars.com/) |

@@ -270,6 +270,12 @@ Every tool below is vetted for reliability and paired with a clear use case:
   - **[catppuccin/catppuccin](https://github.com/catppuccin/catppuccin)** · **[dracula/dracula-theme](https://github.com/dracula/dracula-theme)** · **[cmduyeen/serein-theme](https://github.com/cmduyeen/serein-theme)** · **[cmduyeen/pinkie-theme](https://github.com/cmduyeen/pinkie-theme)** — Cohesive color systems for profiles, editors, and terminals.
   - **[abhisheknaiidu/awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme)** · **[coderjojo/creative-profile-readme](https://github.com/coderjojo/creative-profile-readme)** — Massive galleries of real-world creative and minimalist profiles for layout inspiration.
 
+- **Online Avatar Generators**
+  - **[myoctocat.com](https://myoctocat.com/)** — Official GitHub Octocat builder to design your own custom mascot avatar.
+  - **[dicebear.com](https://www.dicebear.com/)** — Open-source avatar playground & API with Pixel Art, Notionists, Lorelei, and Bottts styles.
+  - **[boringavatars.com](https://boringavatars.com/)** — Minimalist geometric SVG avatars with customizable color palettes.
+  - **[getavataaars.com](https://getavataaars.com/)** — Clean vector cartoon avatar creator with custom outfits, glasses, and expressions.
+
 > Full reference notes in **[docs/RESOURCES.md](docs/RESOURCES.md)** and automation setup in **[docs/AUTOMATION.md](docs/AUTOMATION.md)**.
 
 ### 2. GitHub SEO & GEO Checklist
