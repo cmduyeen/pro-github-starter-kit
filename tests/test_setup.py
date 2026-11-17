@@ -14,7 +14,17 @@ class TestStarterKitSetup(unittest.TestCase):
     def test_discover_themes_and_plugins(self) -> None:
         themes = setup.discover_themes()
         plugins = setup.discover_plugins()
-        for tid in ("minimalist", "indie-maker", "developer-portfolio", "terminal-hacker", "research-student"):
+        for tid in (
+            "minimalist",
+            "indie-maker",
+            "developer-portfolio",
+            "terminal-hacker",
+            "research-student",
+            "dracula",
+            "catppuccin",
+            "serein",
+            "pinkie",
+        ):
             self.assertIn(tid, themes)
         for pid in (
             "blog-rss",

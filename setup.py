@@ -160,6 +160,10 @@ def compose_profile(
             raise ValueError(f"Unknown plugin '{pid}'. Available: {available}")
 
     merged_vars: dict[str, str] = {"USERNAME": username}
+    theme_defaults = themes[theme_id].get("defaults", {})
+    if isinstance(theme_defaults, dict):
+        for k, v in theme_defaults.items():
+            merged_vars[str(k)] = str(v)
     for pid in plugin_ids:
         defaults = plugins[pid].get("defaults", {})
         if isinstance(defaults, dict):
