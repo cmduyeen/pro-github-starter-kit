@@ -149,6 +149,10 @@ class TestStarterKitSetup(unittest.TestCase):
                 f"Unreplaced placeholder in {name}",
             )
 
+    def test_parse_vars_rejects_newlines(self) -> None:
+        with self.assertRaises(ValueError):
+            setup.parse_vars(["BLOG_RSS_URL=https://example.com\nmalicious: true"])
+
 
 if __name__ == "__main__":
     unittest.main()

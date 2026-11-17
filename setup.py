@@ -114,6 +114,9 @@ def validate_extensions(
                 defaults = data.get("defaults", {}) or {}
                 wf_path = item / "workflow.yml"
                 combined_text = snippet_text
+                wf_name = str(data.get("workflow_file", f"{item.name}.yml"))
+                if Path(wf_name).name != wf_name or ".." in wf_name or not wf_name.endswith((".yml", ".yaml")):
+                    errors.append(f"Plugin '{item.name}' has unsafe workflow_file '{wf_name}'")
                 if wf_path.exists():
                     wf_text = wf_path.read_text(encoding="utf-8")
                     combined_text += "\n" + wf_text
@@ -137,9 +140,12 @@ def parse_vars(raw_vars: list[str]) -> dict[str, str]:
             raise ValueError(f"Invalid --var '{entry}'. Expected KEY=VALUE format.")
         key, value = entry.split("=", 1)
         key = key.strip()
+        val = value.strip()
         if not key:
             raise ValueError(f"Empty key in --var '{entry}'.")
-        parsed[key] = value.strip()
+        if "\n" in val or "\r" in val:
+            raise ValueError(f"Invalid newline character in --var '{key}'.")
+        parsed[key] = val
     return parsed
 
 
@@ -201,9 +207,11 @@ def compose_profile(
 
         wf_path = pdir / "workflow.yml"
         if wf_path.exists():
-            wf_name = plugins[pid].get("workflow_file", f"{pid}.yml")
+            wf_name = str(plugins[pid].get("workflow_file", f"{pid}.yml"))
+            if Path(wf_name).name != wf_name or ".." in wf_name:
+                raise ValueError(f"Unsafe workflow_file '{wf_name}' in plugin '{pid}'.")
             wf_content = render_placeholders(wf_path.read_text(encoding="utf-8"), merged_vars)
-            workflows.append((str(wf_name), wf_content))
+            workflows.append((wf_name, wf_content))
 
     plugins_section = "\n\n".join(plugin_blocks)
     theme_dir: Path = themes[theme_id]["_dir"]

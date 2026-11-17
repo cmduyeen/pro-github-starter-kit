@@ -333,6 +333,7 @@
     .preview-pane pre { padding: 12px; overflow-x: auto; }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
 </head>
 <body>
   <header>
@@ -460,8 +461,17 @@
     }
 
     function updatePreviewPane(markdown) {
-      if (window.marked && typeof window.marked.parse === "function") {
-        previewPaneEl.innerHTML = window.marked.parse(markdown, { breaks: true, gfm: true });
+      if (
+        window.marked &&
+        typeof window.marked.parse === "function" &&
+        window.DOMPurify &&
+        typeof window.DOMPurify.sanitize === "function"
+      ) {
+        const rawHtml = window.marked.parse(markdown, { breaks: true, gfm: true });
+        previewPaneEl.innerHTML = window.DOMPurify.sanitize(rawHtml, {
+          ADD_TAGS: ["picture", "source"],
+          ADD_ATTR: ["media", "srcset", "align", "valign", "width", "alt"],
+        });
       } else {
         previewPaneEl.textContent = markdown;
       }
