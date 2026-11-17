@@ -108,12 +108,20 @@ class TestStarterKitSetup(unittest.TestCase):
                 "# Test\n\n<!-- THEMES-TABLE:START -->\nold\n<!-- THEMES-TABLE:END -->\n\n<!-- PLUGINS-TABLE:START -->\nold\n<!-- PLUGINS-TABLE:END -->\n",
                 encoding="utf-8",
             )
-            changed = setup.sync_readme_catalog(readme_path=fake_readme)
+            changed = setup.sync_readme_catalog(
+                readme_path=fake_readme,
+                catalog_path=Path(tmp) / "catalog.json",
+            )
             self.assertTrue(changed)
             content = fake_readme.read_text(encoding="utf-8")
             self.assertIn("dracula", content)
             self.assertIn("blog-rss", content)
-            self.assertFalse(setup.sync_readme_catalog(readme_path=fake_readme))
+            self.assertFalse(
+                setup.sync_readme_catalog(
+                    readme_path=fake_readme,
+                    catalog_path=Path(tmp) / "catalog.json",
+                )
+            )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro GitHub Starter Kit — Visual Profile Builder</title>
+  <meta name="description" content="Build your GitHub Profile README visually in seconds. Pick a theme, toggle plugins, and copy or download your Markdown." />
+  <style>
+    :root {
+      --bg: #0b1120;
+      --panel: #111827;
+      --border: #1f2937;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --green: #10b981;
+      --code-bg: #030712;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--panel);
+    }
+    header h1 { margin: 0; font-size: 1.2rem; }
+    header p { margin: 2px 0 0; font-size: 0.88rem; color: var(--muted); }
+    .header-links { display: flex; gap: 10px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #1f2937;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover { background: #374151; }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-success { background: var(--green); border-color: var(--green); color: #052e16; }
+    main {
+      max-width: 1280px;
+      margin: 24px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 920px) {
+      main { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    label.field-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 12px 0 6px;
+      color: #d1d5db;
+    }
+    input[type="text"], select {
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--code-bg);
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .plugins-list {
+      display: grid;
+      gap: 8px;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .plugin-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .plugin-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .plugin-head input { accent-color: var(--accent); width: 16px; height: 16px; }
+    .plugin-desc { font-size: 0.8rem; color: var(--muted); margin: 4px 0 0 24px; }
+    .plugin-vars { margin: 8px 0 0 24px; display: none; }
+    .plugin-item.active .plugin-vars { display: block; }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 460px;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--code-bg);
+      color: #e5e7eb;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+      resize: vertical;
+    }
+    .cli-box {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      font-family: ui-monospace, monospace;
+      font-size: 0.8rem;
+      color: #93c5fd;
+      word-break: break-all;
+    }
+    .status { font-size: 0.85rem; color: var(--green); margin-left: auto; align-self: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>🚀 Pro GitHub Starter Kit — Profile Builder</h1>
+      <p>Pick a theme, toggle plugins, and copy or download your <code>README.md</code> in seconds.</p>
+    </div>
+    <div class="header-links">
+      <a class="btn" href="https://github.com/cmduyeen/pro-github-starter-kit" target="_blank" rel="noopener">GitHub Repo</a>
+      <a class="btn btn-primary" href="https://github.com/cmduyeen/pro-github-starter-kit/generate" target="_blank" rel="noopener">Use This Template</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Configure Your Profile</h2>
+      <label class="field-label" for="username">GitHub Username</label>
+      <input id="username" type="text" value="cmduyeen" placeholder="your-github-username" />
+
+      <label class="field-label" for="themeSelect">Choose a Theme</label>
+      <select id="themeSelect"></select>
+      <p id="themeDesc" class="plugin-desc" style="margin-left: 0;"></p>
+
+      <label class="field-label">Select Plugins</label>
+      <div id="pluginsList" class="plugins-list">Loading catalog...</div>
+    </section>
+
+    <section class="card">
+      <h2>2. Generated <code>README.md</code></h2>
+      <div class="toolbar">
+        <button id="copyBtn" class="btn btn-primary" type="button">Copy Markdown</button>
+        <button id="downloadBtn" class="btn btn-success" type="button">Download README.md</button>
+        <button id="copyCliBtn" class="btn" type="button">Copy CLI Command</button>
+        <span id="statusMsg" class="status"></span>
+      </div>
+      <textarea id="output" spellcheck="false"></textarea>
+      <div id="cliBox" class="cli-box"></div>
+    </section>
+  </main>
+
+  <script>
+    let catalog = { themes: [], plugins: [] };
+    const selectedPlugins = new Set(["skill-icons", "github-stats", "social-badges"]);
+    const customVars = {};
+
+    const usernameEl = document.getElementById("username");
+    const themeSelectEl = document.getElementById("themeSelect");
+    const themeDescEl = document.getElementById("themeDesc");
+    const pluginsListEl = document.getElementById("pluginsList");
+    const outputEl = document.getElementById("output");
+    const cliBoxEl = document.getElementById("cliBox");
+    const statusMsgEl = document.getElementById("statusMsg");
+
+    function replacePlaceholders(text, vars) {
+      let result = text;
+      for (const [k, v] of Object.entries(vars)) {
+        result = result.split(`{{${k}}}`).join(v);
+      }
+      return result;
+    }
+
+    function renderOutput() {
+      const username = (usernameEl.value || "your-username").trim();
+      const theme = catalog.themes.find(t => t.id === themeSelectEl.value) || catalog.themes[0];
+      if (!theme) return;
+
+      themeDescEl.textContent = `${theme.description} (by @${theme.author})`;
+
+      const merged = { USERNAME: username, ...(theme.defaults || {}) };
+      const chosen = catalog.plugins.filter(p => selectedPlugins.has(p.id));
+      for (const p of chosen) {
+        for (const [k, v] of Object.entries(p.defaults || {})) {
+          if (!(k in merged)) merged[k] = String(v);
+        }
+      }
+      for (const [k, v] of Object.entries(customVars)) {
+        if (v.trim()) merged[k] = v.trim();
+      }
+
+      const pluginBlocks = chosen.map(p => replacePlaceholders(p.snippet, merged));
+      let rendered = theme.template.replace("{{PLUGINS}}", pluginBlocks.join("\n\n"));
+      rendered = replacePlaceholders(rendered, merged).replace(/\n{3,}/g, "\n\n").trim() + "\n";
+      outputEl.value = rendered;
+
+      const pluginArg = chosen.map(p => p.id).join(",");
+      let cli = `python setup.py --username ${username} --theme ${theme.id}`;
+      if (pluginArg) cli += ` --plugins ${pluginArg}`;
+      for (const [k, v] of Object.entries(customVars)) {
+        if (v.trim()) cli += ` --var ${k}=${v.trim()}`;
+      }
+      cliBoxEl.textContent = cli;
+    }
+
+    function renderPluginsUI() {
+      pluginsListEl.innerHTML = "";
+      for (const p of catalog.plugins) {
+        const wrapper = document.createElement("div");
+        const isChecked = selectedPlugins.has(p.id);
+        wrapper.className = "plugin-item" + (isChecked ? " active" : "");
+
+        const head = document.createElement("label");
+        head.className = "plugin-head";
+        const cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.checked = isChecked;
+        cb.addEventListener("change", () => {
+          if (cb.checked) selectedPlugins.add(p.id);
+          else selectedPlugins.delete(p.id);
+          wrapper.classList.toggle("active", cb.checked);
+          renderOutput();
+        });
+        const title = document.createElement("strong");
+        title.textContent = p.id;
+        head.append(cb, title);
+
+        const desc = document.createElement("div");
+        desc.className = "plugin-desc";
+        desc.textContent = p.description;
+
+        wrapper.append(head, desc);
+
+        const defaultEntries = Object.entries(p.defaults || {});
+        if (defaultEntries.length > 0) {
+          const varsDiv = document.createElement("div");
+          varsDiv.className = "plugin-vars";
+          for (const [k, v] of defaultEntries) {
+            const lbl = document.createElement("label");
+            lbl.className = "field-label";
+            lbl.style.marginTop = "6px";
+            lbl.textContent = k;
+            const inp = document.createElement("input");
+            inp.type = "text";
+            inp.placeholder = String(v);
+            inp.value = customVars[k] || "";
+            inp.addEventListener("input", () => {
+              customVars[k] = inp.value;
+              renderOutput();
+            });
+            varsDiv.append(lbl, inp);
+          }
+          wrapper.append(varsDiv);
+        }
+
+        pluginsListEl.append(wrapper);
+      }
+    }
+
+    function flashStatus(msg) {
+      statusMsgEl.textContent = msg;
+      setTimeout(() => { statusMsgEl.textContent = ""; }, 2200);
+    }
+
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      await navigator.clipboard.writeText(outputEl.value);
+      flashStatus("Copied Markdown!");
+    });
+    document.getElementById("copyCliBtn").addEventListener("click", async () => {
+      await navigator.clipboard.writeText(cliBoxEl.textContent);
+      flashStatus("Copied CLI command!");
+    });
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const blob = new Blob([outputEl.value], { type: "text/markdown;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "README.md";
+      a.click();
+      URL.revokeObjectURL(url);
+      flashStatus("Downloaded README.md!");
+    });
+
+    usernameEl.addEventListener("input", renderOutput);
+    themeSelectEl.addEventListener("change", renderOutput);
+
+    fetch("./catalog.json")
+      .then(res => res.json())
+      .then(data => {
+        catalog = data;
+        for (const t of catalog.themes) {
+          const opt = document.createElement("option");
+          opt.value = t.id;
+          opt.textContent = `${t.id} — ${t.name}`;
+          if (t.id === "indie-maker") opt.selected = true;
+          themeSelectEl.append(opt);
+        }
+        renderPluginsUI();
+        renderOutput();
+      })
+      .catch(() => {
+        pluginsListEl.textContent = "Failed to load catalog.json.";
+      });
+  </script>
+</body>
+</html>

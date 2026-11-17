@@ -1,0 +1,216 @@
+{
+  "themes": [
+    {
+      "id": "catppuccin",
+      "name": "Catppuccin Mocha",
+      "description": "Soothing pastel-dark palette inspired by Catppuccin (catppuccin/catppuccin).",
+      "author": "cmduyeen",
+      "defaults": {
+        "STATS_THEME": "catppuccin_mocha",
+        "GRAPH_THEME": "catppuccin"
+      },
+      "template": "<div align=\"center\">\n\n# ☕ {{USERNAME}}\n\n[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=CBA6F7&center=true&vCenter=true&width=520&lines=Hi%2C+I'm+{{USERNAME}};Soothing+Pastel+Mocha+Profile)](https://github.com/{{USERNAME}})\n\n[![GitHub](https://img.shields.io/badge/GitHub-1E1E2E?style=for-the-badge&logo=github&logoColor=CBA6F7)](https://github.com/{{USERNAME}})\n[![Blog](https://img.shields.io/badge/Blog-1E1E2E?style=for-the-badge&logo=rss&logoColor=F5C2E7)](https://{{USERNAME}}.github.io)\n\n</div>\n\n---\n\n## Currently Building\n\n- **[Main Project](https://github.com/{{USERNAME}})** — Thoughtful software with clean ergonomics.\n- **[Notes & Guides](https://github.com/{{USERNAME}})** — Learning in public and sharing starter kits.\n\n{{PLUGINS}}\n\n---\n\n<sub>Color palette inspired by [Catppuccin](https://github.com/catppuccin/catppuccin) (MIT).</sub>\n"
+    },
+    {
+      "id": "developer-portfolio",
+      "name": "Developer Portfolio",
+      "description": "Full developer showcase ready for tech stack icons, stats cards, and activity widgets.",
+      "author": "cmduyeen",
+      "defaults": {},
+      "template": "# Hi there, I'm {{USERNAME}} 🚀\n\nFull-stack developer passionate about open-source, automation, and clean architecture.\n\n- 🔭 Currently building: **Your current project**\n- 🌱 Learning: **Your next technology**\n- 💬 Ask me about: **Python, TypeScript, Automation**\n- 📫 Reach me: **https://github.com/{{USERNAME}}**\n\n{{PLUGINS}}\n\n---\n\n⭐️ From [@{{USERNAME}}](https://github.com/{{USERNAME}})\n"
+    },
+    {
+      "id": "dracula",
+      "name": "Dracula Palette",
+      "description": "Dark purple & neon palette inspired by Dracula Theme (dracula/dracula-theme).",
+      "author": "cmduyeen",
+      "defaults": {
+        "STATS_THEME": "dracula",
+        "GRAPH_THEME": "dracula"
+      },
+      "template": "<div align=\"center\">\n\n# 🧛 {{USERNAME}}\n\n[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=BD93F9&center=true&vCenter=true&width=520&lines=Hello%2C+I'm+{{USERNAME}};Dracula-Styled+Developer+Profile)](https://github.com/{{USERNAME}})\n\n[![GitHub](https://img.shields.io/badge/GitHub-282A36?style=for-the-badge&logo=github&logoColor=BD93F9)](https://github.com/{{USERNAME}})\n[![Blog](https://img.shields.io/badge/Blog-282A36?style=for-the-badge&logo=rss&logoColor=FF79C6)](https://{{USERNAME}}.github.io)\n\n</div>\n\n---\n\n## Featured Projects\n\n- **[Project One](https://github.com/{{USERNAME}})** — Fast, open-source developer tool.\n- **[Project Two](https://github.com/{{USERNAME}})** — Automation scripts and clean workflows.\n\n{{PLUGINS}}\n\n---\n\n<sub>Color palette inspired by [Dracula Theme](https://github.com/dracula/dracula-theme) (MIT).</sub>\n"
+    },
+    {
+      "id": "indie-maker",
+      "name": "Indie Maker",
+      "description": "Product-focused layout highlighting shipped projects, writing, and updates.",
+      "author": "cmduyeen",
+      "defaults": {},
+      "template": "# Hey, I'm {{USERNAME}} 👋\n\nIndie builder crafting lightweight, zero-install tools and sharing notes along the way.\n\n## Featured Products\n\n| Project | What It Solves | Status |\n| --- | --- | --- |\n| **[Flagship Project](https://github.com/{{USERNAME}})** | Describe the core problem it solves in one line | Active |\n| **[Starter Kit / Tool](https://github.com/{{USERNAME}})** | Describe your second project | Active |\n\n{{PLUGINS}}\n\n## Connect\n\n- 🌐 Website: [https://{{USERNAME}}.github.io](https://{{USERNAME}}.github.io)\n- 🐙 GitHub: [@{{USERNAME}}](https://github.com/{{USERNAME}})\n"
+    },
+    {
+      "id": "minimalist",
+      "name": "Minimalist",
+      "description": "Clean text-first profile with zero visual clutter.",
+      "author": "cmduyeen",
+      "defaults": {},
+      "template": "# Hi, I'm {{USERNAME}}\n\nSoftware builder & lifelong learner. I care about simple tools, clear writing, and maintainable systems.\n\n## What I'm Working On\n\n- **[Project One](https://github.com/{{USERNAME}})** — Short one-line description of your flagship project.\n- **[Project Two](https://github.com/{{USERNAME}})** — Another useful tool, theme, or open-source guide.\n\n{{PLUGINS}}\n\n## Elsewhere\n\n- GitHub: [@{{USERNAME}}](https://github.com/{{USERNAME}})\n- Website / Blog: [https://{{USERNAME}}.github.io](https://{{USERNAME}}.github.io)\n"
+    },
+    {
+      "id": "pinkie",
+      "name": "Pinkie Pastel",
+      "description": "Soft pastel-pink aesthetic from Pinkie Theme (cmduyeen/pinkie-theme).",
+      "author": "cmduyeen",
+      "defaults": {
+        "STATS_THEME": "rose_pine",
+        "GRAPH_THEME": "rogue"
+      },
+      "template": "<div align=\"center\">\n\n# 🌸 {{USERNAME}}\n\n[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=EC4899&center=true&vCenter=true&width=520&lines=Hi%2C+I'm+{{USERNAME}};Soft+Pastel+Pink+Profile)](https://github.com/{{USERNAME}})\n\n[![GitHub](https://img.shields.io/badge/GitHub-FFF1F2?style=for-the-badge&logo=github&logoColor=EC4899)](https://github.com/{{USERNAME}})\n[![Blog](https://img.shields.io/badge/Blog-FDF2F8?style=for-the-badge&logo=rss&logoColor=DB2777)](https://{{USERNAME}}.github.io)\n\n</div>\n\n---\n\n## Favorite Creations\n\n- **[Creative Project](https://github.com/{{USERNAME}})** — Aesthetic tools & pastel themes.\n- **[Open Source Notes](https://github.com/{{USERNAME}})** — Guides, snippets, and templates.\n\n{{PLUGINS}}\n\n---\n\n<sub>Color palette from [Pinkie Theme](https://github.com/cmduyeen/pinkie-theme) (MIT).</sub>\n"
+    },
+    {
+      "id": "research-student",
+      "name": "Student & Self-Learner",
+      "description": "Structured layout highlighting learning roadmap, notes, and starter projects.",
+      "author": "cmduyeen",
+      "defaults": {},
+      "template": "# Hello, I'm {{USERNAME}} 📚\n\nComputer Science student & self-learner documenting my coding journey in public.\n\n## Learning Roadmap\n\n- **Currently Studying:** Data Structures, Python, Git & GitHub Workflows\n- **Public Notes:** [My Self-Study Repository](https://github.com/{{USERNAME}})\n- **Goal:** Ship small, useful open-source projects consistently\n\n{{PLUGINS}}\n\n## Connect\n\n- GitHub: [@{{USERNAME}}](https://github.com/{{USERNAME}})\n"
+    },
+    {
+      "id": "serein",
+      "name": "Serein Warm Minimal",
+      "description": "Warm, low-distraction palette from Serein Theme (cmduyeen/serein-theme).",
+      "author": "cmduyeen",
+      "defaults": {
+        "STATS_THEME": "gruvbox",
+        "GRAPH_THEME": "gruvbox"
+      },
+      "template": "<div align=\"center\">\n\n# 🕯️ {{USERNAME}}\n\n[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=D97706&center=true&vCenter=true&width=520&lines=Hi%2C+I'm+{{USERNAME}};Warm+Minimalism+%26+Everyday+Comfort)](https://github.com/{{USERNAME}})\n\n[![GitHub](https://img.shields.io/badge/GitHub-1C1917?style=for-the-badge&logo=github&logoColor=F59E0B)](https://github.com/{{USERNAME}})\n[![Blog](https://img.shields.io/badge/Blog-1C1917?style=for-the-badge&logo=rss&logoColor=FBBF24)](https://{{USERNAME}}.github.io)\n\n</div>\n\n---\n\n## Selected Works\n\n- **[Flagship Tool](https://github.com/{{USERNAME}})** — Lightweight utility built for everyday calm.\n- **[Theme & Configs](https://github.com/{{USERNAME}})** — Low-glare developer workspace presets.\n\n{{PLUGINS}}\n\n---\n\n<sub>Color palette from [Serein Theme](https://github.com/cmduyeen/serein-theme) (MIT).</sub>\n"
+    },
+    {
+      "id": "terminal-hacker",
+      "name": "Terminal / CLI",
+      "description": "Neofetch-inspired terminal block layout for CLI and systems developers.",
+      "author": "cmduyeen",
+      "defaults": {},
+      "template": "# `whoami` → {{USERNAME}}\n\n```text\n{{USERNAME}}@github\n-------------------\nOS:       Open Source / Linux / Terminal\nRole:     Software Engineer & Automation Builder\nFocus:    CLI Tools, Clean Code, Systems\nBlog:     https://{{USERNAME}}.github.io\n```\n\n## `$ ls ./featured-projects`\n\n- [`project-alpha`](https://github.com/{{USERNAME}}) — Fast, zero-dependency CLI utility.\n- [`project-beta`](https://github.com/{{USERNAME}}) — Dotfiles, terminal themes, and automation scripts.\n\n{{PLUGINS}}\n\n## `$ cat ./contact.txt`\n\n- GitHub: [@{{USERNAME}}](https://github.com/{{USERNAME}})\n"
+    }
+  ],
+  "plugins": [
+    {
+      "id": "activity-graph",
+      "name": "Contribution Activity Graph",
+      "description": "Renders a 31-day contribution line graph using github-readme-activity-graph.",
+      "author": "cmduyeen",
+      "defaults": {
+        "GRAPH_THEME": "minimal"
+      },
+      "has_workflow": false,
+      "snippet": "## Activity Graph\n\n[![{{USERNAME}}'s github activity graph](https://github-readme-activity-graph.vercel.app/graph?username={{USERNAME}}&theme={{GRAPH_THEME}})](https://github.com/{{USERNAME}})"
+    },
+    {
+      "id": "blog-rss",
+      "name": "Blog RSS Sync",
+      "description": "Automatically syncs your latest blog posts via RSS using GitHub Actions.",
+      "author": "cmduyeen",
+      "defaults": {
+        "BLOG_RSS_URL": "https://{{USERNAME}}.github.io/index.xml"
+      },
+      "has_workflow": true,
+      "snippet": "## Latest Blog Posts\n\n<!-- BLOG-POST-LIST:START -->\n<!-- Automatically updated by .github/workflows/blog-rss-sync.yml -->\n<!-- BLOG-POST-LIST:END -->"
+    },
+    {
+      "id": "github-stats",
+      "name": "GitHub Stats & Streak Cards",
+      "description": "Embeds dynamic GitHub summary stats, top languages, and streak cards.",
+      "author": "cmduyeen",
+      "defaults": {
+        "STATS_THEME": "transparent"
+      },
+      "has_workflow": false,
+      "snippet": "## GitHub Streak & Stats\n\n[![GitHub Streak](https://streak-stats.demolab.com?user={{USERNAME}}&theme={{STATS_THEME}})](https://github.com/{{USERNAME}})"
+    },
+    {
+      "id": "profile-views",
+      "name": "Profile Views Counter",
+      "description": "Adds a live profile visitor counter badge via komarev.com.",
+      "author": "cmduyeen",
+      "defaults": {
+        "VIEWS_COLOR": "3b82f6"
+      },
+      "has_workflow": false,
+      "snippet": "![Profile Views](https://komarev.com/ghpvc/?username={{USERNAME}}&color={{VIEWS_COLOR}}&style=flat-square)"
+    },
+    {
+      "id": "skill-icons",
+      "name": "Skill Icons Grid",
+      "description": "Displays your tech stack cleanly using skillicons.dev.",
+      "author": "cmduyeen",
+      "defaults": {
+        "SKILLS": "py,ts,js,git,github,vscode,obsidian,markdown"
+      },
+      "has_workflow": false,
+      "snippet": "## Tech Stack\n\n[![My Skills](https://skillicons.dev/icons?i={{SKILLS}})](https://skillicons.dev)"
+    },
+    {
+      "id": "snake-contribution",
+      "name": "Contribution Snake Animation",
+      "description": "Generates an animated SVG snake eating your contribution graph daily via Platane/snk.",
+      "author": "cmduyeen",
+      "defaults": {},
+      "has_workflow": true,
+      "snippet": "## Contribution Snake\n\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/{{USERNAME}}/{{USERNAME}}/output/github-contribution-grid-snake-dark.svg\" />\n  <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/{{USERNAME}}/{{USERNAME}}/output/github-contribution-grid-snake.svg\" />\n  <img alt=\"github contribution grid snake animation\" src=\"https://raw.githubusercontent.com/{{USERNAME}}/{{USERNAME}}/output/github-contribution-grid-snake.svg\" />\n</picture>"
+    },
+    {
+      "id": "social-badges",
+      "name": "Social & Contact Badges",
+      "description": "Adds crisp shields.io social and portfolio badges.",
+      "author": "cmduyeen",
+      "defaults": {
+        "X_HANDLE": "{{USERNAME}}"
+      },
+      "has_workflow": false,
+      "snippet": "## Find Me Online\n\n[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/{{USERNAME}})\n[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/{{X_HANDLE}})\n[![Blog](https://img.shields.io/badge/Blog-2563EB?style=for-the-badge&logo=rss&logoColor=white)](https://{{USERNAME}}.github.io)"
+    },
+    {
+      "id": "sponsor-badge",
+      "name": "Sponsor & Support Badges",
+      "description": "Adds GitHub Sponsors and support buttons to help fund your open-source work.",
+      "author": "cmduyeen",
+      "defaults": {},
+      "has_workflow": false,
+      "snippet": "## Support My Work\n\n[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/{{USERNAME}})"
+    },
+    {
+      "id": "spotify-now-playing",
+      "name": "Spotify Now Playing",
+      "description": "Displays your currently playing or recently played Spotify track.",
+      "author": "cmduyeen",
+      "defaults": {
+        "SPOTIFY_UID": "your-spotify-uid"
+      },
+      "has_workflow": false,
+      "snippet": "## Currently Listening\n\n[![Spotify](https://spotify-github-profile.kittinanx.com/api/view?uid={{SPOTIFY_UID}}&cover_image=true&theme=novatorem&show_offline=true&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://open.spotify.com/)"
+    },
+    {
+      "id": "typing-svg",
+      "name": "Typing SVG Banner",
+      "description": "Adds an animated typing header powered by readme-typing-svg.",
+      "author": "cmduyeen",
+      "defaults": {
+        "TYPING_LINES": "Builder+%26+Open-Source+Creator;Automation+%26+Clean+Code"
+      },
+      "has_workflow": false,
+      "snippet": "[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=false&vCenter=true&width=480&lines={{TYPING_LINES}})](https://github.com/{{USERNAME}})"
+    },
+    {
+      "id": "wakatime-stats",
+      "name": "WakaTime Coding Stats",
+      "description": "Automatically updates your weekly coding time and language breakdown via WakaTime.",
+      "author": "cmduyeen",
+      "defaults": {},
+      "has_workflow": true,
+      "snippet": "## Weekly Coding Activity\n\n<!--START_SECTION:waka-->\n<!-- Automatically updated by .github/workflows/wakatime-sync.yml (requires WAKATIME_API_KEY secret) -->\n<!--END_SECTION:waka-->"
+    },
+    {
+      "id": "youtube-rss",
+      "name": "YouTube RSS Sync",
+      "description": "Automatically lists your latest YouTube videos via channel RSS feed.",
+      "author": "cmduyeen",
+      "defaults": {
+        "YOUTUBE_CHANNEL_ID": "UC_YOUR_CHANNEL_ID"
+      },
+      "has_workflow": true,
+      "snippet": "## Latest YouTube Videos\n\n<!-- YOUTUBE:START -->\n<!-- Automatically updated by .github/workflows/youtube-rss-sync.yml -->\n<!-- YOUTUBE:END -->"
+    }
+  ]
+}

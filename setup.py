@@ -366,20 +366,70 @@ def render_plugins_table(
     return _render_grid_cells(cells, columns=3)
 
 
+def build_catalog_data(
+    themes_dir: Path = THEMES_DIR,
+    plugins_dir: Path = PLUGINS_DIR,
+) -> dict[str, Any]:
+    """Build JSON-serializable catalog payload for the static GitHub Pages web builder."""
+    themes_raw = discover_themes(themes_dir)
+    plugins_raw = discover_plugins(plugins_dir)
+
+    themes_out: list[dict[str, Any]] = []
+    for tid, data in themes_raw.items():
+        tdir: Path = data["_dir"]
+        themes_out.append(
+            {
+                "id": tid,
+                "name": data.get("name", tid),
+                "description": data.get("description", ""),
+                "author": data.get("author", "community"),
+                "defaults": data.get("defaults", {}),
+                "template": (tdir / "README.template.md").read_text(encoding="utf-8"),
+            }
+        )
+
+    plugins_out: list[dict[str, Any]] = []
+    for pid, data in plugins_raw.items():
+        pdir: Path = data["_dir"]
+        plugins_out.append(
+            {
+                "id": pid,
+                "name": data.get("name", pid),
+                "description": data.get("description", ""),
+                "author": data.get("author", "community"),
+                "defaults": data.get("defaults", {}),
+                "has_workflow": (pdir / "workflow.yml").exists(),
+                "snippet": (pdir / "snippet.md").read_text(encoding="utf-8").strip(),
+            }
+        )
+
+    return {"themes": themes_out, "plugins": plugins_out}
+
+
 def sync_readme_catalog(
     readme_path: Path | None = None,
     themes_dir: Path = THEMES_DIR,
     plugins_dir: Path = PLUGINS_DIR,
+    catalog_path: Path | None = None,
 ) -> bool:
-    """Update auto-generated theme and plugin tables in README.md. Returns True if changed."""
+    """Update auto-generated theme/plugin tables in README.md and docs/catalog.json. Returns True if changed."""
     target = readme_path or (ROOT_DIR / "README.md")
     original = target.read_text(encoding="utf-8")
     updated = _replace_marker_block(original, "THEMES-TABLE", render_themes_table(themes_dir, target.parent))
     updated = _replace_marker_block(updated, "PLUGINS-TABLE", render_plugins_table(plugins_dir, target.parent))
-    if updated == original:
-        return False
-    target.write_text(updated, encoding="utf-8")
-    return True
+    changed = updated != original
+    if changed:
+        target.write_text(updated, encoding="utf-8")
+
+    cat_target = catalog_path or (target.parent / "docs" / "catalog.json")
+    if cat_target.parent.exists():
+        new_cat = json.dumps(build_catalog_data(themes_dir, plugins_dir), indent=2, ensure_ascii=False) + "\n"
+        old_cat = cat_target.read_text(encoding="utf-8") if cat_target.exists() else ""
+        if new_cat != old_cat:
+            cat_target.write_text(new_cat, encoding="utf-8")
+            changed = True
+
+    return changed
 
 
 def build_parser() -> argparse.ArgumentParser:

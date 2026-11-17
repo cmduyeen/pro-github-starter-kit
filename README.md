@@ -8,6 +8,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 [![Template Repo](https://img.shields.io/badge/Use%20This%20Template-Click%20Here-2ea44f?style=flat-square&logo=github)](https://github.com/cmduyeen/pro-github-starter-kit/generate)
+[![Web Builder](https://img.shields.io/badge/Web%20Builder-Open%20App-3B82F6?style=flat-square&logo=googlechrome&logoColor=white)](https://cmduyeen.github.io/pro-github-starter-kit/)
 
 **An Obsidian-inspired, extensible starter kit for crafting a clean, automated, and high-converting GitHub Profile.**
 
@@ -33,7 +34,11 @@
 
 ## ⚡ Quick Start (No Coding Required)
 
-### Option A: 100% in Browser (Recommended for Beginners & Non-Tech)
+### Option A: Visual Web Builder (Fastest — Zero Setup)
+
+Open **[https://cmduyeen.github.io/pro-github-starter-kit/](https://cmduyeen.github.io/pro-github-starter-kit/)**, enter your username, pick a theme & plugins, and click **Copy Markdown** or **Download `README.md`**.
+
+### Option B: 100% in Browser via GitHub Actions
 
 No terminal, no Python, no Git commands needed:
 
