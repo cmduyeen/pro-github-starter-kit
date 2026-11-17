@@ -133,6 +133,18 @@ class TestStarterKitSetup(unittest.TestCase):
         self.assertIn("lines=Hello+World;Open+Source+Builder", readme)
         self.assertNotIn("{{", readme)
 
+    def test_all_plugins_compose_without_unreplaced_placeholders(self) -> None:
+        all_pids = list(setup.discover_plugins().keys())
+        readme, workflows = setup.compose_profile(
+            username="octocat",
+            theme_id="indie-maker",
+            plugin_ids=all_pids,
+            variables={},
+        )
+        self.assertNotIn("{{", readme)
+        for name, wf_content in workflows:
+            self.assertNotIn("{{", wf_content, f"Unreplaced placeholder in {name}")
+
 
 if __name__ == "__main__":
     unittest.main()

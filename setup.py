@@ -144,13 +144,14 @@ def parse_vars(raw_vars: list[str]) -> dict[str, str]:
 
 
 def render_placeholders(text: str, variables: dict[str, str]) -> str:
-    """Replace {{KEY}} placeholders using provided variables."""
+    """Replace {{KEY}} placeholders using provided variables (supports nested {{USERNAME}})."""
     rendered = text
-    for key, value in variables.items():
-        val = value
-        if key == "TYPING_LINES" and " " in val:
-            val = val.replace(" ", "+")
-        rendered = rendered.replace(f"{{{{{key}}}}}", val)
+    for _ in range(2):
+        for key, value in variables.items():
+            val = value
+            if key == "TYPING_LINES" and " " in val:
+                val = val.replace(" ", "+")
+            rendered = rendered.replace(f"{{{{{key}}}}}", val)
     return rendered
 
 
