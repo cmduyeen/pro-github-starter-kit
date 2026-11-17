@@ -109,6 +109,22 @@ def validate_extensions(
                     errors.append(f"Plugin '{item.name}' plugin.json missing '{key}'")
             if not snippet.exists():
                 errors.append(f"Plugin '{item.name}' is missing snippet.md")
+            else:
+                snippet_text = snippet.read_text(encoding="utf-8")
+                defaults = data.get("defaults", {}) or {}
+                wf_path = item / "workflow.yml"
+                combined_text = snippet_text
+                if wf_path.exists():
+                    wf_text = wf_path.read_text(encoding="utf-8")
+                    combined_text += "\n" + wf_text
+                    for required_key in ("name:", "on:", "jobs:"):
+                        if required_key not in wf_text:
+                            errors.append(f"Plugin '{item.name}' workflow.yml missing '{required_key}'")
+                for ph in re.findall(r"\{\{([A-Z0-9_]+)\}\}", combined_text):
+                    if ph != "USERNAME" and ph not in defaults:
+                        errors.append(
+                            f"Plugin '{item.name}' uses '{{{{{ph}}}}}' without a default in plugin.json"
+                        )
 
     return errors
 
@@ -131,7 +147,10 @@ def render_placeholders(text: str, variables: dict[str, str]) -> str:
     """Replace {{KEY}} placeholders using provided variables."""
     rendered = text
     for key, value in variables.items():
-        rendered = rendered.replace(f"{{{{{key}}}}}", value)
+        val = value
+        if key == "TYPING_LINES" and " " in val:
+            val = val.replace(" ", "+")
+        rendered = rendered.replace(f"{{{{{key}}}}}", val)
     return rendered
 
 

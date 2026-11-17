@@ -123,6 +123,16 @@ class TestStarterKitSetup(unittest.TestCase):
                 )
             )
 
+    def test_typing_lines_spaces_are_encoded_in_markdown(self) -> None:
+        readme, _ = setup.compose_profile(
+            username="octocat",
+            theme_id="minimalist",
+            plugin_ids=["typing-svg"],
+            variables={"TYPING_LINES": "Hello World;Open Source Builder"},
+        )
+        self.assertIn("lines=Hello+World;Open+Source+Builder", readme)
+        self.assertNotIn("{{", readme)
+
 
 if __name__ == "__main__":
     unittest.main()
